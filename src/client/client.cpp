@@ -45,13 +45,27 @@ int main() {
 
     // Connect to the server
     if (connect(clientSocket, (sockaddr*)&serverAddr, sizeof(serverAddr)) == 0) {
+        std::cout << "Connected to server.\n";
+
+        // Send data to the server (ensure it's wide characters)
+        const wchar_t* msg = L"Hello, Server! This is the client sending a message in wchar_t.";
+        int msgLen = wcslen(msg) * sizeof(wchar_t);  // Calculate byte length for wide characters
+        int bytesSent = send(clientSocket, reinterpret_cast<const char*>(msg), msgLen, 0);
+        if (bytesSent == SOCKET_ERROR) {
+            std::cerr << "Failed to send data.\n";
+            closesocket(clientSocket);
+            WSACleanup();
+            return 1;
+        }
+        std::wcout << L"Sent " << bytesSent << L" bytes to the server.\n";
+
+        // Receive response from the server
         char buffer[256];
         int bytesReceived = recv(clientSocket, buffer, sizeof(buffer), 0);
         if (bytesReceived > 0) {
-            buffer[bytesReceived] = '\0'; // Null-terminate the string
+            buffer[bytesReceived] = '\0'; // Null-terminate the received string
             std::cout << "Server says: " << buffer << std::endl;
-        }
-        else {
+        } else {
             std::cerr << "Failed to receive data from the server.\n";
         }
     } else {
