@@ -3,16 +3,27 @@
 #include <WS2tcpip.h>
 #include <thread>
 #include <string>
+#include "logger.h"  // Include the Logger header
 
 #pragma comment(lib, "ws2_32.lib")
+#pragma warning(disable : 4267)
 
 // Function to handle each client connection
-void handleClient(SOCKET clientSocket) {
-    wchar_t buffer[256];
+void handleClient(SOCKET clientSocket, Logger& logger) {
+    sockaddr_in clientAddr;
+    int clientAddrSize = sizeof(clientAddr);
+    getpeername(clientSocket, (sockaddr*)&clientAddr, &clientAddrSize);
+    char clientIP[INET_ADDRSTRLEN];
+    inet_ntop(AF_INET, &clientAddr.sin_addr, clientIP, sizeof(clientIP));
 
+    // Log client connection
+    logger.log("IP Address: " + std::string(clientIP) + " has connected.");
+
+    wchar_t buffer[256];
+    
     // Send a welcome message to the client
     const wchar_t* welcomeMessage = L"Welcome to the server!";
-    int msgLen = wcslen(welcomeMessage) * sizeof(wchar_t); // Calculate length in bytes
+    int msgLen = wcslen(welcomeMessage) * sizeof(wchar_t);  // Calculate length in bytes
     send(clientSocket, reinterpret_cast<const char*>(welcomeMessage), msgLen, 0);
 
     // Receive data from the client (as wide characters)
@@ -27,16 +38,21 @@ void handleClient(SOCKET clientSocket) {
         std::cerr << "Failed to receive data from client.\n";
     }
 
+    // Log client disconnection
+    logger.log("IP Address: " + std::string(clientIP) + " has disconnected.");
+
     // Clean up
     closesocket(clientSocket);
 }
 
 // Function to initialize the server and accept client connections
 void startServer() {
+    Logger logger;  // Create a logger instance to log events
+
     WSADATA wsa;
     SOCKET serverSocket, clientSocket;
     sockaddr_in serverAddr, clientAddr;
-    int clientAddrSize = sizeof(clientAddr);
+    size_t clientAddrSize = sizeof(clientAddr);
 
     // Initialize Winsock
     if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0) {
@@ -71,16 +87,16 @@ void startServer() {
 
     // Accept incoming client connections
     while (true) {
-        clientSocket = accept(serverSocket, (sockaddr*)&clientAddr, &clientAddrSize);
+        clientSocket = accept(serverSocket, (sockaddr*)&clientAddr, (int*)&clientAddrSize);
         if (clientSocket == INVALID_SOCKET) {
             std::cerr << "Failed to accept client connection.\n";
             continue;
         }
 
-        std::cout << "Client connected, spawning thread to handle communication.\n";
+        std::cout << "Client connected.\n";
 
         // Create a new thread for each client connection
-        std::thread clientThread(handleClient, clientSocket);
+        std::thread clientThread(handleClient, clientSocket, std::ref(logger));
         clientThread.detach();  // Detach the thread to run independently
     }
 

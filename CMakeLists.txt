@@ -3,9 +3,6 @@ cmake_minimum_required(VERSION 3.10)
 # Project name
 project(Garioth)
 
-add_definitions(-DUNICODE=0 -D_UNICODE=0)
-
-
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -16,11 +13,20 @@ set(CLIENT_SRC src/client/client.cpp)
 
 # Add server executable
 add_executable(garioth_server ${SERVER_SRC})
-target_include_directories(garioth_server PRIVATE include)
 
 # Add client executable
 add_executable(garioth_client ${CLIENT_SRC})
-target_include_directories(garioth_client PRIVATE include)
+
+
+
+# Add the common include directory to both client and server after targets are created
+target_include_directories(garioth_server PRIVATE ${PROJECT_SOURCE_DIR}/src/common)
+target_include_directories(garioth_client PRIVATE ${PROJECT_SOURCE_DIR}/src/common)
+
+# Add definitions
+add_definitions(-DUNICODE=0 -D_UNICODE=0)
+message(STATUS "Include directories for garioth_server: ${PROJECT_SOURCE_DIR}/src/common")
+message(STATUS "Include directories for garioth_client: ${PROJECT_SOURCE_DIR}/src/common")
 
 # Link necessary libraries (Winsock for Windows)
 if (WIN32)

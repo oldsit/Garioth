@@ -1,6 +1,7 @@
 #include <iostream>
 #include <WinSock2.h>
 #include <WS2tcpip.h>
+#include "logger.h"  // Include your logger header file
 
 #pragma comment(lib, "ws2_32.lib")
 
@@ -13,22 +14,28 @@ std::wstring StringToWString(const std::string& str) {
 }
 
 int main() {
+    Logger logger("client_log.txt");  // Create an instance of Logger
+
     WSADATA wsa;
     SOCKET clientSocket;
     sockaddr_in serverAddr;
 
     // Initialize winsock
     if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0) {
+        logger.log("Failed to initialize Winsock.");  // Log using Logger instance
         std::cerr << "Failed to initialize Winsock.\n";
         return 1;
     }
+    logger.log("Winsock initialized successfully.");
 
     // Create TCP Socket
     clientSocket = socket(AF_INET, SOCK_STREAM, 0);
     if (clientSocket == INVALID_SOCKET) {
+        logger.log("Socket creation failed.");  // Log using Logger instance
         std::cerr << "Socket creation failed.\n";
         return 1;
     }
+    logger.log("Socket created successfully.");
 
     // Define server address to connect to
     serverAddr.sin_family = AF_INET; // IPV4
@@ -39,12 +46,15 @@ int main() {
 
     // Use InetPtonW for Windows wide string address conversion
     if (InetPtonW(AF_INET, wAddress.c_str(), &serverAddr.sin_addr) != 1) {
+        logger.log("Invalid address format.");  // Log using Logger instance
         std::cerr << "Invalid address format.\n";
         return 1;
     }
+    logger.log("Address format validated successfully.");
 
     // Connect to the server
     if (connect(clientSocket, (sockaddr*)&serverAddr, sizeof(serverAddr)) == 0) {
+        logger.log("Connected to server.");  // Log using Logger instance
         std::cout << "Connected to server.\n";
 
         // Send data to the server (ensure it's wide characters)
@@ -52,11 +62,13 @@ int main() {
         int msgLen = wcslen(msg) * sizeof(wchar_t);  // Calculate byte length for wide characters
         int bytesSent = send(clientSocket, reinterpret_cast<const char*>(msg), msgLen, 0);
         if (bytesSent == SOCKET_ERROR) {
+            logger.log("Failed to send data.");  // Log using Logger instance
             std::cerr << "Failed to send data.\n";
             closesocket(clientSocket);
             WSACleanup();
             return 1;
         }
+        logger.log("Sent " + std::to_string(bytesSent) + " bytes to the server.");  // Log using Logger instance
         std::wcout << L"Sent " << bytesSent << L" bytes to the server.\n";
 
         // Receive response from the server
@@ -64,17 +76,21 @@ int main() {
         int bytesReceived = recv(clientSocket, buffer, sizeof(buffer), 0);
         if (bytesReceived > 0) {
             buffer[bytesReceived] = '\0'; // Null-terminate the received string
+            logger.log("Received data from server: " + std::string(buffer, bytesReceived));  // Log using Logger instance
             std::cout << "Server says: " << buffer << std::endl;
         } else {
+            logger.log("Failed to receive data from the server.");  // Log using Logger instance
             std::cerr << "Failed to receive data from the server.\n";
         }
     } else {
+        logger.log("Connection to server failed.");  // Log using Logger instance
         std::cerr << "Connection to server failed.\n";
     }
 
     // Cleanup
     closesocket(clientSocket);
     WSACleanup();
+    logger.log("Client disconnected.");  // Log using Logger instance
 
     return 0;
 }
