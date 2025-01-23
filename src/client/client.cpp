@@ -55,8 +55,7 @@ int main() {
     // Connect to the server
     if (connect(clientSocket, (sockaddr*)&serverAddr, sizeof(serverAddr)) == 0) {
         logger.log("Connected to server.");  // Log using Logger instance
-        std::cout << "Connected to server.\n";
-
+        
         // Send data to the server (ensure it's wide characters)
         const wchar_t* msg = L"Hello, Server! This is the client sending a message in wchar_t.";
         int msgLen = wcslen(msg) * sizeof(wchar_t);  // Calculate byte length for wide characters
@@ -69,7 +68,6 @@ int main() {
             return 1;
         }
         logger.log("Sent " + std::to_string(bytesSent) + " bytes to the server.");  // Log using Logger instance
-        std::wcout << L"Sent " << bytesSent << L" bytes to the server.\n";
 
         // Receive response from the server
         wchar_t buffer[256];  // Buffer to store received data as wide characters
