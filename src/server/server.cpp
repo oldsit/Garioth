@@ -3,7 +3,7 @@
 #include <WS2tcpip.h>
 #include <thread>
 #include <string>
-#include "logger.h"  // Include the Logger header
+#include "logger.h"  // Include your logger header file
 
 #pragma comment(lib, "ws2_32.lib")
 #pragma warning(disable : 4267)
@@ -23,7 +23,7 @@ void handleClient(SOCKET clientSocket, Logger& logger) {
     
     // Send a welcome message to the client
     const wchar_t* welcomeMessage = L"Welcome to the server!";
-    int msgLen = wcslen(welcomeMessage) * sizeof(wchar_t);  // Calculate length in bytes
+    int msgLen = wcslen(welcomeMessage) * sizeof(wchar_t);  // Calculate byte length for wide characters
     send(clientSocket, reinterpret_cast<const char*>(welcomeMessage), msgLen, 0);
 
     // Receive data from the client (as wide characters)

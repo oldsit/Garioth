@@ -72,12 +72,17 @@ int main() {
         std::wcout << L"Sent " << bytesSent << L" bytes to the server.\n";
 
         // Receive response from the server
-        char buffer[256];
-        int bytesReceived = recv(clientSocket, buffer, sizeof(buffer), 0);
+        wchar_t buffer[256];  // Buffer to store received data as wide characters
+        int bytesReceived = recv(clientSocket, reinterpret_cast<char*>(buffer), sizeof(buffer), 0);
         if (bytesReceived > 0) {
-            buffer[bytesReceived] = '\0'; // Null-terminate the received string
-            logger.log("Received data from server: " + std::string(buffer, bytesReceived));  // Log using Logger instance
-            std::cout << "Server says: " << buffer << std::endl;
+            buffer[bytesReceived / sizeof(wchar_t)] = L'\0';  // Null-terminate the string
+
+            // Convert wideBuffer to std::wstring for logging
+            std::wstring receivedData(buffer);
+            std::string logMessage = "Received data from server: " + std::string(receivedData.begin(), receivedData.end());
+
+            logger.log(logMessage);  // Log the concatenated message
+            std::wcout << L"Server says: " << buffer << std::endl;
         } else {
             logger.log("Failed to receive data from the server.");  // Log using Logger instance
             std::cerr << "Failed to receive data from the server.\n";
