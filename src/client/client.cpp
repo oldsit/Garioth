@@ -57,15 +57,15 @@ int main() {
         logger.log("Connected to server.");  // Log using Logger instance
 
         // Receive prompt from server
-        wchar_t buffer[256];  // Buffer to store received data as wide characters
-        int bytesReceived = recv(clientSocket, reinterpret_cast<char*>(buffer), sizeof(buffer), 0);
+        char buffer[256];  // Buffer to store received data
+        int bytesReceived = recv(clientSocket, buffer, sizeof(buffer), 0);
         if (bytesReceived > 0) {
-            buffer[bytesReceived / sizeof(wchar_t)] = L'\0';  // Null-terminate the string
-            std::wcout << L"Server says: " << buffer << std::endl;
-            logger.log("Received prompt from server: " + std::string(buffer, buffer + bytesReceived));
+            buffer[bytesReceived] = '\0';  // Null-terminate the string
+            std::cout << "Server says: " << buffer << std::endl;
+            logger.log("Received prompt from server: " + std::string(buffer));
 
             // Ask the user for input based on the server's prompt
-            std::cout << "Please enter your choice: ";
+            std::cout << "Please enter your choice (1 for Register, 2 for Login): ";
             std::string choice;
             std::getline(std::cin, choice);
 
@@ -80,39 +80,14 @@ int main() {
             }
             logger.log("Sent choice: " + choice);
 
-            // Continue with further steps (login/registration) based on choice
+            // Continue with further steps (registration/login) based on choice
             if (choice == "1") {
-                // Login process
-                std::string username;
-                std::cout << "Enter username: ";
-                std::getline(std::cin, username);
-                send(clientSocket, username.c_str(), username.length(), 0);
-
-                std::string password;
-                std::cout << "Enter password: ";
-                std::getline(std::cin, password);
-                send(clientSocket, password.c_str(), password.length(), 0);
-
-                // Receive login result from server
-                bytesReceived = recv(clientSocket, reinterpret_cast<char*>(buffer), sizeof(buffer), 0);
-                if (bytesReceived > 0) {
-                    buffer[bytesReceived / sizeof(wchar_t)] = L'\0';
-                    std::wcout << L"Server says: " << buffer << std::endl;
-                    logger.log("Login result: " + std::string(buffer, buffer + bytesReceived));
-                } else {
-                    std::cerr << "Failed to receive login result.\n";
-                }
-            } else if (choice == "2") {
                 // Registration process
-                std::string username;
+                std::string username, email, password;
                 std::cout << "Enter desired username: ";
                 std::getline(std::cin, username);
-
-                std::string email;
                 std::cout << "Enter email: ";
                 std::getline(std::cin, email);
-
-                std::string password;
                 std::cout << "Enter desired password: ";
                 std::getline(std::cin, password);
 
@@ -121,14 +96,37 @@ int main() {
                 send(clientSocket, registrationDetails.c_str(), registrationDetails.length(), 0);
 
                 // Receive registration result from server
-                bytesReceived = recv(clientSocket, reinterpret_cast<char*>(buffer), sizeof(buffer), 0);
+                bytesReceived = recv(clientSocket, buffer, sizeof(buffer), 0);
                 if (bytesReceived > 0) {
-                    buffer[bytesReceived / sizeof(wchar_t)] = L'\0';
-                    std::wcout << L"Server says: " << buffer << std::endl;
-                    logger.log("Registration result: " + std::string(buffer, buffer + bytesReceived));
+                    buffer[bytesReceived] = '\0';
+                    std::cout << "Server says: " << buffer << std::endl;
+                    logger.log("Registration result: " + std::string(buffer));
                 } else {
                     std::cerr << "Failed to receive registration result.\n";
                 }
+            } else if (choice == "2") {
+                // Login process
+                std::string username, password;
+                std::cout << "Enter username: ";
+                std::getline(std::cin, username);
+                std::cout << "Enter password: ";
+                std::getline(std::cin, password);
+
+                // Format and send login details to the server
+                std::string loginDetails = username + "|" + password;
+                send(clientSocket, loginDetails.c_str(), loginDetails.length(), 0);
+
+                // Receive login result from server
+                bytesReceived = recv(clientSocket, buffer, sizeof(buffer), 0);
+                if (bytesReceived > 0) {
+                    buffer[bytesReceived] = '\0';
+                    std::cout << "Server says: " << buffer << std::endl;
+                    logger.log("Login result: " + std::string(buffer));
+                } else {
+                    std::cerr << "Failed to receive login result.\n";
+                }
+            } else {
+                std::cerr << "Invalid choice." << std::endl;
             }
         } else {
             logger.log("Failed to receive data from the server.");  // Log using Logger instance

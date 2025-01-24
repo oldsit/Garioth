@@ -86,36 +86,65 @@ void handleClient(SOCKET clientSocket, Logger& logger, sql::Connection* conn) {
         logger.log("IP Address: " + std::string(clientIP) + " has connected.");
     }
 
-    wchar_t buffer[256];
+    // Send initial message to client asking for choice
+    std::string initialMessage = "Welcome! Please choose an option: \n1. Register\n2. Login\n";
+    send(clientSocket, initialMessage.c_str(), initialMessage.length(), 0);
 
-    // Receive data from the client (as wide characters)
-    int bytesReceived = recv(clientSocket, reinterpret_cast<char*>(buffer), sizeof(buffer), 0);
+    char buffer[256];
+    int bytesReceived = recv(clientSocket, buffer, sizeof(buffer), 0);
     if (bytesReceived > 0) {
-        buffer[bytesReceived / sizeof(wchar_t)] = L'\0';  // Null-terminate the string
-        std::wcout << L"Received message: " << buffer << std::endl;
+        buffer[bytesReceived] = '\0';  // Null-terminate the string
+        std::string choice = buffer;
 
-        // Convert wide char buffer to a standard string
-        std::wstring ws(buffer);
-        std::string receivedMessage(ws.begin(), ws.end());
+        if (choice == "1") {
+            // Registration process
+            std::string registerMessage = "Please enter your username, email, and password separated by '|'.\n";
+            send(clientSocket, registerMessage.c_str(), registerMessage.length(), 0);
 
-        // Parse the received message
-        std::vector<std::string> fields = splitString(receivedMessage, '|');
-        if (fields.size() == 3) {
-            std::string username = fields[0];
-            std::string email = fields[1];
-            std::string password = fields[2];
+            bytesReceived = recv(clientSocket, buffer, sizeof(buffer), 0);
+            if (bytesReceived > 0) {
+                buffer[bytesReceived] = '\0';  // Null-terminate the string
+                std::string registrationInfo = buffer;
 
-            // Register user (example, adjust as needed)
-            registerUser(username, email, password, conn, logger);
+                std::vector<std::string> fields = splitString(registrationInfo, '|');
+                if (fields.size() == 3) {
+                    std::string username = fields[0];
+                    std::string email = fields[1];
+                    std::string password = fields[2];
 
-            // Authenticate user
-            if (authenticateUser(username, password, conn, logger)) {
-                send(clientSocket, "Authentication successful", 25, 0);
-            } else {
-                send(clientSocket, "Authentication failed", 21, 0);
+                    registerUser(username, email, password, conn, logger);
+
+                    send(clientSocket, "Registration successful!\n", 25, 0);
+                } else {
+                    send(clientSocket, "Invalid registration format.\n", 28, 0);
+                }
+            }
+        } else if (choice == "2") {
+            // Login process
+            std::string loginMessage = "Please enter your username and password separated by '|'.\n";
+            send(clientSocket, loginMessage.c_str(), loginMessage.length(), 0);
+
+            bytesReceived = recv(clientSocket, buffer, sizeof(buffer), 0);
+            if (bytesReceived > 0) {
+                buffer[bytesReceived] = '\0';  // Null-terminate the string
+                std::string loginInfo = buffer;
+
+                std::vector<std::string> fields = splitString(loginInfo, '|');
+                if (fields.size() == 2) {
+                    std::string username = fields[0];
+                    std::string password = fields[1];
+
+                    if (authenticateUser(username, password, conn, logger)) {
+                        send(clientSocket, "Authentication successful!\n", 28, 0);
+                    } else {
+                        send(clientSocket, "Authentication failed.\n", 23, 0);
+                    }
+                } else {
+                    send(clientSocket, "Invalid login format.\n", 24, 0);
+                }
             }
         } else {
-            std::cerr << "Invalid message format.\n";
+            send(clientSocket, "Invalid choice. Please try again.\n", 33, 0);
         }
     } else {
         std::cerr << "Failed to receive data from client.\n";
@@ -137,7 +166,7 @@ void startServer() {
 
     // Load environment variables from .env file
     logger.log("Loading environment variables...");
-    loadEnvFile(".env");
+    loadEnvFile("C:/GoliathGames/Garioth/.env");  // Use the absolute path for the .env file
 
     // Retrieve database credentials from environment variables
     char* db_host = nullptr;
@@ -201,7 +230,7 @@ void startServer() {
         return;
     }
 
-    // Bind the server socket to a specific port
+        // Bind the server socket to a specific port
     serverAddr.sin_family = AF_INET;
     serverAddr.sin_port = htons(54000); // Port number
     serverAddr.sin_addr.s_addr = INADDR_ANY;
@@ -220,6 +249,7 @@ void startServer() {
     }
 
     logger.log("Server started and waiting for connections...");
+    std::cout << "Server started and waiting for connections..." << std::endl;
 
     // Accept incoming client connections
     while (true) {
