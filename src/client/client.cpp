@@ -3,6 +3,10 @@
 #include <WS2tcpip.h>
 #include "logger.h"  // Include your logger header file
 #include <limits>
+#include <string>
+
+// Define Windows version for proper Winsock functionality
+#define _WIN32_WINNT 0x0601  // Windows 7 or later
 
 #pragma comment(lib, "ws2_32.lib")
 
@@ -24,9 +28,9 @@ int main() {
     SOCKET clientSocket = INVALID_SOCKET;
     sockaddr_in serverAddr;
 
-    // Initialize winsock
+    // Initialize Winsock
     if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0) {
-        logger.log("Failed to initialize Winsock.");  // Log using Logger instance
+        logger.log("Failed to initialize Winsock.");
         std::cerr << "Failed to initialize Winsock.\n";
         return 1;
     }
@@ -43,15 +47,15 @@ int main() {
     logger.log("Socket created successfully.");
 
     // Define server address to connect to
-    serverAddr.sin_family = AF_INET; // IPV4
-    serverAddr.sin_port = htons(54000); // PORT
+    serverAddr.sin_family = AF_INET;  // IPV4
+    serverAddr.sin_port = htons(54000);  // PORT
 
     // Convert "127.0.0.1" to wchar_t (wide string) for InetPtonW
     std::wstring wAddress = StringToWString("127.0.0.1");
 
     // Use InetPtonW for Windows wide string address conversion
     if (InetPtonW(AF_INET, wAddress.c_str(), &serverAddr.sin_addr) != 1) {
-        logger.log("Invalid address format.");  // Log using Logger instance
+        logger.log("Invalid address format.");
         std::cerr << "Invalid address format.\n";
         closesocket(clientSocket);
         WSACleanup();
@@ -74,7 +78,7 @@ int main() {
 
     do {
         // Receive prompt from server
-        int bytesReceived = recv(clientSocket, buffer, sizeof(buffer) - 1, 0);  // Reserve space for null terminator
+        int bytesReceived = recv(clientSocket, buffer, sizeof(buffer) - 1, 0);
         if (bytesReceived > 0) {
             buffer[bytesReceived] = '\0';  // Null-terminate the string
             std::cout << "Server says: " << buffer << std::endl;
@@ -88,13 +92,13 @@ int main() {
             // Send user's choice to the server
             int bytesSent = send(clientSocket, choice.c_str(), choice.length(), 0);
             if (bytesSent == SOCKET_ERROR) {
-                logger.log("Failed to send choice.");  // Log using Logger instance
+                logger.log("Failed to send choice.");
                 std::cerr << "Failed to send choice.\n";
                 break;
             }
             logger.log("Sent choice: " + choice);
 
-            // Continue with further steps (registration/login) based on choice
+            // Process user choice
             if (choice == "1") {
                 // Registration process
                 std::string username, email, password;
@@ -152,7 +156,8 @@ int main() {
 
         std::cout << "Do you want to continue? (y/n): ";
         std::cin >> continueChoice;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        auto maxVal = (std::numeric_limits<std::streamsize>::max)();
+        std::cin.ignore(maxVal, '\n');
     } while (continueChoice == 'y' || continueChoice == 'Y');
 
     // Cleanup
