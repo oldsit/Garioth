@@ -55,32 +55,81 @@ int main() {
     // Connect to the server
     if (connect(clientSocket, (sockaddr*)&serverAddr, sizeof(serverAddr)) == 0) {
         logger.log("Connected to server.");  // Log using Logger instance
-        
-        // Send data to the server (ensure it's wide characters)
-        const wchar_t* msg = L"Hello, Server! This is the client sending a message in wchar_t.";
-        int msgLen = wcslen(msg) * sizeof(wchar_t);  // Calculate byte length for wide characters
-        int bytesSent = send(clientSocket, reinterpret_cast<const char*>(msg), msgLen, 0);
-        if (bytesSent == SOCKET_ERROR) {
-            logger.log("Failed to send data.");  // Log using Logger instance
-            std::cerr << "Failed to send data.\n";
-            closesocket(clientSocket);
-            WSACleanup();
-            return 1;
-        }
-        logger.log("Sent " + std::to_string(bytesSent) + " bytes to the server.");  // Log using Logger instance
 
-        // Receive response from the server
+        // Receive prompt from server
         wchar_t buffer[256];  // Buffer to store received data as wide characters
         int bytesReceived = recv(clientSocket, reinterpret_cast<char*>(buffer), sizeof(buffer), 0);
         if (bytesReceived > 0) {
             buffer[bytesReceived / sizeof(wchar_t)] = L'\0';  // Null-terminate the string
-
-            // Convert wideBuffer to std::wstring for logging
-            std::wstring receivedData(buffer);
-            std::string logMessage = "Received data from server: " + std::string(receivedData.begin(), receivedData.end());
-
-            logger.log(logMessage);  // Log the concatenated message
             std::wcout << L"Server says: " << buffer << std::endl;
+            logger.log("Received prompt from server: " + std::string(buffer, buffer + bytesReceived));
+
+            // Ask the user for input based on the server's prompt
+            std::cout << "Please enter your choice: ";
+            std::string choice;
+            std::getline(std::cin, choice);
+
+            // Send user's choice to the server
+            int bytesSent = send(clientSocket, choice.c_str(), choice.length(), 0);
+            if (bytesSent == SOCKET_ERROR) {
+                logger.log("Failed to send choice.");  // Log using Logger instance
+                std::cerr << "Failed to send choice.\n";
+                closesocket(clientSocket);
+                WSACleanup();
+                return 1;
+            }
+            logger.log("Sent choice: " + choice);
+
+            // Continue with further steps (login/registration) based on choice
+            if (choice == "1") {
+                // Login process
+                std::string username;
+                std::cout << "Enter username: ";
+                std::getline(std::cin, username);
+                send(clientSocket, username.c_str(), username.length(), 0);
+
+                std::string password;
+                std::cout << "Enter password: ";
+                std::getline(std::cin, password);
+                send(clientSocket, password.c_str(), password.length(), 0);
+
+                // Receive login result from server
+                bytesReceived = recv(clientSocket, reinterpret_cast<char*>(buffer), sizeof(buffer), 0);
+                if (bytesReceived > 0) {
+                    buffer[bytesReceived / sizeof(wchar_t)] = L'\0';
+                    std::wcout << L"Server says: " << buffer << std::endl;
+                    logger.log("Login result: " + std::string(buffer, buffer + bytesReceived));
+                } else {
+                    std::cerr << "Failed to receive login result.\n";
+                }
+            } else if (choice == "2") {
+                // Registration process
+                std::string username;
+                std::cout << "Enter desired username: ";
+                std::getline(std::cin, username);
+
+                std::string email;
+                std::cout << "Enter email: ";
+                std::getline(std::cin, email);
+
+                std::string password;
+                std::cout << "Enter desired password: ";
+                std::getline(std::cin, password);
+
+                // Format and send registration details to the server
+                std::string registrationDetails = username + "|" + email + "|" + password;
+                send(clientSocket, registrationDetails.c_str(), registrationDetails.length(), 0);
+
+                // Receive registration result from server
+                bytesReceived = recv(clientSocket, reinterpret_cast<char*>(buffer), sizeof(buffer), 0);
+                if (bytesReceived > 0) {
+                    buffer[bytesReceived / sizeof(wchar_t)] = L'\0';
+                    std::wcout << L"Server says: " << buffer << std::endl;
+                    logger.log("Registration result: " + std::string(buffer, buffer + bytesReceived));
+                } else {
+                    std::cerr << "Failed to receive registration result.\n";
+                }
+            }
         } else {
             logger.log("Failed to receive data from the server.");  // Log using Logger instance
             std::cerr << "Failed to receive data from the server.\n";

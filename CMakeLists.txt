@@ -21,14 +21,15 @@ add_executable(garioth_client ${CLIENT_SRC})
 target_include_directories(garioth_server PRIVATE ${PROJECT_SOURCE_DIR}/src/common "C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/include")
 target_include_directories(garioth_client PRIVATE ${PROJECT_SOURCE_DIR}/src/common "C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/include")
 
-# Link necessary libraries (Winsock for Windows) and MariaDB Connector/C++
+# Include directory for load_env.h and OpenSSL
+target_include_directories(garioth_server PRIVATE ${PROJECT_SOURCE_DIR}/include "C:/Program Files/OpenSSL-Win64/include")
+target_include_directories(garioth_client PRIVATE ${PROJECT_SOURCE_DIR}/include "C:/Program Files/OpenSSL-Win64/include")
+
+# Link necessary libraries (Winsock for Windows), MariaDB Connector/C++, and OpenSSL
 if (WIN32)
-    target_link_libraries(garioth_server ws2_32 "C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/mariadbcpp.lib")
-    target_link_libraries(garioth_client ws2_32 "C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/mariadbcpp.lib")
+    target_link_libraries(garioth_server ws2_32 "C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/mariadbcpp.lib" "C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD/libssl.lib" "C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD/libcrypto.lib")
+    target_link_libraries(garioth_client ws2_32 "C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/mariadbcpp.lib" "C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD/libssl.lib" "C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD/libcrypto.lib")
 endif()
 
 # Add definitions
 add_definitions(-DUNICODE=0 -D_UNICODE=0)
-message(STATUS "Include directories for garioth_server: ${PROJECT_SOURCE_DIR}/src/common C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/include")
-message(STATUS "Include directories for garioth_client: ${PROJECT_SOURCE_DIR}/src/common C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/include")
-message(STATUS "Library directories for mariadbcpp.lib: C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/lib")
