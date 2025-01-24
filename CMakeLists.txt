@@ -13,10 +13,21 @@ set(LOGIN_SRC src/login/login.cpp)
 # Add glad source file to login executable
 set(GLAD_SRC "C:/local/glad/src/glad.c")
 
+# Add ImGui source files
+set(IMGUI_SOURCES
+    ${PROJECT_SOURCE_DIR}/include/imgui/imgui.cpp
+    ${PROJECT_SOURCE_DIR}/include/imgui/imgui_draw.cpp
+    ${PROJECT_SOURCE_DIR}/include/imgui/imgui_demo.cpp
+    ${PROJECT_SOURCE_DIR}/include/imgui/imgui_tables.cpp
+    ${PROJECT_SOURCE_DIR}/include/imgui/imgui_widgets.cpp
+    ${PROJECT_SOURCE_DIR}/include/imgui/backends/imgui_impl_glfw.cpp
+    ${PROJECT_SOURCE_DIR}/include/imgui/backends/imgui_impl_opengl3.cpp
+)
+
 # Executables
 add_executable(garioth_server ${SERVER_SRC})
 add_executable(garioth_client ${CLIENT_SRC})
-add_executable(garioth_login ${LOGIN_SRC} ${GLAD_SRC})
+add_executable(garioth_login ${LOGIN_SRC} ${GLAD_SRC} ${IMGUI_SOURCES})
 
 # Include directories
 target_include_directories(garioth_server PRIVATE ${PROJECT_SOURCE_DIR}/src/common 
@@ -31,7 +42,8 @@ target_include_directories(garioth_login PRIVATE ${PROJECT_SOURCE_DIR}/src/commo
                                                       ${PROJECT_SOURCE_DIR}/src/login 
                                                       "C:/local/glad/include" 
                                                       "C:/local/glfw-3.4.bin.WIN64/include"
-                                                      "include/") 
+                                                      ${PROJECT_SOURCE_DIR}/include
+                                                      ${PROJECT_SOURCE_DIR}/include/imgui) 
 
 # Link libraries for Windows
 if (WIN32)
@@ -43,6 +55,9 @@ if (WIN32)
                           "C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/mariadbcpp.lib" 
                           "C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD/libssl.lib" 
                           "C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD/libcrypto.lib")
+  target_link_libraries(garioth_login ws2_32 
+                          "C:/local/glfw-3.4.bin.WIN64/lib-vc2022/glfw3.lib" 
+                          opengl32)
 endif()
 
 # Find OpenGL and link it with the login executable
