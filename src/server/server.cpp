@@ -3,10 +3,14 @@
 #include <WS2tcpip.h>
 #include <thread>
 #include <string>
-#include "logger.h"  // Include your logger header file
+#include <mutex>
+#include "logger.h"
+#include <mariadb/conncpp.hpp>
 
 #pragma comment(lib, "ws2_32.lib")
 #pragma warning(disable : 4267)
+
+std::mutex client_mutex;  // Mutex for thread synchronization
 
 // Function to handle each client connection
 void handleClient(SOCKET clientSocket, Logger& logger) {
@@ -17,12 +21,15 @@ void handleClient(SOCKET clientSocket, Logger& logger) {
     inet_ntop(AF_INET, &clientAddr.sin_addr, clientIP, sizeof(clientIP));
 
     // Log client connection
-    logger.log("IP Address: " + std::string(clientIP) + " has connected.");
+    {
+        std::lock_guard<std::mutex> lock(client_mutex);  // Locking the mutex for thread-safe logging
+        logger.log("IP Address: " + std::string(clientIP) + " has connected.");
+    }
 
     wchar_t buffer[256];
     
     // Send a welcome message to the client
-    const wchar_t* welcomeMessage = L"Welcome to the server!";
+    const wchar_t* welcomeMessage = L"Welcome to the Gariath!";
     int msgLen = wcslen(welcomeMessage) * sizeof(wchar_t);  // Calculate byte length for wide characters
     send(clientSocket, reinterpret_cast<const char*>(welcomeMessage), msgLen, 0);
 
@@ -39,7 +46,10 @@ void handleClient(SOCKET clientSocket, Logger& logger) {
     }
 
     // Log client disconnection
-    logger.log("IP Address: " + std::string(clientIP) + " has disconnected.");
+    {
+        std::lock_guard<std::mutex> lock(client_mutex);  // Locking the mutex for thread-safe logging
+        logger.log("IP Address: " + std::string(clientIP) + " has disconnected.");
+    }
 
     // Clean up
     closesocket(clientSocket);
