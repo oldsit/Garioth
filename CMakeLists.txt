@@ -30,7 +30,8 @@ target_include_directories(garioth_client PRIVATE ${PROJECT_SOURCE_DIR}/src/comm
 target_include_directories(garioth_login PRIVATE ${PROJECT_SOURCE_DIR}/src/common 
                                                       ${PROJECT_SOURCE_DIR}/src/login 
                                                       "C:/local/glad/include" 
-                                                      "C:/local/glfw-3.4.bin.WIN64/include") 
+                                                      "C:/local/glfw-3.4.bin.WIN64/include"
+                                                      "include/") 
 
 # Link libraries for Windows
 if (WIN32)
