@@ -69,9 +69,11 @@ int main() {
         ImGui::NewFrame();
 
         // Create login UI
-        ImGui::SetNextWindowPos(ImVec2(300, 200), ImGuiCond_Once);
+        int display_w, display_h;
+        glfwGetFramebufferSize(window, &display_w, &display_h);
+        ImGui::SetNextWindowPos(ImVec2((display_w - 250) / 2, (display_h - 180) / 2));
         ImGui::SetNextWindowSize(ImVec2(250, 180));
-        ImGui::Begin("Login", NULL, ImGuiWindowFlags_NoResize);
+        ImGui::Begin("Login", NULL, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove);
 
         ImGui::Text("Username:");
         ImGui::InputText("##username", username, IM_ARRAYSIZE(username));
