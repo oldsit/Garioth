@@ -168,8 +168,17 @@ int main() {
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    // Create window with larger size
-    GLFWwindow* window = glfwCreateWindow(1200, 800, "Garioth Login", NULL, NULL);
+    // // Open Window in Full Screen mode
+    // GLFWmonitor* monitor = glfwGetPrimaryMonitor();
+    // const GLFWvidmode* mode = glfwGetVideoMode(monitor);
+
+    // GLFWwindow* window = glfwCreateWindow(mode->width, mode->height, "Garioth Login", monitor, NULL);
+
+    // Create a maximized window instead of fullscreen
+    GLFWwindow* window = glfwCreateWindow(1280, 720, "Garioth Login", NULL, NULL);
+    // Maximize the window right after creation
+    glfwMaximizeWindow(window);
+
     if (window == NULL) {
         std::cerr << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
@@ -184,7 +193,7 @@ int main() {
     }
 
     // Load background texture
-    GLuint bgTexture = LoadTexture("assets/images/bg.png");
+    GLuint bgTexture = LoadTexture("assets/images/bg.jpg");
 
     // Check for texture loading errors
     if (bgTexture == 0) {
@@ -224,6 +233,7 @@ int main() {
     char username[128] = "";
     char password[128] = "";
     char confirmPassword[128] = "";
+    char email[128] = "";
 
     bool isRegistering = false;
 
@@ -242,35 +252,89 @@ int main() {
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-        // Create a window for login/register
-        ImGui::SetNextWindowPos(ImVec2(500, 250), ImGuiCond_Always);
-        ImGui::SetNextWindowSize(ImVec2(300, 400), ImGuiCond_Always);
+        // Set window size and position
+        ImGui::SetNextWindowPos(ImVec2((display_w - 400) * 0.5f, (display_h - 500) * 0.5f), ImGuiCond_Always);
+        ImGui::SetNextWindowSize(ImVec2(450, 500), ImGuiCond_Always);
+
         ImGui::Begin("Login / Register", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
+
+        ImGui::TextColored(ImVec4(1.0f, 0.8f, 0.0f, 1.0f), "Garioth - Realm of Legends"); // Gold color for the heading
+        ImGui::Separator(); // Adds a separator below the heading
+
 
         // Login/Register forms
         if (isRegistering) {
             ImGui::Text("Register New Account");
-            ImGui::InputText("Username", username, IM_ARRAYSIZE(username));
-            ImGui::InputText("Password", password, IM_ARRAYSIZE(password), ImGuiInputTextFlags_Password);
-            ImGui::InputText("Confirm Password", confirmPassword, IM_ARRAYSIZE(confirmPassword), ImGuiInputTextFlags_Password);
 
-            if (ImGui::Button("Register")) {
+            // Set width for input fields to 80% of the window width
+            float windowWidth = ImGui::GetWindowWidth();
+            float inputWidth = windowWidth * 0.8f;  // 80% of window width
+
+            ImGui::TextUnformatted("Email");
+            ImGui::PushItemWidth(inputWidth);
+            ImGui::InputText("##email", email, IM_ARRAYSIZE(email));
+            ImGui::PopItemWidth();
+
+            ImGui::TextUnformatted("Username");
+            ImGui::PushItemWidth(inputWidth);
+            ImGui::InputText("##username", username, IM_ARRAYSIZE(username));
+            ImGui::PopItemWidth();
+
+            ImGui::TextUnformatted("Password");
+            ImGui::PushItemWidth(inputWidth);
+            ImGui::InputText("##password", password, IM_ARRAYSIZE(password), ImGuiInputTextFlags_Password);
+            ImGui::PopItemWidth();
+
+            ImGui::TextUnformatted("Confirm Password");
+            ImGui::PushItemWidth(inputWidth);
+            ImGui::InputText("##confirmPassword", confirmPassword, IM_ARRAYSIZE(confirmPassword), ImGuiInputTextFlags_Password);
+            ImGui::PopItemWidth();
+
+            ImGui::Dummy(ImVec2(0.0f, 10.0f)); // Add spacing above the button
+
+            // Center the "Register" button
+            ImGui::SetCursorPosX((windowWidth - 150) * 0.5f);
+            if (ImGui::Button("Register", ImVec2(150, 0))) {
                 if (strcmp(password, confirmPassword) == 0) {
                     std::cout << "Registered: " << username << std::endl;
                 } else {
                     std::cout << "Passwords do not match!" << std::endl;
                 }
             }
+
+            ImGui::SetCursorPosY(ImGui::GetWindowHeight() - 50);
+            ImGui::SetCursorPosX((windowWidth - 250) * 0.5f);
+            if (ImGui::Button("Already have an account? Log in.", ImVec2(250, 0))) {
+                isRegistering = false;
+            }
         } else {
             ImGui::Text("Login");
-            ImGui::InputText("Username", username, IM_ARRAYSIZE(username));
-            ImGui::InputText("Password", password, IM_ARRAYSIZE(password), ImGuiInputTextFlags_Password);
 
-            if (ImGui::Button("Login")) {
+            // Set width for input fields to 80% of the window width
+            float windowWidth = ImGui::GetWindowWidth();
+            float inputWidth = windowWidth * 0.8f;  // 80% of window width
+
+            ImGui::TextUnformatted("Username");
+            ImGui::PushItemWidth(inputWidth);
+            ImGui::InputText("##username", username, IM_ARRAYSIZE(username));
+            ImGui::PopItemWidth();
+
+            ImGui::TextUnformatted("Password");
+            ImGui::PushItemWidth(inputWidth);
+            ImGui::InputText("##password", password, IM_ARRAYSIZE(password), ImGuiInputTextFlags_Password);
+            ImGui::PopItemWidth();
+
+            ImGui::Dummy(ImVec2(0.0f, 10.0f)); // Add spacing above the button
+
+            // Center the "Login" button
+            ImGui::SetCursorPosX((windowWidth - 150) * 0.5f);
+            if (ImGui::Button("Login", ImVec2(150, 0))) {
                 std::cout << "Logged in: " << username << std::endl;
             }
 
-            if (ImGui::Button("Switch to Register")) {
+            ImGui::SetCursorPosY(ImGui::GetWindowHeight() - 50);
+            ImGui::SetCursorPosX((windowWidth - 250) * 0.5f);
+            if (ImGui::Button("Don't have an account? Create one.", ImVec2(250, 0))) {
                 isRegistering = true;
             }
         }
