@@ -106,10 +106,16 @@ int main() {
             if (ImGui::Button("Login")) {
                 loginClicked = true;
                 std::cout << "Logging in with Username: " << username << " and Password: " << password << std::endl;
+                // Clear textboxes
+                username[0] = '\0';
+                password[0] = '\0';
             }
 
             if (ImGui::Button("Register")) {
                 isLogin = false; // Switch to registration form
+                // Clear textboxes
+                username[0] = '\0';
+                password[0] = '\0';
             }
         } else {
             ImGui::Text("Email:");
@@ -126,10 +132,18 @@ int main() {
             if (ImGui::Button("Register")) {
                 registerClicked = true;
                 std::cout << "Registering with Email: " << email << ", Username: " << username << " and Password: " << password << std::endl;
+                // Clear textboxes
+                email[0] = '\0';
+                username[0] = '\0';
+                password[0] = '\0';
             }
 
             if (ImGui::Button("Back to Login")) {
                 isLogin = true; // Switch back to login form
+                // Clear textboxes
+                email[0] = '\0';
+                username[0] = '\0';
+                password[0] = '\0';
             }
         }
 
