@@ -5,7 +5,7 @@ project(Garioth)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Source files
+# Define paths for source files
 set(SERVER_SRC src/server/server.cpp)
 set(CLIENT_SRC src/client/client.cpp)
 set(LOGIN_SRC src/login/login.cpp)
@@ -24,21 +24,31 @@ set(IMGUI_SOURCES
     ${PROJECT_SOURCE_DIR}/include/imgui/backends/imgui_impl_opengl3.cpp
 )
 
+include_directories(C:/GoliathGames/Garioth/src/common)
+
+
+# Manifest file path
+set(MANIFEST_FILE ${CMAKE_SOURCE_DIR}/Goriath.manifest)
+
+# Add common source files
+set(COMMON_SRC
+    ${PROJECT_SOURCE_DIR}/src/common/image_utils.cpp
+)
+
 # Add STB Image header
 set(STB_IMAGE_HEADER ${PROJECT_SOURCE_DIR}/include/stb_image.h)
 
 # Executables
 add_executable(garioth_server ${SERVER_SRC})
 add_executable(garioth_client ${CLIENT_SRC})
-add_executable(garioth_login ${LOGIN_SRC} ${GLAD_SRC} ${IMGUI_SOURCES})
+add_executable(garioth_login ${LOGIN_SRC} ${GLAD_SRC} ${IMGUI_SOURCES} ${COMMON_SRC})
 
-# Include directories
+# Include directories for all targets
 target_include_directories(garioth_server PRIVATE 
     ${PROJECT_SOURCE_DIR}/src/common 
     ${PROJECT_SOURCE_DIR}/include 
     "C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/include"
     "C:/Program Files/OpenSSL-Win64/include"
-    ${STB_IMAGE_HEADER}
 )
 
 target_include_directories(garioth_client PRIVATE 
@@ -46,20 +56,20 @@ target_include_directories(garioth_client PRIVATE
     ${PROJECT_SOURCE_DIR}/include 
     "C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/include"
     "C:/Program Files/OpenSSL-Win64/include"
-    ${STB_IMAGE_HEADER}
 )
 
 target_include_directories(garioth_login PRIVATE 
-    ${PROJECT_SOURCE_DIR}/src/common 
-    ${PROJECT_SOURCE_DIR}/src/login 
+    ${PROJECT_SOURCE_DIR}/src/common
     "C:/local/glad/include" 
     "C:/local/glfw-3.4.bin.WIN64/include"
     ${PROJECT_SOURCE_DIR}/include
     ${PROJECT_SOURCE_DIR}/include/imgui
     "C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/include"
     "C:/Program Files/OpenSSL-Win64/include"
-    ${STB_IMAGE_HEADER}
 )
+
+# Verify include directories
+message(STATUS "Include directories for garioth_login: ${PROJECT_SOURCE_DIR}/src/common")
 
 # Link libraries for Windows
 if (WIN32)
@@ -75,13 +85,9 @@ if (WIN32)
       "C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD/libcrypto.lib"
   )
 
-  target_link_libraries(garioth_login ws2_32 
-      "C:/local/glfw-3.4.bin.WIN64/lib-vc2022/glfw3.lib" 
-      "C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/mariadbcpp.lib"
-      "C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD/libssl.lib"
-      "C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD/libcrypto.lib"
-      opengl32
-  )
+  # Link the manifest file for the login executable
+  set_target_properties(garioth_login PROPERTIES 
+      LINK_FLAGS "/MANIFEST /MANIFESTINPUT:${MANIFEST_FILE}")
 endif()
 
 # Find OpenGL and link it with the login executable
