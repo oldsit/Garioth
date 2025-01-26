@@ -168,12 +168,6 @@ int main() {
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    // // Open Window in Full Screen mode
-    // GLFWmonitor* monitor = glfwGetPrimaryMonitor();
-    // const GLFWvidmode* mode = glfwGetVideoMode(monitor);
-
-    // GLFWwindow* window = glfwCreateWindow(mode->width, mode->height, "Garioth Login", monitor, NULL);
-
     // Create a maximized window instead of fullscreen
     GLFWwindow* window = glfwCreateWindow(1280, 720, "Garioth Login", NULL, NULL);
     // Maximize the window right after creation
@@ -252,15 +246,20 @@ int main() {
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-        // Set window size and position
+        // Set window position (keeping it the same for both login and register)
         ImGui::SetNextWindowPos(ImVec2((display_w - 400) * 0.5f, (display_h - 500) * 0.5f), ImGuiCond_Always);
-        ImGui::SetNextWindowSize(ImVec2(450, 500), ImGuiCond_Always);
+
+        // Set window size based on whether the user is registering or logging in
+        if (isRegistering) {
+            ImGui::SetNextWindowSize(ImVec2(450, 500), ImGuiCond_Always);
+        } else {
+            ImGui::SetNextWindowSize(ImVec2(300, 300), ImGuiCond_Always); // Smaller size for login
+        }
 
         ImGui::Begin("Login / Register", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
 
         ImGui::TextColored(ImVec4(1.0f, 0.8f, 0.0f, 1.0f), "Garioth - Realm of Legends"); // Gold color for the heading
         ImGui::Separator(); // Adds a separator below the heading
-
 
         // Login/Register forms
         if (isRegistering) {
@@ -304,7 +303,7 @@ int main() {
 
             ImGui::SetCursorPosY(ImGui::GetWindowHeight() - 50);
             ImGui::SetCursorPosX((windowWidth - 250) * 0.5f);
-            if (ImGui::Button("Already have an account? Log in.", ImVec2(250, 0))) {
+            if (ImGui::Button("Back to login.", ImVec2(250, 0))) {
                 isRegistering = false;
             }
         } else {
@@ -341,6 +340,7 @@ int main() {
 
         ImGui::End();
 
+        // Render the frame
         ImGui::Render();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
