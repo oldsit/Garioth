@@ -24,8 +24,8 @@ set(IMGUI_SOURCES
     ${PROJECT_SOURCE_DIR}/include/imgui/backends/imgui_impl_opengl3.cpp
 )
 
+# Include directories
 include_directories(C:/GoliathGames/Garioth/src/common)
-
 
 # Manifest file path
 set(MANIFEST_FILE ${CMAKE_SOURCE_DIR}/Goriath.manifest)
@@ -33,10 +33,14 @@ set(MANIFEST_FILE ${CMAKE_SOURCE_DIR}/Goriath.manifest)
 # Add common source files
 set(COMMON_SRC
     ${PROJECT_SOURCE_DIR}/src/common/image_utils.cpp
+    ${PROJECT_SOURCE_DIR}/src/common/audio_manager.cpp
 )
 
 # Add STB Image header
 set(STB_IMAGE_HEADER ${PROJECT_SOURCE_DIR}/include/stb_image.h)
+
+# Add Miniaudio header
+set(MINIAUDIO_HEADER ${PROJECT_SOURCE_DIR}/include/miniaudio.h)
 
 # Executables
 add_executable(garioth_server ${SERVER_SRC})
@@ -66,10 +70,8 @@ target_include_directories(garioth_login PRIVATE
     ${PROJECT_SOURCE_DIR}/include/imgui
     "C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/include"
     "C:/Program Files/OpenSSL-Win64/include"
+    ${PROJECT_SOURCE_DIR}/include/miniaudio  # Miniaudio include directory
 )
-
-# Verify include directories
-message(STATUS "Include directories for garioth_login: ${PROJECT_SOURCE_DIR}/src/common")
 
 # Link libraries for Windows
 if (WIN32)
@@ -100,7 +102,10 @@ target_link_libraries(garioth_login ${OPENGL_gl_LIBRARY}
 # Add preprocessor definitions for Unicode
 add_definitions(-DUNICODE=0 -D_UNICODE=0)
 
-# --- Bundle assets (fonts, images, etc.) ---
+# Define Miniaudio implementation in audio_manager.cpp
+target_compile_definitions(garioth_login PRIVATE MINIAUDIO_IMPLEMENTATION)
+
+# --- Bundle assets (fonts, images, etc.) --- 
 # Copy assets to the build directory during the build process
 add_custom_target(copy_assets ALL
     COMMAND ${CMAKE_COMMAND} -E copy_directory 
