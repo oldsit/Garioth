@@ -11,8 +11,9 @@
 #include <sstream>
 #include <algorithm>
 #include <windows.h>
-#include "C:/GoliathGames/Garioth/src/common/image_utils.h"
+#include <image_utils.h>
 // #include "common/directory_utils.h"
+#include <audio_manager.h>
 
 // Persistent settings variables
 bool isDirectoryCreated = false;

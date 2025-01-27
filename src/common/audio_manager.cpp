@@ -29,7 +29,7 @@ bool AudioManager::playMusic(const std::string& filePath) {
     deviceConfig.playback.channels = decoder.outputChannels;
     deviceConfig.sampleRate        = decoder.outputSampleRate;
     deviceConfig.dataCallback      = audioCallback;
-    deviceConfig.pUserData         = &decoder;
+    deviceConfig.pUserData         = this;  // Pass the instance of AudioManager
 
     result = ma_device_init(nullptr, &deviceConfig, &device);
     if (result != MA_SUCCESS) {
@@ -63,11 +63,23 @@ bool AudioManager::isPlaying() const {
     return isMusicPlaying.load();
 }
 
-// Audio callback function to feed audio data to the device
+// Audio callback function to handle looping
 void AudioManager::audioCallback(ma_device* pDevice, void* pOutput, const void* pInput, ma_uint32 frameCount) {
-    ma_decoder* pDecoder = static_cast<ma_decoder*>(pDevice->pUserData);
+    AudioManager* audioMgr = static_cast<AudioManager*>(pDevice->pUserData);
+    ma_decoder* pDecoder = &audioMgr->decoder;
+
     if (pDecoder) {
-        ma_decoder_read_pcm_frames(pDecoder, pOutput, frameCount, nullptr);
+        ma_uint64 framesRead;
+        ma_result result = ma_decoder_read_pcm_frames(pDecoder, pOutput, frameCount, &framesRead);
+
+        if (result == MA_SUCCESS && framesRead < frameCount) {
+            // If we reach the end of the file, loop by seeking to the start
+            ma_decoder_seek_to_pcm_frame(pDecoder, 0);
+            ma_decoder_read_pcm_frames(pDecoder, 
+                static_cast<ma_uint8*>(pOutput) + (framesRead * ma_get_bytes_per_frame(pDecoder->outputFormat, pDecoder->outputChannels)), 
+                frameCount - framesRead, nullptr);
+        }
     }
+
     (void)pInput;  // Suppress unused variable warning
 }
