@@ -531,6 +531,19 @@ int main() {
         return -1;
     }
 
+    AudioManager audioManager;
+
+    if (!audioManager.init()) {
+        std::cerr << "Failied to initialize AudioManager" << std::endl;
+        return -1;
+    }
+
+    //Start playing bg music
+    std::string musicFilePath = "assets/audio/menu.mp3";
+    if (!audioManager.playMusic(musicFilePath)) {
+        std::cerr << "Failed to play music" << std::endl;
+    }
+
     // Load background texture
     GLuint bgTexture = LoadTexture("assets/images/bg.jpg");
 
@@ -918,7 +931,7 @@ if (ImGui::BeginPopupModal("Settings", NULL, ImGuiWindowFlags_AlwaysAutoResize))
         glfwDestroyCursor(customCursor);
     }
     glfwDestroyWindow(window);
+    audioManager.stopMusic();
     glfwTerminate();
-
     return 0;
 }
