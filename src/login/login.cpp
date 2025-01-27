@@ -531,6 +531,23 @@ int main() {
         return -1;
     }
 
+    // Make Icon
+    std::string iconPath = "assets/images/icon2.png";  // Replace with the actual path to your icon
+    std::cout << "Loading icon from: " << iconPath << std::endl;
+    int iconWidth, iconHeight, iconChannels;
+    unsigned char* image = stbi_load(iconPath.c_str(), &iconWidth, &iconHeight, &iconChannels, 4);
+
+    if (image) {
+        GLFWimage icon;
+        icon.width = iconWidth;
+        icon.height = iconHeight;
+        icon.pixels = image;
+        glfwSetWindowIcon(window, 1, &icon);
+        stbi_image_free(image);
+    } else {
+        std::cerr << "Failed to load icon image" << std::endl;
+    }
+
     AudioManager audioManager;
 
     if (!audioManager.init()) {
