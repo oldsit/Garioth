@@ -484,7 +484,7 @@ through the command line requires linking to `-lpthread` and `-lm`.
 
 Due to the way miniaudio links to frameworks at runtime, your application may not pass Apple's
 notarization process. To fix this there are two options. The first is to use the
-`MA_NO_RUNTIME_LINKING` option, like so:
+`MA_NO_RUNTIME_LINKING` option, like so:#
 
     ```c
     #ifdef __APPLE__

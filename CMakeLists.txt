@@ -34,6 +34,7 @@ set(MANIFEST_FILE ${CMAKE_SOURCE_DIR}/Goriath.manifest)
 set(COMMON_SRC
     ${PROJECT_SOURCE_DIR}/src/common/image_utils.cpp
     ${PROJECT_SOURCE_DIR}/src/common/audio_manager.cpp
+    ${PROJECT_SOURCE_DIR}/src/common/miniaudio_impl.cpp  # Add miniaudio implementation file
 )
 
 # Add STB Image header
@@ -101,9 +102,6 @@ target_link_libraries(garioth_login ${OPENGL_gl_LIBRARY}
 
 # Add preprocessor definitions for Unicode
 add_definitions(-DUNICODE=0 -D_UNICODE=0)
-
-# Define Miniaudio implementation in audio_manager.cpp
-target_compile_definitions(garioth_login PRIVATE MINIAUDIO_IMPLEMENTATION)
 
 # --- Bundle assets (fonts, images, etc.) --- 
 # Copy assets to the build directory during the build process

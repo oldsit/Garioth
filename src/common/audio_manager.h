@@ -1,8 +1,7 @@
 #ifndef AUDIO_MANAGER_H
 #define AUDIO_MANAGER_H
 
-#define MINI_AUDIO_IMPLEMENTATION
-#include <miniaudio.h>
+#include <miniaudio.h>  // Include the Miniaudio header without implementation
 #include <string>
 #include <atomic>
 
@@ -24,4 +23,4 @@ private:
     static void audioCallback(ma_device* pDevice, void* pOutput, const void* pInput, ma_uint32 frameCount);
 };
 
-#endif
+#endif  // AUDIO_MANAGER_H

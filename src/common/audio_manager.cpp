@@ -8,7 +8,7 @@ AudioManager::~AudioManager() {
 }
 
 bool AudioManager::init() {
-    // Potentially add initialization logic here (e.g., global audio context)
+    // Initialize any global audio settings if necessary (for example, default device selection).
     return true;
 }
 
@@ -18,18 +18,20 @@ bool AudioManager::playMusic(const std::string& filePath) {
         return false;
     }
 
+    // Initialize decoder for the given file path
     ma_result result = ma_decoder_init_file(filePath.c_str(), nullptr, &decoder);
     if (result != MA_SUCCESS) {
         std::cerr << "Failed to initialize decoder for file: " << filePath << std::endl;
         return false;
     }
 
+    // Configure playback device
     ma_device_config deviceConfig = ma_device_config_init(ma_device_type_playback);
     deviceConfig.playback.format   = decoder.outputFormat;
     deviceConfig.playback.channels = decoder.outputChannels;
     deviceConfig.sampleRate        = decoder.outputSampleRate;
     deviceConfig.dataCallback      = audioCallback;
-    deviceConfig.pUserData         = this;  // Pass the instance of AudioManager
+    deviceConfig.pUserData         = this;  // Pass the instance of AudioManager for callback usage
 
     result = ma_device_init(nullptr, &deviceConfig, &device);
     if (result != MA_SUCCESS) {
@@ -63,23 +65,24 @@ bool AudioManager::isPlaying() const {
     return isMusicPlaying.load();
 }
 
-// Audio callback function to handle looping
+// Audio callback function to handle looping and playback
 void AudioManager::audioCallback(ma_device* pDevice, void* pOutput, const void* pInput, ma_uint32 frameCount) {
-    AudioManager* audioMgr = static_cast<AudioManager*>(pDevice->pUserData);
+    AudioManager* audioMgr = static_cast<AudioManager*>(pDevice->pUserData);  // Access the AudioManager instance
     ma_decoder* pDecoder = &audioMgr->decoder;
 
-    if (pDecoder) {
-        ma_uint64 framesRead;
-        ma_result result = ma_decoder_read_pcm_frames(pDecoder, pOutput, frameCount, &framesRead);
+    if (!pDecoder) return;  // Safety check
 
-        if (result == MA_SUCCESS && framesRead < frameCount) {
-            // If we reach the end of the file, loop by seeking to the start
-            ma_decoder_seek_to_pcm_frame(pDecoder, 0);
-            ma_decoder_read_pcm_frames(pDecoder, 
-                static_cast<ma_uint8*>(pOutput) + (framesRead * ma_get_bytes_per_frame(pDecoder->outputFormat, pDecoder->outputChannels)), 
-                frameCount - framesRead, nullptr);
-        }
+    ma_uint64 framesRead;
+    ma_result result = ma_decoder_read_pcm_frames(pDecoder, pOutput, frameCount, &framesRead);
+
+    // Check if the end of the audio is reached and loop if necessary
+    if (result == MA_SUCCESS && framesRead < frameCount) {
+        // Loop by seeking back to the start of the file
+        ma_decoder_seek_to_pcm_frame(pDecoder, 0);
+        ma_decoder_read_pcm_frames(pDecoder, 
+            static_cast<ma_uint8*>(pOutput) + (framesRead * ma_get_bytes_per_frame(pDecoder->outputFormat, pDecoder->outputChannels)), 
+            frameCount - framesRead, nullptr);
     }
 
-    (void)pInput;  // Suppress unused variable warning
+    (void)pInput;  // Suppress unused variable warning (as input is not needed in playback)
 }
