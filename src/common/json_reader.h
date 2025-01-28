@@ -18,6 +18,9 @@ public:
     // Convert the internal data into a JSON string
     std::string toJsonString() const;
 
+    // Getter for the internal data (jsonData)
+    std::unordered_map<std::string, std::string> getData() const;
+
 private:
     std::unordered_map<std::string, std::string> jsonData;  // Simple key-value map for values
 

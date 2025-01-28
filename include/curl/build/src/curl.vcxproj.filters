@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\slist_wc.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\terminal.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_binmode.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_bname.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_cb_dbg.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_cb_hdr.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_cb_prg.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_cb_rea.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_cb_see.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_cb_soc.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_cb_wrt.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_cfgable.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_dirhie.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_doswin.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_easysrc.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_filetime.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_findfile.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_formparse.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_getparam.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_getpass.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_help.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_helpers.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\build\src\tool_hugehelp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_ipfs.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_libinfo.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_listhelp.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_main.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_msgs.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_operate.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_operhlp.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_paramhlp.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_parsecfg.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_progress.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_setopt.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_sleep.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_stderr.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_strdup.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_urlglob.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_util.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_vms.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_writeout.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_writeout_json.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\tool_xattr.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\src\var.c">
+      <Filter>curl source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\base64.c">
+      <Filter>curlX source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\curl_multibyte.c">
+      <Filter>curlX source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\dynbuf.c">
+      <Filter>curlX source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\nonblock.c">
+      <Filter>curlX source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\strtoofft.c">
+      <Filter>curlX source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\timediff.c">
+      <Filter>curlX source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\version_win32.c">
+      <Filter>curlX source files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\warnless.c">
+      <Filter>curlX source files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\slist_wc.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\terminal.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_binmode.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_bname.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_cb_dbg.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_cb_hdr.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_cb_prg.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_cb_rea.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_cb_see.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_cb_soc.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_cb_wrt.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_cfgable.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_dirhie.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_doswin.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_easysrc.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_filetime.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_findfile.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_formparse.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_getparam.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_getpass.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_help.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_helpers.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_hugehelp.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_ipfs.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_libinfo.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_main.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_msgs.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_operate.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_operhlp.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_paramhlp.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_parsecfg.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_progress.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_sdecls.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_setopt.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_setup.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_sleep.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_stderr.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_strdup.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_urlglob.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_util.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_version.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_vms.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_writeout.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_writeout_json.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\tool_xattr.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\src\var.h">
+      <Filter>curl header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\GoliathGames\Garioth\include\curl\build\CMakeFiles\c62eeb33905406b3eec9a995b6722f0e\tool_hugehelp.c.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\GoliathGames\Garioth\include\curl\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\GoliathGames\Garioth\include\curl\src\curl.rc">
+      <Filter>curl source files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{411A3C03-D637-3E4F-80BA-C7E546A64337}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2BDFDA74-EC9A-3940-85EC-82F05BC364E4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="curl header files">
+      <UniqueIdentifier>{5858A09D-A65B-337D-9BDD-CF737A53B2CC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="curl source files">
+      <UniqueIdentifier>{31721D2C-9CB0-30E1-BFFD-C2911626BC77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="curlX source files">
+      <UniqueIdentifier>{FC75A08F-623D-3129-9414-85336CB00284}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

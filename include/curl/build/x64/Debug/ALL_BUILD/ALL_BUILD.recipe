@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\GoliathGames\Garioth\include\curl\build\x64\Debug\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\GoliathGames\Garioth\include\curl\build\docs\cmdline-opts\x64\Debug\generate-curl.1</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\GoliathGames\Garioth\include\curl\build\lib\Debug\libcurl-d.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\GoliathGames\Garioth\include\curl\build\src\Debug\curl.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\GoliathGames\Garioth\include\curl\build\docs\x64\Debug\curl-generate-curl-config.1</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\GoliathGames\Garioth\include\curl\build\docs\x64\Debug\curl-generate-mk-ca-bundle.1</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\GoliathGames\Garioth\include\curl\build\docs\libcurl\opts\x64\Debug\curl-opts-man</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\GoliathGames\Garioth\include\curl\build\docs\libcurl\x64\Debug\curl-man</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\GoliathGames\Garioth\include\curl\build\x64\Debug\ALL_BUILD</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

@@ -1,0 +1,1 @@
+C:\GoliathGames\Garioth\include\curl\build\lib\libcurl_object.dir\Debug\libcurl_object.lib

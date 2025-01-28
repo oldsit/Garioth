@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\mprintf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\nonblock.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\strtoofft.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\warnless.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\timediff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\dynbuf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\strdup.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\strcase.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\curl_multibyte.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\tests\server\getpart.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\base64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\memdebug.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\tests\server\util.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\tests\server\resolve.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\lib\curlx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\lib\nonblock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\lib\strtoofft.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\lib\warnless.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\lib\timediff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\lib\curl_ctype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\lib\dynbuf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\lib\strdup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\lib\curl_multibyte.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\tests\server\getpart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\tests\server\server_setup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\lib\curl_base64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\lib\memdebug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\tests\server\util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\GoliathGames\Garioth\include\curl\tests\server\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7582D7FB-08FC-3BCB-BDF0-0EF0C7510B77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2BDFDA74-EC9A-3940-85EC-82F05BC364E4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

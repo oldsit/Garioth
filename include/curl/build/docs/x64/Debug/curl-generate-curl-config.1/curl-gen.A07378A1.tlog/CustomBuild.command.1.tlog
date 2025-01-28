@@ -1,0 +1,32 @@
+^C:\GOLIATHGAMES\GARIOTH\INCLUDE\CURL\BUILD\CMAKEFILES\742358355B0BE22872431124E68F639B\CURL-CONFIG.1.RULE
+setlocal
+cd C:\GoliathGames\Garioth\include\curl\docs
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\msys64\usr\bin\perl.exe C:/GoliathGames/Garioth/include/curl/scripts/cd2nroff curl-config.md > C:/GoliathGames/Garioth/include/curl/build/docs/curl-config.1
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\GOLIATHGAMES\GARIOTH\INCLUDE\CURL\BUILD\CMAKEFILES\A183E60A909F1C972CF3BB7FB3DA7542\CURL-GENERATE-CURL-CONFIG.1.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\GOLIATHGAMES\GARIOTH\INCLUDE\CURL\DOCS\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/GoliathGames/Garioth/include/curl -BC:/GoliathGames/Garioth/include/curl/build --check-stamp-file C:/GoliathGames/Garioth/include/curl/build/docs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

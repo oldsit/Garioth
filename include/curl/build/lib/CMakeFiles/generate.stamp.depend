@@ -1,0 +1,5 @@
+# CMake generation dependency list for this directory.
+C:/GoliathGames/Garioth/include/curl/build/lib/Makefile.inc.cmake
+C:/GoliathGames/Garioth/include/curl/lib/CMakeLists.txt
+C:/GoliathGames/Garioth/include/curl/lib/Makefile.inc
+C:/GoliathGames/Garioth/include/curl/lib/curl_config.h.cmake

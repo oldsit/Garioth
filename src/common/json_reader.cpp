@@ -93,7 +93,6 @@ bool JSONReader::parseObject(std::istringstream& stream, std::string& value) {
     return true;
 }
 
-
 // Helper function to parse numbers, booleans, or other types (just numbers for now)
 bool JSONReader::parseNumberOrBoolean(std::istringstream& stream, std::string& value) {
     std::ostringstream oss;
@@ -155,3 +154,7 @@ void JSONReader::add(const std::string& key, const std::string& value) {
     jsonData[key] = value;
 }
 
+// Getter for the internal data (jsonData)
+std::unordered_map<std::string, std::string> JSONReader::getData() const {
+    return jsonData;
+}

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\tests\http\clients\ws-data.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\GoliathGames\Garioth\include\curl\tests\http\clients\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2BDFDA74-EC9A-3940-85EC-82F05BC364E4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

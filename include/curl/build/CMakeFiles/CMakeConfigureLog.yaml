@@ -1,0 +1,884 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:94 (project)"
+    message: |
+      The system is: Windows - 10.0.26100 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:94 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.9.5+33de0b227 for .NET Framework
+      Build started 28/01/2025 3:05:41 pm.
+      
+      Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\3.31.4\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\3.31.4\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\3.31.4\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.35
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/3.31.4/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:94 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-5zv5wu"
+      binary: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-5zv5wu"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/GoliathGames/Garioth/include/curl/CMake;"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-5zv5wu'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_50500.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 28/01/2025 3:05:41 pm.
+        
+        Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5zv5wu\\cmTC_50500.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_50500.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5zv5wu\\Debug\\".
+          Creating directory "cmTC_50500.dir\\Debug\\cmTC_50500.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_50500.dir\\Debug\\cmTC_50500.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_50500.dir\\Debug\\cmTC_50500.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_50500.dir\\Debug\\\\" /Fd"cmTC_50500.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_50500.dir\\Debug\\\\" /Fd"cmTC_50500.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5zv5wu\\Debug\\cmTC_50500.exe" /INCREMENTAL /ILK:"cmTC_50500.dir\\Debug\\cmTC_50500.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-5zv5wu/Debug/cmTC_50500.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-5zv5wu/Debug/cmTC_50500.lib" /MACHINE:X64  /machine:x64 cmTC_50500.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_50500.vcxproj -> C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5zv5wu\\Debug\\cmTC_50500.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_50500.dir\\Debug\\cmTC_50500.tlog\\unsuccessfulbuild".
+          Touching "cmTC_50500.dir\\Debug\\cmTC_50500.tlog\\cmTC_50500.lastbuildstate".
+        Done Building Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5zv5wu\\cmTC_50500.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.33
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:94 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.39.33519/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:94 (project)"
+    message: |
+      Running the C compiler's linker: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.39.33519/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.39.33521.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "CMake/Macros.cmake:48 (try_compile)"
+      - "CMakeLists.txt:203 (curl_internal_test)"
+    directories:
+      source: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeTmp"
+      binary: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/GoliathGames/Garioth/include/curl/CMake;"
+    buildResult:
+      variable: "HAVE_WIN32_WINNT"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_dac00.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 28/01/2025 3:05:42 pm.
+        
+        Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeTmp\\cmTC_dac00.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_dac00.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeTmp\\Debug\\".
+          Creating directory "cmTC_dac00.dir\\Debug\\cmTC_dac00.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_dac00.dir\\Debug\\cmTC_dac00.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_dac00.dir\\Debug\\cmTC_dac00.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_WIN32_WINNT /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_dac00.dir\\Debug\\\\" /Fd"cmTC_dac00.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue C:\\GoliathGames\\Garioth\\include\\curl\\CMake\\CurlTests.c
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_WIN32_WINNT /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_dac00.dir\\Debug\\\\" /Fd"cmTC_dac00.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue C:\\GoliathGames\\Garioth\\include\\curl\\CMake\\CurlTests.c
+          CurlTests.c
+          _WIN32_WINNT=0x0A00
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeTmp\\Debug\\cmTC_dac00.exe" /INCREMENTAL /ILK:"cmTC_dac00.dir\\Debug\\cmTC_dac00.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeTmp/Debug/cmTC_dac00.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeTmp/Debug/cmTC_dac00.lib" /MACHINE:X64  /machine:x64 cmTC_dac00.dir\\Debug\\CurlTests.obj
+          cmTC_dac00.vcxproj -> C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeTmp\\Debug\\cmTC_dac00.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_dac00.dir\\Debug\\cmTC_dac00.tlog\\unsuccessfulbuild".
+          Touching "cmTC_dac00.dir\\Debug\\cmTC_dac00.tlog\\cmTC_dac00.lastbuildstate".
+        Done Building Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeTmp\\cmTC_dac00.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.38
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:263 (check_include_file)"
+      - "CMakeLists.txt:1528 (check_type_size)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-txq84w"
+      binary: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-txq84w"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/GoliathGames/Garioth/include/curl/CMake;"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-txq84w'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_28fcd.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 28/01/2025 3:05:42 pm.
+        
+        Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-txq84w\\cmTC_28fcd.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_28fcd.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-txq84w\\Debug\\".
+          Creating directory "cmTC_28fcd.dir\\Debug\\cmTC_28fcd.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_28fcd.dir\\Debug\\cmTC_28fcd.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_28fcd.dir\\Debug\\cmTC_28fcd.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_28fcd.dir\\Debug\\\\" /Fd"cmTC_28fcd.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-txq84w\\CheckIncludeFile.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_28fcd.dir\\Debug\\\\" /Fd"cmTC_28fcd.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-txq84w\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-txq84w\\Debug\\cmTC_28fcd.exe" /INCREMENTAL /ILK:"cmTC_28fcd.dir\\Debug\\cmTC_28fcd.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-txq84w/Debug/cmTC_28fcd.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-txq84w/Debug/cmTC_28fcd.lib" /MACHINE:X64  /machine:x64 cmTC_28fcd.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_28fcd.vcxproj -> C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-txq84w\\Debug\\cmTC_28fcd.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_28fcd.dir\\Debug\\cmTC_28fcd.tlog\\unsuccessfulbuild".
+          Touching "cmTC_28fcd.dir\\Debug\\cmTC_28fcd.tlog\\cmTC_28fcd.lastbuildstate".
+        Done Building Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-txq84w\\cmTC_28fcd.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.34
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMakeLists.txt:1528 (check_type_size)"
+    checks:
+      - "Check size of size_t"
+    directories:
+      source: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-zhehuo"
+      binary: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-zhehuo"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/GoliathGames/Garioth/include/curl/CMake;"
+    buildResult:
+      variable: "HAVE_SIZEOF_SIZE_T"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-zhehuo'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_ac518.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 28/01/2025 3:05:43 pm.
+        
+        Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zhehuo\\cmTC_ac518.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_ac518.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zhehuo\\Debug\\".
+          Creating directory "cmTC_ac518.dir\\Debug\\cmTC_ac518.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_ac518.dir\\Debug\\cmTC_ac518.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_ac518.dir\\Debug\\cmTC_ac518.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ac518.dir\\Debug\\\\" /Fd"cmTC_ac518.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zhehuo\\SIZEOF_SIZE_T.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ac518.dir\\Debug\\\\" /Fd"cmTC_ac518.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zhehuo\\SIZEOF_SIZE_T.c"
+          SIZEOF_SIZE_T.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zhehuo\\Debug\\cmTC_ac518.exe" /INCREMENTAL /ILK:"cmTC_ac518.dir\\Debug\\cmTC_ac518.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-zhehuo/Debug/cmTC_ac518.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-zhehuo/Debug/cmTC_ac518.lib" /MACHINE:X64  /machine:x64 cmTC_ac518.dir\\Debug\\SIZEOF_SIZE_T.obj
+          cmTC_ac518.vcxproj -> C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zhehuo\\Debug\\cmTC_ac518.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_ac518.dir\\Debug\\cmTC_ac518.tlog\\unsuccessfulbuild".
+          Touching "cmTC_ac518.dir\\Debug\\cmTC_ac518.tlog\\cmTC_ac518.lastbuildstate".
+        Done Building Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zhehuo\\cmTC_ac518.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.33
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMakeLists.txt:1529 (check_type_size)"
+    checks:
+      - "Check size of ssize_t"
+    directories:
+      source: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-9kh862"
+      binary: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-9kh862"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/GoliathGames/Garioth/include/curl/CMake;"
+    buildResult:
+      variable: "HAVE_SIZEOF_SSIZE_T"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-9kh862'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_f3f53.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 28/01/2025 3:05:43 pm.
+        
+        Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\cmTC_f3f53.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_f3f53.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\Debug\\".
+          Creating directory "cmTC_f3f53.dir\\Debug\\cmTC_f3f53.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_f3f53.dir\\Debug\\cmTC_f3f53.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_f3f53.dir\\Debug\\cmTC_f3f53.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f3f53.dir\\Debug\\\\" /Fd"cmTC_f3f53.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\SIZEOF_SSIZE_T.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f3f53.dir\\Debug\\\\" /Fd"cmTC_f3f53.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\SIZEOF_SSIZE_T.c"
+          SIZEOF_SSIZE_T.c
+        C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\SIZEOF_SSIZE_T.c(29,12): error C2065: 'ssize_t': undeclared identifier [C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\cmTC_f3f53.vcxproj]
+        C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\SIZEOF_SSIZE_T.c(30,12): error C2065: 'ssize_t': undeclared identifier [C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\cmTC_f3f53.vcxproj]
+        C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\SIZEOF_SSIZE_T.c(31,12): error C2065: 'ssize_t': undeclared identifier [C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\cmTC_f3f53.vcxproj]
+        C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\SIZEOF_SSIZE_T.c(32,12): error C2065: 'ssize_t': undeclared identifier [C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\cmTC_f3f53.vcxproj]
+        C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\SIZEOF_SSIZE_T.c(33,12): error C2065: 'ssize_t': undeclared identifier [C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\cmTC_f3f53.vcxproj]
+        Done Building Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\cmTC_f3f53.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\cmTC_f3f53.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\SIZEOF_SSIZE_T.c(29,12): error C2065: 'ssize_t': undeclared identifier [C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\cmTC_f3f53.vcxproj]
+          C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\SIZEOF_SSIZE_T.c(30,12): error C2065: 'ssize_t': undeclared identifier [C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\cmTC_f3f53.vcxproj]
+          C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\SIZEOF_SSIZE_T.c(31,12): error C2065: 'ssize_t': undeclared identifier [C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\cmTC_f3f53.vcxproj]
+          C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\SIZEOF_SSIZE_T.c(32,12): error C2065: 'ssize_t': undeclared identifier [C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\cmTC_f3f53.vcxproj]
+          C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\SIZEOF_SSIZE_T.c(33,12): error C2065: 'ssize_t': undeclared identifier [C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9kh862\\cmTC_f3f53.vcxproj]
+        
+            0 Warning(s)
+            5 Error(s)
+        
+        Time Elapsed 00:00:00.22
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMakeLists.txt:1530 (check_type_size)"
+    checks:
+      - "Check size of long long"
+    directories:
+      source: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-kw19d1"
+      binary: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-kw19d1"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/GoliathGames/Garioth/include/curl/CMake;"
+    buildResult:
+      variable: "HAVE_SIZEOF_LONG_LONG"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-kw19d1'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_73e9b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 28/01/2025 3:05:43 pm.
+        
+        Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-kw19d1\\cmTC_73e9b.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_73e9b.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-kw19d1\\Debug\\".
+          Creating directory "cmTC_73e9b.dir\\Debug\\cmTC_73e9b.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_73e9b.dir\\Debug\\cmTC_73e9b.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_73e9b.dir\\Debug\\cmTC_73e9b.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_73e9b.dir\\Debug\\\\" /Fd"cmTC_73e9b.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-kw19d1\\SIZEOF_LONG_LONG.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_73e9b.dir\\Debug\\\\" /Fd"cmTC_73e9b.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-kw19d1\\SIZEOF_LONG_LONG.c"
+          SIZEOF_LONG_LONG.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-kw19d1\\Debug\\cmTC_73e9b.exe" /INCREMENTAL /ILK:"cmTC_73e9b.dir\\Debug\\cmTC_73e9b.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-kw19d1/Debug/cmTC_73e9b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-kw19d1/Debug/cmTC_73e9b.lib" /MACHINE:X64  /machine:x64 cmTC_73e9b.dir\\Debug\\SIZEOF_LONG_LONG.obj
+          cmTC_73e9b.vcxproj -> C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-kw19d1\\Debug\\cmTC_73e9b.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_73e9b.dir\\Debug\\cmTC_73e9b.tlog\\unsuccessfulbuild".
+          Touching "cmTC_73e9b.dir\\Debug\\cmTC_73e9b.tlog\\cmTC_73e9b.lastbuildstate".
+        Done Building Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-kw19d1\\cmTC_73e9b.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.34
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMakeLists.txt:1531 (check_type_size)"
+    checks:
+      - "Check size of long"
+    directories:
+      source: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-jzp0mm"
+      binary: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-jzp0mm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/GoliathGames/Garioth/include/curl/CMake;"
+    buildResult:
+      variable: "HAVE_SIZEOF_LONG"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-jzp0mm'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_c3190.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 28/01/2025 3:05:44 pm.
+        
+        Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jzp0mm\\cmTC_c3190.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_c3190.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jzp0mm\\Debug\\".
+          Creating directory "cmTC_c3190.dir\\Debug\\cmTC_c3190.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_c3190.dir\\Debug\\cmTC_c3190.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_c3190.dir\\Debug\\cmTC_c3190.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c3190.dir\\Debug\\\\" /Fd"cmTC_c3190.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jzp0mm\\SIZEOF_LONG.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c3190.dir\\Debug\\\\" /Fd"cmTC_c3190.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jzp0mm\\SIZEOF_LONG.c"
+          SIZEOF_LONG.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jzp0mm\\Debug\\cmTC_c3190.exe" /INCREMENTAL /ILK:"cmTC_c3190.dir\\Debug\\cmTC_c3190.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-jzp0mm/Debug/cmTC_c3190.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-jzp0mm/Debug/cmTC_c3190.lib" /MACHINE:X64  /machine:x64 cmTC_c3190.dir\\Debug\\SIZEOF_LONG.obj
+          cmTC_c3190.vcxproj -> C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jzp0mm\\Debug\\cmTC_c3190.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_c3190.dir\\Debug\\cmTC_c3190.tlog\\unsuccessfulbuild".
+          Touching "cmTC_c3190.dir\\Debug\\cmTC_c3190.tlog\\cmTC_c3190.lastbuildstate".
+        Done Building Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jzp0mm\\cmTC_c3190.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.33
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMakeLists.txt:1532 (check_type_size)"
+    checks:
+      - "Check size of int"
+    directories:
+      source: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-pvxbaa"
+      binary: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-pvxbaa"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/GoliathGames/Garioth/include/curl/CMake;"
+    buildResult:
+      variable: "HAVE_SIZEOF_INT"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-pvxbaa'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_ee13a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 28/01/2025 3:05:44 pm.
+        
+        Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pvxbaa\\cmTC_ee13a.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_ee13a.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pvxbaa\\Debug\\".
+          Creating directory "cmTC_ee13a.dir\\Debug\\cmTC_ee13a.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_ee13a.dir\\Debug\\cmTC_ee13a.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_ee13a.dir\\Debug\\cmTC_ee13a.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ee13a.dir\\Debug\\\\" /Fd"cmTC_ee13a.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pvxbaa\\SIZEOF_INT.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ee13a.dir\\Debug\\\\" /Fd"cmTC_ee13a.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pvxbaa\\SIZEOF_INT.c"
+          SIZEOF_INT.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pvxbaa\\Debug\\cmTC_ee13a.exe" /INCREMENTAL /ILK:"cmTC_ee13a.dir\\Debug\\cmTC_ee13a.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-pvxbaa/Debug/cmTC_ee13a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-pvxbaa/Debug/cmTC_ee13a.lib" /MACHINE:X64  /machine:x64 cmTC_ee13a.dir\\Debug\\SIZEOF_INT.obj
+          cmTC_ee13a.vcxproj -> C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pvxbaa\\Debug\\cmTC_ee13a.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_ee13a.dir\\Debug\\cmTC_ee13a.tlog\\unsuccessfulbuild".
+          Touching "cmTC_ee13a.dir\\Debug\\cmTC_ee13a.tlog\\cmTC_ee13a.lastbuildstate".
+        Done Building Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pvxbaa\\cmTC_ee13a.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.34
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMakeLists.txt:1533 (check_type_size)"
+    checks:
+      - "Check size of __int64"
+    directories:
+      source: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-4j272m"
+      binary: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-4j272m"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/GoliathGames/Garioth/include/curl/CMake;"
+    buildResult:
+      variable: "HAVE_SIZEOF___INT64"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-4j272m'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6dd46.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 28/01/2025 3:05:45 pm.
+        
+        Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4j272m\\cmTC_6dd46.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_6dd46.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4j272m\\Debug\\".
+          Creating directory "cmTC_6dd46.dir\\Debug\\cmTC_6dd46.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_6dd46.dir\\Debug\\cmTC_6dd46.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_6dd46.dir\\Debug\\cmTC_6dd46.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6dd46.dir\\Debug\\\\" /Fd"cmTC_6dd46.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4j272m\\SIZEOF___INT64.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6dd46.dir\\Debug\\\\" /Fd"cmTC_6dd46.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4j272m\\SIZEOF___INT64.c"
+          SIZEOF___INT64.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4j272m\\Debug\\cmTC_6dd46.exe" /INCREMENTAL /ILK:"cmTC_6dd46.dir\\Debug\\cmTC_6dd46.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-4j272m/Debug/cmTC_6dd46.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-4j272m/Debug/cmTC_6dd46.lib" /MACHINE:X64  /machine:x64 cmTC_6dd46.dir\\Debug\\SIZEOF___INT64.obj
+          cmTC_6dd46.vcxproj -> C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4j272m\\Debug\\cmTC_6dd46.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_6dd46.dir\\Debug\\cmTC_6dd46.tlog\\unsuccessfulbuild".
+          Touching "cmTC_6dd46.dir\\Debug\\cmTC_6dd46.tlog\\cmTC_6dd46.lastbuildstate".
+        Done Building Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4j272m\\cmTC_6dd46.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.35
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMakeLists.txt:1534 (check_type_size)"
+    checks:
+      - "Check size of time_t"
+    directories:
+      source: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-m3mde8"
+      binary: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-m3mde8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/GoliathGames/Garioth/include/curl/CMake;"
+    buildResult:
+      variable: "HAVE_SIZEOF_TIME_T"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-m3mde8'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_f3e3d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 28/01/2025 3:05:45 pm.
+        
+        Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m3mde8\\cmTC_f3e3d.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_f3e3d.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m3mde8\\Debug\\".
+          Creating directory "cmTC_f3e3d.dir\\Debug\\cmTC_f3e3d.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_f3e3d.dir\\Debug\\cmTC_f3e3d.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_f3e3d.dir\\Debug\\cmTC_f3e3d.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f3e3d.dir\\Debug\\\\" /Fd"cmTC_f3e3d.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m3mde8\\SIZEOF_TIME_T.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f3e3d.dir\\Debug\\\\" /Fd"cmTC_f3e3d.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m3mde8\\SIZEOF_TIME_T.c"
+          SIZEOF_TIME_T.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m3mde8\\Debug\\cmTC_f3e3d.exe" /INCREMENTAL /ILK:"cmTC_f3e3d.dir\\Debug\\cmTC_f3e3d.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-m3mde8/Debug/cmTC_f3e3d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-m3mde8/Debug/cmTC_f3e3d.lib" /MACHINE:X64  /machine:x64 cmTC_f3e3d.dir\\Debug\\SIZEOF_TIME_T.obj
+          cmTC_f3e3d.vcxproj -> C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m3mde8\\Debug\\cmTC_f3e3d.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_f3e3d.dir\\Debug\\cmTC_f3e3d.tlog\\unsuccessfulbuild".
+          Touching "cmTC_f3e3d.dir\\Debug\\cmTC_f3e3d.tlog\\cmTC_f3e3d.lastbuildstate".
+        Done Building Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m3mde8\\cmTC_f3e3d.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.33
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMakeLists.txt:1648 (check_type_size)"
+    checks:
+      - "Check size of ADDRESS_FAMILY"
+    directories:
+      source: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-49rllq"
+      binary: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-49rllq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/GoliathGames/Garioth/include/curl/CMake;"
+    buildResult:
+      variable: "HAVE_SIZEOF_ADDRESS_FAMILY"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-49rllq'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a6724.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 28/01/2025 3:05:46 pm.
+        
+        Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-49rllq\\cmTC_a6724.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_a6724.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-49rllq\\Debug\\".
+          Creating directory "cmTC_a6724.dir\\Debug\\cmTC_a6724.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_a6724.dir\\Debug\\cmTC_a6724.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_a6724.dir\\Debug\\cmTC_a6724.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a6724.dir\\Debug\\\\" /Fd"cmTC_a6724.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-49rllq\\SIZEOF_ADDRESS_FAMILY.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a6724.dir\\Debug\\\\" /Fd"cmTC_a6724.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-49rllq\\SIZEOF_ADDRESS_FAMILY.c"
+          SIZEOF_ADDRESS_FAMILY.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-49rllq\\Debug\\cmTC_a6724.exe" /INCREMENTAL /ILK:"cmTC_a6724.dir\\Debug\\cmTC_a6724.ilk" /NOLOGO ws2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-49rllq/Debug/cmTC_a6724.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-49rllq/Debug/cmTC_a6724.lib" /MACHINE:X64  /machine:x64 cmTC_a6724.dir\\Debug\\SIZEOF_ADDRESS_FAMILY.obj
+          cmTC_a6724.vcxproj -> C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-49rllq\\Debug\\cmTC_a6724.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_a6724.dir\\Debug\\cmTC_a6724.tlog\\unsuccessfulbuild".
+          Touching "cmTC_a6724.dir\\Debug\\cmTC_a6724.tlog\\cmTC_a6724.lastbuildstate".
+        Done Building Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-49rllq\\cmTC_a6724.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.39
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMakeLists.txt:1688 (check_type_size)"
+    checks:
+      - "Check size of off_t"
+    directories:
+      source: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-xpg8tf"
+      binary: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-xpg8tf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/GoliathGames/Garioth/include/curl/CMake;"
+    buildResult:
+      variable: "HAVE_SIZEOF_OFF_T"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-xpg8tf'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_b21eb.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 28/01/2025 3:05:46 pm.
+        
+        Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xpg8tf\\cmTC_b21eb.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_b21eb.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xpg8tf\\Debug\\".
+          Creating directory "cmTC_b21eb.dir\\Debug\\cmTC_b21eb.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_b21eb.dir\\Debug\\cmTC_b21eb.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_b21eb.dir\\Debug\\cmTC_b21eb.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b21eb.dir\\Debug\\\\" /Fd"cmTC_b21eb.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xpg8tf\\SIZEOF_OFF_T.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b21eb.dir\\Debug\\\\" /Fd"cmTC_b21eb.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xpg8tf\\SIZEOF_OFF_T.c"
+          SIZEOF_OFF_T.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xpg8tf\\Debug\\cmTC_b21eb.exe" /INCREMENTAL /ILK:"cmTC_b21eb.dir\\Debug\\cmTC_b21eb.ilk" /NOLOGO ws2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-xpg8tf/Debug/cmTC_b21eb.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-xpg8tf/Debug/cmTC_b21eb.lib" /MACHINE:X64  /machine:x64 cmTC_b21eb.dir\\Debug\\SIZEOF_OFF_T.obj
+          cmTC_b21eb.vcxproj -> C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xpg8tf\\Debug\\cmTC_b21eb.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_b21eb.dir\\Debug\\cmTC_b21eb.tlog\\unsuccessfulbuild".
+          Touching "cmTC_b21eb.dir\\Debug\\cmTC_b21eb.tlog\\cmTC_b21eb.lastbuildstate".
+        Done Building Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xpg8tf\\cmTC_b21eb.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.34
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMakeLists.txt:1703 (check_type_size)"
+    checks:
+      - "Check size of curl_off_t"
+    directories:
+      source: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-f44rja"
+      binary: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-f44rja"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/GoliathGames/Garioth/include/curl/CMake;"
+    buildResult:
+      variable: "HAVE_SIZEOF_CURL_OFF_T"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-f44rja'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_274c7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 28/01/2025 3:05:47 pm.
+        
+        Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f44rja\\cmTC_274c7.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_274c7.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f44rja\\Debug\\".
+          Creating directory "cmTC_274c7.dir\\Debug\\cmTC_274c7.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_274c7.dir\\Debug\\cmTC_274c7.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_274c7.dir\\Debug\\cmTC_274c7.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /IC:\\GoliathGames\\Garioth\\include\\curl\\include /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_274c7.dir\\Debug\\\\" /Fd"cmTC_274c7.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f44rja\\SIZEOF_CURL_OFF_T.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /IC:\\GoliathGames\\Garioth\\include\\curl\\include /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_274c7.dir\\Debug\\\\" /Fd"cmTC_274c7.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f44rja\\SIZEOF_CURL_OFF_T.c"
+          SIZEOF_CURL_OFF_T.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f44rja\\Debug\\cmTC_274c7.exe" /INCREMENTAL /ILK:"cmTC_274c7.dir\\Debug\\cmTC_274c7.ilk" /NOLOGO ws2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-f44rja/Debug/cmTC_274c7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-f44rja/Debug/cmTC_274c7.lib" /MACHINE:X64  /machine:x64 cmTC_274c7.dir\\Debug\\SIZEOF_CURL_OFF_T.obj
+          cmTC_274c7.vcxproj -> C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f44rja\\Debug\\cmTC_274c7.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_274c7.dir\\Debug\\cmTC_274c7.tlog\\unsuccessfulbuild".
+          Touching "cmTC_274c7.dir\\Debug\\cmTC_274c7.tlog\\cmTC_274c7.lastbuildstate".
+        Done Building Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f44rja\\cmTC_274c7.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.33
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMakeLists.txt:1705 (check_type_size)"
+    checks:
+      - "Check size of curl_socket_t"
+    directories:
+      source: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-qnecm8"
+      binary: "C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-qnecm8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/GoliathGames/Garioth/include/curl/CMake;"
+    buildResult:
+      variable: "HAVE_SIZEOF_CURL_SOCKET_T"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-qnecm8'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_e14f7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 28/01/2025 3:05:47 pm.
+        
+        Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qnecm8\\cmTC_e14f7.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_e14f7.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qnecm8\\Debug\\".
+          Creating directory "cmTC_e14f7.dir\\Debug\\cmTC_e14f7.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_e14f7.dir\\Debug\\cmTC_e14f7.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_e14f7.dir\\Debug\\cmTC_e14f7.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /IC:\\GoliathGames\\Garioth\\include\\curl\\include /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e14f7.dir\\Debug\\\\" /Fd"cmTC_e14f7.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qnecm8\\SIZEOF_CURL_SOCKET_T.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33521 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /IC:\\GoliathGames\\Garioth\\include\\curl\\include /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D WIN32_LEAN_AND_MEAN /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e14f7.dir\\Debug\\\\" /Fd"cmTC_e14f7.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qnecm8\\SIZEOF_CURL_SOCKET_T.c"
+          SIZEOF_CURL_SOCKET_T.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qnecm8\\Debug\\cmTC_e14f7.exe" /INCREMENTAL /ILK:"cmTC_e14f7.dir\\Debug\\cmTC_e14f7.ilk" /NOLOGO ws2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-qnecm8/Debug/cmTC_e14f7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/GoliathGames/Garioth/include/curl/build/CMakeFiles/CMakeScratch/TryCompile-qnecm8/Debug/cmTC_e14f7.lib" /MACHINE:X64  /machine:x64 cmTC_e14f7.dir\\Debug\\SIZEOF_CURL_SOCKET_T.obj
+          cmTC_e14f7.vcxproj -> C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qnecm8\\Debug\\cmTC_e14f7.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_e14f7.dir\\Debug\\cmTC_e14f7.tlog\\unsuccessfulbuild".
+          Touching "cmTC_e14f7.dir\\Debug\\cmTC_e14f7.tlog\\cmTC_e14f7.lastbuildstate".
+        Done Building Project "C:\\GoliathGames\\Garioth\\include\\curl\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qnecm8\\cmTC_e14f7.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.41
+        
+      exitCode: 0
+...

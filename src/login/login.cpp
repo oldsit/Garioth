@@ -14,7 +14,8 @@
 #include <image_utils.h>
 // #include "common/directory_utils.h"
 #include <audio_manager.h>
-#include "json_reader.h"
+#include <json_reader.h>
+#include <http.h>
 
 // Persistent settings variables
 bool isDirectoryCreated = false;

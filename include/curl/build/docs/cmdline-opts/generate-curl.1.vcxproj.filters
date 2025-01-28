@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\GoliathGames\Garioth\include\curl\build\CMakeFiles\5836664dc8fbafff12e178d86aacb2c5\curl.1.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\GoliathGames\Garioth\include\curl\build\CMakeFiles\41acb192a4ecf248dd8bb914c46fb5b9\generate-curl.1.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\GoliathGames\Garioth\include\curl\docs\cmdline-opts\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\GoliathGames\Garioth\include\curl\build\docs\cmdline-opts\CMakeFiles\generate-curl.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{411A3C03-D637-3E4F-80BA-C7E546A64337}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -5,6 +5,20 @@ project(Garioth)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# Set the CURL_INCLUDE_DIR and CURL_LIBRARIES manually
+set(CURL_INCLUDE_DIR "C:/GoliathGames/Garioth/include/curl/include")
+set(CURL_LIBRARIES "C:/GoliathGames/Garioth/include/curl/build/lib/Debug/libcurl.a")  # Adjust path if needed
+
+# Include directories
+include_directories(
+    ${PROJECT_SOURCE_DIR}/src/common  # Include common directory for JSONReader
+    ${PROJECT_SOURCE_DIR}/include
+    ${CURL_INCLUDE_DIR}  # Explicitly set CURL_INCLUDE_DIR
+)
+
+# Find cURL package (use custom path if necessary)
+find_package(CURL REQUIRED)
+
 # Define paths for source files
 set(SERVER_SRC src/server/server.cpp)
 set(CLIENT_SRC src/client/client.cpp)
@@ -24,12 +38,6 @@ set(IMGUI_SOURCES
     ${PROJECT_SOURCE_DIR}/include/imgui/backends/imgui_impl_opengl3.cpp
 )
 
-# Include directories
-include_directories(
-    ${PROJECT_SOURCE_DIR}/src/common  # Include common directory for JSONReader
-    ${PROJECT_SOURCE_DIR}/include
-)
-
 # Manifest file path
 set(MANIFEST_FILE ${CMAKE_SOURCE_DIR}/Goriath.manifest)
 
@@ -39,6 +47,7 @@ set(COMMON_SRC
     ${PROJECT_SOURCE_DIR}/src/common/audio_manager.cpp
     ${PROJECT_SOURCE_DIR}/src/common/miniaudio_impl.cpp  # Add miniaudio implementation file
     ${PROJECT_SOURCE_DIR}/src/common/json_reader.cpp     # Add json_reader source file
+    ${PROJECT_SOURCE_DIR}/src/common/http.cpp           # Add http source file
 )
 
 # Add STB Image header
@@ -58,6 +67,7 @@ target_include_directories(garioth_server PRIVATE
     ${PROJECT_SOURCE_DIR}/include 
     "C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/include"
     "C:/Program Files/OpenSSL-Win64/include"
+    ${CURL_INCLUDE_DIR}  # Explicitly set CURL_INCLUDE_DIR
 )
 
 target_include_directories(garioth_client PRIVATE 
@@ -65,6 +75,7 @@ target_include_directories(garioth_client PRIVATE
     ${PROJECT_SOURCE_DIR}/include 
     "C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/include"
     "C:/Program Files/OpenSSL-Win64/include"
+    ${CURL_INCLUDE_DIR}  # Explicitly set CURL_INCLUDE_DIR
 )
 
 target_include_directories(garioth_login PRIVATE 
@@ -76,6 +87,12 @@ target_include_directories(garioth_login PRIVATE
     "C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/include"
     "C:/Program Files/OpenSSL-Win64/include"
     ${PROJECT_SOURCE_DIR}/include/miniaudio  # Miniaudio include directory
+    ${CURL_INCLUDE_DIR}  # Explicitly set CURL_INCLUDE_DIR
+)
+
+# Link directories for libraries
+link_directories(
+    "C:/GoliathGames/Garioth/include/curl/build/lib/Debug"  # Directory containing libcurl.a
 )
 
 # Link libraries for Windows
@@ -84,17 +101,27 @@ if (WIN32)
       "C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/mariadbcpp.lib"
       "C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD/libssl.lib"
       "C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD/libcrypto.lib"
+      ${CURL_LIBRARIES}  # Add this line for cURL
   )
 
   target_link_libraries(garioth_client ws2_32 
       "C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/mariadbcpp.lib"
       "C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD/libssl.lib"
       "C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD/libcrypto.lib"
+      ${CURL_LIBRARIES}  # Add this line for cURL
   )
 
   # Link the manifest file for the login executable
   set_target_properties(garioth_login PROPERTIES 
       LINK_FLAGS "/MANIFEST /MANIFESTINPUT:${MANIFEST_FILE}")
+
+  target_link_libraries(garioth_login 
+      ws2_32 
+      "C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/mariadbcpp.lib"
+      "C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD/libssl.lib"
+      "C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD/libcrypto.lib"
+      ${CURL_LIBRARIES}  # Add this line for cURL
+  )
 endif()
 
 # Find OpenGL and link it with the login executable

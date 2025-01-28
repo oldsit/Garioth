@@ -1,0 +1,1394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C4553B7C-923F-3FFB-BB77-2CD9A124F9B7}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>testdeps</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\GoliathGames\Garioth\include\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\GoliathGames\Garioth\include\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\GoliathGames\Garioth\include\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\GoliathGames\Garioth\include\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\GoliathGames\Garioth\include\curl\tests\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/GoliathGames/Garioth/include/curl/tests/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/GoliathGames/Garioth/include/curl -BC:/GoliathGames/Garioth/include/curl/build --check-stamp-file C:/GoliathGames/Garioth/include/curl/build/tests/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GoliathGames\Garioth\include\curl\tests\config.in;C:\GoliathGames\Garioth\include\curl\tests\configurehelp.pm.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GoliathGames\Garioth\include\curl\build\tests\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/GoliathGames/Garioth/include/curl/tests/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/GoliathGames/Garioth/include/curl -BC:/GoliathGames/Garioth/include/curl/build --check-stamp-file C:/GoliathGames/Garioth/include/curl/build/tests/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GoliathGames\Garioth\include\curl\tests\config.in;C:\GoliathGames\Garioth\include\curl\tests\configurehelp.pm.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GoliathGames\Garioth\include\curl\build\tests\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/GoliathGames/Garioth/include/curl/tests/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/GoliathGames/Garioth/include/curl -BC:/GoliathGames/Garioth/include/curl/build --check-stamp-file C:/GoliathGames/Garioth/include/curl/build/tests/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\GoliathGames\Garioth\include\curl\tests\config.in;C:\GoliathGames\Garioth\include\curl\tests\configurehelp.pm.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\GoliathGames\Garioth\include\curl\build\tests\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/GoliathGames/Garioth/include/curl/tests/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/GoliathGames/Garioth/include/curl -BC:/GoliathGames/Garioth/include/curl/build --check-stamp-file C:/GoliathGames/Garioth/include/curl/build/tests/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\GoliathGames\Garioth\include\curl\tests\config.in;C:\GoliathGames\Garioth\include\curl\tests\configurehelp.pm.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\GoliathGames\Garioth\include\curl\build\tests\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\ZERO_CHECK.vcxproj">
+      <Project>{2AA234E9-E203-3CC5-807B-490F632E5505}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\http\clients\curlt-client-h2-pausing.vcxproj">
+      <Project>{B70480FE-07C0-34A3-A039-3AD754DAAD17}</Project>
+      <Name>curlt-client-h2-pausing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\http\clients\curlt-client-h2-serverpush.vcxproj">
+      <Project>{153B7F87-7E69-38A3-AC16-55FE313A70FC}</Project>
+      <Name>curlt-client-h2-serverpush</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\http\clients\curlt-client-h2-upgrade-extreme.vcxproj">
+      <Project>{43BF1F34-3B12-3AA3-B362-98D14D3A9CDF}</Project>
+      <Name>curlt-client-h2-upgrade-extreme</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\http\clients\curlt-client-hx-download.vcxproj">
+      <Project>{6A14A405-623A-3156-9BFB-ABFE979FB0A7}</Project>
+      <Name>curlt-client-hx-download</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\http\clients\curlt-client-hx-upload.vcxproj">
+      <Project>{8CC75118-3C84-3FBE-B233-341D2371AA2A}</Project>
+      <Name>curlt-client-hx-upload</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\http\clients\curlt-client-tls-session-reuse.vcxproj">
+      <Project>{CFD313A9-CDC7-3266-ACC6-0CD0B1160A0D}</Project>
+      <Name>curlt-client-tls-session-reuse</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\http\clients\curlt-client-upload-pausing.vcxproj">
+      <Project>{5E1C8535-6F90-3B24-B604-485A7CE1B814}</Project>
+      <Name>curlt-client-upload-pausing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\http\clients\curlt-client-ws-data.vcxproj">
+      <Project>{440A82AF-394E-348F-B482-5738CC34779E}</Project>
+      <Name>curlt-client-ws-data</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\http\clients\curlt-client-ws-pingpong.vcxproj">
+      <Project>{76B0ECBA-C0E2-35DF-9D55-AC10A7C1E033}</Project>
+      <Name>curlt-client-ws-pingpong</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\server\disabled.vcxproj">
+      <Project>{BAD74D15-E710-38ED-BED0-2AF0F8D62CC7}</Project>
+      <Name>disabled</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\server\getpart.vcxproj">
+      <Project>{5F79D287-7CC5-385A-A46B-063F5C72D28E}</Project>
+      <Name>getpart</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1156.vcxproj">
+      <Project>{304D4D18-410D-3925-9ADE-98E6DF9EAD35}</Project>
+      <Name>lib1156</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1301.vcxproj">
+      <Project>{88D1D4C6-9DDF-37DD-84CE-5777B42AE9CC}</Project>
+      <Name>lib1301</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1485.vcxproj">
+      <Project>{A4BD31D8-5BA7-3EBD-B134-4DFFD9002A5F}</Project>
+      <Name>lib1485</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1500.vcxproj">
+      <Project>{514D404F-4B51-3E91-A776-A9F450D2788D}</Project>
+      <Name>lib1500</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1501.vcxproj">
+      <Project>{E60EAF77-90A2-3B81-8144-2B221884C84F}</Project>
+      <Name>lib1501</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1502.vcxproj">
+      <Project>{C88A8CC0-6395-3897-8F8F-DB140184C2AD}</Project>
+      <Name>lib1502</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1503.vcxproj">
+      <Project>{B99897EF-4E4E-39D5-BC7C-123F1A47F47F}</Project>
+      <Name>lib1503</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1504.vcxproj">
+      <Project>{571E50D1-7228-3C30-BCEE-11DBB08F2D58}</Project>
+      <Name>lib1504</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1505.vcxproj">
+      <Project>{8E5029BB-C8D1-3D17-BF71-CB50F0D42B1F}</Project>
+      <Name>lib1505</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1506.vcxproj">
+      <Project>{EE32B74F-7CF5-3C85-BB75-F60611EA26F2}</Project>
+      <Name>lib1506</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1507.vcxproj">
+      <Project>{D52B4201-D933-3A64-A88F-73A5E2E21DF5}</Project>
+      <Name>lib1507</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1508.vcxproj">
+      <Project>{B0D45831-8410-3EEE-9D8E-0C4E3B0B5DC3}</Project>
+      <Name>lib1508</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1509.vcxproj">
+      <Project>{AC624186-AA06-3951-88A3-93D068B16E78}</Project>
+      <Name>lib1509</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1510.vcxproj">
+      <Project>{53503AC1-4EE3-3AEF-B27A-68CBEAC0FA37}</Project>
+      <Name>lib1510</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1511.vcxproj">
+      <Project>{1219F05B-F409-34AB-AFEF-DE64231E8CA6}</Project>
+      <Name>lib1511</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1512.vcxproj">
+      <Project>{495FF46E-31E5-3CFD-985C-5634CE89CA7B}</Project>
+      <Name>lib1512</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1513.vcxproj">
+      <Project>{2BA0BE3D-4224-37E1-AC1C-FEB46D856D3C}</Project>
+      <Name>lib1513</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1514.vcxproj">
+      <Project>{4D40AA38-5A43-3993-B780-42476BABA86E}</Project>
+      <Name>lib1514</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1515.vcxproj">
+      <Project>{A713E5C4-06E6-33DC-9D07-0A836B803268}</Project>
+      <Name>lib1515</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1517.vcxproj">
+      <Project>{03CEAF19-4000-3AE0-B209-9251DF338FF5}</Project>
+      <Name>lib1517</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1518.vcxproj">
+      <Project>{2B208FCD-1290-3890-87D0-7463B7066CA4}</Project>
+      <Name>lib1518</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1520.vcxproj">
+      <Project>{122C01F8-AD9F-37A2-838F-F085136309EB}</Project>
+      <Name>lib1520</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1521.vcxproj">
+      <Project>{8386AD66-52B9-376E-98DC-D28E383ECD28}</Project>
+      <Name>lib1521</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1522.vcxproj">
+      <Project>{879BC561-923D-3341-A540-415667220F6D}</Project>
+      <Name>lib1522</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1523.vcxproj">
+      <Project>{191685AE-A6E1-3297-8E3C-01F509884546}</Project>
+      <Name>lib1523</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1525.vcxproj">
+      <Project>{C92EDE1D-E4EB-3641-92CA-169E56511825}</Project>
+      <Name>lib1525</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1526.vcxproj">
+      <Project>{D9BD6AEB-6C86-356A-8B4E-86C6E37D7C03}</Project>
+      <Name>lib1526</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1527.vcxproj">
+      <Project>{ACEE99D1-DA17-333D-88F0-D0C1A710F1B8}</Project>
+      <Name>lib1527</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1528.vcxproj">
+      <Project>{A7308E9A-718B-3565-9487-C791BB21161F}</Project>
+      <Name>lib1528</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1529.vcxproj">
+      <Project>{50DFD9CA-D31E-3F9A-B889-3D5D7B84060E}</Project>
+      <Name>lib1529</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1530.vcxproj">
+      <Project>{E0033EF0-42B8-3B90-ACD2-D723FC6584CD}</Project>
+      <Name>lib1530</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1531.vcxproj">
+      <Project>{E11DF290-5B3D-35DE-AA10-612E8763214E}</Project>
+      <Name>lib1531</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1532.vcxproj">
+      <Project>{59351215-5110-3FD6-8AC2-7AB227B296CF}</Project>
+      <Name>lib1532</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1533.vcxproj">
+      <Project>{B5AFE8E1-76CD-3444-8CA5-1611DB82BA3F}</Project>
+      <Name>lib1533</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1534.vcxproj">
+      <Project>{1F13610E-9458-31E0-993C-B533684FA2AD}</Project>
+      <Name>lib1534</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1535.vcxproj">
+      <Project>{CCC7B056-D45C-3F98-9735-FD9ADB0B6188}</Project>
+      <Name>lib1535</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1536.vcxproj">
+      <Project>{B2F9395E-CD86-3D98-BEA7-8F66AF95F358}</Project>
+      <Name>lib1536</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1537.vcxproj">
+      <Project>{BB005CDA-5567-325F-823A-DA162CA05226}</Project>
+      <Name>lib1537</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1538.vcxproj">
+      <Project>{7D1F1F02-D3D6-3AF4-A89F-18536BC895BA}</Project>
+      <Name>lib1538</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1539.vcxproj">
+      <Project>{A98727F8-F9B7-3B95-9D42-D050FC53C804}</Project>
+      <Name>lib1539</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1540.vcxproj">
+      <Project>{15BFC350-A73A-34B1-8626-4EAFEAC4E799}</Project>
+      <Name>lib1540</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1541.vcxproj">
+      <Project>{648B47AC-4E82-3D92-AA0F-7A3CC2EC7A70}</Project>
+      <Name>lib1541</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1542.vcxproj">
+      <Project>{EDD7AAEF-3F46-3049-8127-E732F2AE9C40}</Project>
+      <Name>lib1542</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1543.vcxproj">
+      <Project>{6408BF1F-91DF-308F-AEBC-A3C2234D1CFF}</Project>
+      <Name>lib1543</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1545.vcxproj">
+      <Project>{FE447663-291B-34F8-AC36-62DED304F2AC}</Project>
+      <Name>lib1545</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1550.vcxproj">
+      <Project>{F832B02B-8C10-36F9-82EB-2AA46078CFFB}</Project>
+      <Name>lib1550</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1551.vcxproj">
+      <Project>{1E723E40-79ED-3A3A-982D-6154A74C4EA6}</Project>
+      <Name>lib1551</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1552.vcxproj">
+      <Project>{9B9DF483-AF62-357D-96CB-56EDA62F8DD9}</Project>
+      <Name>lib1552</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1553.vcxproj">
+      <Project>{14232408-E247-38E8-AAD4-45649F76E4A3}</Project>
+      <Name>lib1553</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1554.vcxproj">
+      <Project>{64C481D4-7ED5-3F3B-9AB5-BD724272161D}</Project>
+      <Name>lib1554</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1555.vcxproj">
+      <Project>{6A5F8F4D-FC25-30DF-B052-A564B62BB3F3}</Project>
+      <Name>lib1555</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1556.vcxproj">
+      <Project>{3C3B0D49-6411-35FE-AFB5-B4932D760C6C}</Project>
+      <Name>lib1556</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1557.vcxproj">
+      <Project>{EEB22CB1-791A-3598-AA0E-43614CB2FA8F}</Project>
+      <Name>lib1557</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1558.vcxproj">
+      <Project>{9F6BC09D-2B12-3917-9242-A1C933163ACA}</Project>
+      <Name>lib1558</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1559.vcxproj">
+      <Project>{2D225DA1-2554-3D9C-9FC2-9053BD39456D}</Project>
+      <Name>lib1559</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1560.vcxproj">
+      <Project>{0B49F415-D5E5-3D5F-9C35-C75CCF447AF3}</Project>
+      <Name>lib1560</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1564.vcxproj">
+      <Project>{66964B30-A46F-3088-AE56-D6CE69F02BF3}</Project>
+      <Name>lib1564</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1565.vcxproj">
+      <Project>{5BB2FDDF-395A-3CFC-8148-896F10B04487}</Project>
+      <Name>lib1565</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1567.vcxproj">
+      <Project>{DB96F075-293C-3416-9801-B284A410CDCC}</Project>
+      <Name>lib1567</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1568.vcxproj">
+      <Project>{5FBA10B4-FC3B-3B33-A7A3-1E16ECA148FE}</Project>
+      <Name>lib1568</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1569.vcxproj">
+      <Project>{96FED049-0D45-3AF0-8774-39E65497F570}</Project>
+      <Name>lib1569</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1591.vcxproj">
+      <Project>{C784A55B-6510-3450-8498-B3760BE6FC34}</Project>
+      <Name>lib1591</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1592.vcxproj">
+      <Project>{EC2FBF34-133A-3580-9835-1FA821E00CE8}</Project>
+      <Name>lib1592</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1593.vcxproj">
+      <Project>{7AAF1275-07FF-3D58-9687-049F025705D8}</Project>
+      <Name>lib1593</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1594.vcxproj">
+      <Project>{5192C62C-F840-39CA-B207-F17660EC8FDE}</Project>
+      <Name>lib1594</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1596.vcxproj">
+      <Project>{4013A33A-8737-33A9-A3AE-3D4DB6511849}</Project>
+      <Name>lib1596</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1597.vcxproj">
+      <Project>{69BA18AA-CFF9-3589-833C-13DBD08D9A7E}</Project>
+      <Name>lib1597</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1598.vcxproj">
+      <Project>{B0246391-DE0F-36EB-BB71-8159FA3BBDBD}</Project>
+      <Name>lib1598</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1662.vcxproj">
+      <Project>{1F4ABD16-8C39-31A1-9324-F67A82B7217C}</Project>
+      <Name>lib1662</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1900.vcxproj">
+      <Project>{DCB23F3E-B099-36F9-AC9B-6C7A73E89A7F}</Project>
+      <Name>lib1900</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1901.vcxproj">
+      <Project>{FF3271D5-5AD0-3EFC-B4F4-5836FB7238CA}</Project>
+      <Name>lib1901</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1903.vcxproj">
+      <Project>{494B0BCA-3873-32F0-8081-D54F684630B5}</Project>
+      <Name>lib1903</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1905.vcxproj">
+      <Project>{B8BB91D1-8667-3301-8844-26E4801774CF}</Project>
+      <Name>lib1905</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1906.vcxproj">
+      <Project>{1C0FFE07-4F26-3A22-9386-B3DB309F4F00}</Project>
+      <Name>lib1906</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1907.vcxproj">
+      <Project>{C17ACB3B-2DF3-32B9-B1B2-A049809FC58B}</Project>
+      <Name>lib1907</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1908.vcxproj">
+      <Project>{A50F17ED-9C12-3E88-AF91-E1051ACF103A}</Project>
+      <Name>lib1908</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1910.vcxproj">
+      <Project>{9C559C15-B5E4-33FA-8DFF-C1892363440D}</Project>
+      <Name>lib1910</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1911.vcxproj">
+      <Project>{BB6461A2-4799-3961-8FF2-46A6FEEC668A}</Project>
+      <Name>lib1911</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1912.vcxproj">
+      <Project>{7B3A32C1-2C47-3582-B610-08196F574B9B}</Project>
+      <Name>lib1912</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1913.vcxproj">
+      <Project>{2E20D155-FF79-3451-9852-1B389E8231A3}</Project>
+      <Name>lib1913</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1915.vcxproj">
+      <Project>{906D0160-BCDB-3921-A9C3-7E53F7D7650C}</Project>
+      <Name>lib1915</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1916.vcxproj">
+      <Project>{46CF28A1-E3A6-3901-99F8-0955B7EEC544}</Project>
+      <Name>lib1916</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1917.vcxproj">
+      <Project>{B68413E2-3E0A-3902-9EF8-6521798DE13B}</Project>
+      <Name>lib1917</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1918.vcxproj">
+      <Project>{38A0E043-9748-3CFD-AB85-1A0413E3654B}</Project>
+      <Name>lib1918</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1919.vcxproj">
+      <Project>{F7063C91-C4EE-3316-9428-CBB9BE1DF4AF}</Project>
+      <Name>lib1919</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1933.vcxproj">
+      <Project>{6A3CE244-B31D-3DBF-9C98-9E553A68534A}</Project>
+      <Name>lib1933</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1934.vcxproj">
+      <Project>{6BF61582-D2C0-362B-BBAE-E2F73E3456DB}</Project>
+      <Name>lib1934</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1935.vcxproj">
+      <Project>{7B436597-91EB-36C7-A7A2-7F80E15C92DB}</Project>
+      <Name>lib1935</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1936.vcxproj">
+      <Project>{EE86221A-5A38-312C-89A1-E5582CD0C030}</Project>
+      <Name>lib1936</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1937.vcxproj">
+      <Project>{46C2B760-1883-3268-A70B-DA1A34D2FFEE}</Project>
+      <Name>lib1937</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1938.vcxproj">
+      <Project>{3B9473D7-A07C-3864-BA52-19CE7A4EA8C2}</Project>
+      <Name>lib1938</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1939.vcxproj">
+      <Project>{2A6898C2-11E8-3E44-94A1-6AABE55F65A9}</Project>
+      <Name>lib1939</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1940.vcxproj">
+      <Project>{0A6FED86-54E7-3BA1-90FD-0B5412447A1E}</Project>
+      <Name>lib1940</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1945.vcxproj">
+      <Project>{BC3A99E4-BFEA-3143-A51B-7571E764544C}</Project>
+      <Name>lib1945</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1946.vcxproj">
+      <Project>{65C59558-1B66-39A5-A083-725132A58A83}</Project>
+      <Name>lib1946</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1947.vcxproj">
+      <Project>{863CAA95-A9BD-3436-8532-B37F82B3079E}</Project>
+      <Name>lib1947</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1948.vcxproj">
+      <Project>{CEE35654-F89C-3422-AFF1-234E1C04EABF}</Project>
+      <Name>lib1948</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1955.vcxproj">
+      <Project>{BF163AC1-7E6A-3D2E-BF17-8EF326FCA611}</Project>
+      <Name>lib1955</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1956.vcxproj">
+      <Project>{85719384-D88C-37F4-B95E-03A9C09AD16D}</Project>
+      <Name>lib1956</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1957.vcxproj">
+      <Project>{98822064-F3E5-3D6C-84A8-A5E1BF4E83D6}</Project>
+      <Name>lib1957</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1958.vcxproj">
+      <Project>{1429C68A-8FE8-3EF0-9CD4-5897611FA769}</Project>
+      <Name>lib1958</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1959.vcxproj">
+      <Project>{AC29A2C0-C657-3205-B93B-FE4C5241FFE8}</Project>
+      <Name>lib1959</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1960.vcxproj">
+      <Project>{47090270-7823-364A-9384-52325DD2C916}</Project>
+      <Name>lib1960</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1964.vcxproj">
+      <Project>{2D811F80-8E2E-36C3-B0FD-FFA51B7F69FD}</Project>
+      <Name>lib1964</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1970.vcxproj">
+      <Project>{896585A1-EAC4-3FB9-9005-8BC0C8769E98}</Project>
+      <Name>lib1970</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1971.vcxproj">
+      <Project>{A632F2F1-E2DA-3A7D-A862-0DFA84F5255A}</Project>
+      <Name>lib1971</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1972.vcxproj">
+      <Project>{38A0A4E0-94F7-353E-B794-497250E996CE}</Project>
+      <Name>lib1972</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1973.vcxproj">
+      <Project>{AE74CD0B-0D1D-397E-AC1D-0BDC64A673DA}</Project>
+      <Name>lib1973</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1974.vcxproj">
+      <Project>{532B93E7-C931-3A84-B722-BB3663BCE158}</Project>
+      <Name>lib1974</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib1975.vcxproj">
+      <Project>{43187996-2560-3F9D-A021-5CBDE7E972BC}</Project>
+      <Name>lib1975</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib2301.vcxproj">
+      <Project>{A5D9B7FF-0054-3C34-8749-E7169F2333EA}</Project>
+      <Name>lib2301</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib2302.vcxproj">
+      <Project>{E05C2079-3299-3718-B493-CF98C6A6271E}</Project>
+      <Name>lib2302</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib2304.vcxproj">
+      <Project>{59A42607-2182-3CF4-84B5-CC05DEFC8E5C}</Project>
+      <Name>lib2304</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib2305.vcxproj">
+      <Project>{678CD215-53D2-3AAC-8767-C220F4F8B280}</Project>
+      <Name>lib2305</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib2306.vcxproj">
+      <Project>{A6AB0C84-75AA-3CF7-8514-36D3C967351A}</Project>
+      <Name>lib2306</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib2308.vcxproj">
+      <Project>{1A8E8728-861A-3928-802A-EBF377BE0CF4}</Project>
+      <Name>lib2308</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib2309.vcxproj">
+      <Project>{87FC0CA2-7813-300E-87D8-A4645522DCAF}</Project>
+      <Name>lib2309</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib2402.vcxproj">
+      <Project>{530E679B-DB5B-395D-AA05-7D35FA4E7478}</Project>
+      <Name>lib2402</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib2404.vcxproj">
+      <Project>{ABCB29BC-8F93-3F78-BE3D-BD95D940B1C8}</Project>
+      <Name>lib2404</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib2405.vcxproj">
+      <Project>{C1C04594-4776-33E8-BF8B-992F82332C93}</Project>
+      <Name>lib2405</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib2502.vcxproj">
+      <Project>{D5A75C92-D2F7-3A97-A542-55914FE60C73}</Project>
+      <Name>lib2502</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib3010.vcxproj">
+      <Project>{183428EC-19ED-3788-81E5-A7EDE8500D28}</Project>
+      <Name>lib3010</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib3025.vcxproj">
+      <Project>{43F93A04-6E80-3C92-B980-ED60FEADE686}</Project>
+      <Name>lib3025</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib3026.vcxproj">
+      <Project>{FFDEFC83-E970-3D17-90A6-111C22E8568F}</Project>
+      <Name>lib3026</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib3027.vcxproj">
+      <Project>{F8E462DD-D0BC-32E4-85DE-08110ACBEE11}</Project>
+      <Name>lib3027</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib3100.vcxproj">
+      <Project>{4EB8EBE6-AD3B-34B8-AADB-35690BE127CA}</Project>
+      <Name>lib3100</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib3101.vcxproj">
+      <Project>{338CAF5B-1F30-3C00-BF70-5E079AAE0FD7}</Project>
+      <Name>lib3101</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib3102.vcxproj">
+      <Project>{AD16AD33-9BEE-3EC5-A409-0B80CE860BC9}</Project>
+      <Name>lib3102</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib3103.vcxproj">
+      <Project>{4BAE78D1-FBAD-35FA-989A-058795B6F44B}</Project>
+      <Name>lib3103</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib3207.vcxproj">
+      <Project>{014C293F-9EC1-3A9B-B048-C6A5401DAAC6}</Project>
+      <Name>lib3207</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib500.vcxproj">
+      <Project>{88DA14A4-F0FE-3AF1-B3C7-479B80A67A61}</Project>
+      <Name>lib500</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib501.vcxproj">
+      <Project>{7F08183B-97F3-3037-B894-C93A4BE6886A}</Project>
+      <Name>lib501</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib502.vcxproj">
+      <Project>{8235435F-6E6D-3DA7-8CA3-82B0B712DBF0}</Project>
+      <Name>lib502</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib503.vcxproj">
+      <Project>{07CFB481-1111-304A-917D-B0388071B7E1}</Project>
+      <Name>lib503</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib504.vcxproj">
+      <Project>{4772695C-D772-3850-964F-88A83D7DACDC}</Project>
+      <Name>lib504</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib505.vcxproj">
+      <Project>{FD50F073-640C-3508-8A4A-FF88D69C19DF}</Project>
+      <Name>lib505</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib506.vcxproj">
+      <Project>{96647494-7D5E-39BC-8C04-9B28807E8BFC}</Project>
+      <Name>lib506</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib507.vcxproj">
+      <Project>{0AF4CF3A-E55C-3FD6-8A6E-C09087827FC2}</Project>
+      <Name>lib507</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib508.vcxproj">
+      <Project>{02704D78-A9CA-33D1-804F-FE0DD4962BE4}</Project>
+      <Name>lib508</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib509.vcxproj">
+      <Project>{3D6AB8A6-CA10-36C3-B453-ECF54FCEA309}</Project>
+      <Name>lib509</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib510.vcxproj">
+      <Project>{8278843F-1D66-3E77-8897-C63F553FEB64}</Project>
+      <Name>lib510</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib511.vcxproj">
+      <Project>{C740B749-91D8-33AE-8F92-D7FB7A542CCD}</Project>
+      <Name>lib511</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib512.vcxproj">
+      <Project>{5E04A530-9E57-3C1C-AB1B-8A882321E493}</Project>
+      <Name>lib512</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib513.vcxproj">
+      <Project>{66CFB5A6-0E9D-389C-B21E-AC9D68DE48BA}</Project>
+      <Name>lib513</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib514.vcxproj">
+      <Project>{1AB2CB3D-E685-3DD0-B417-8036A027B851}</Project>
+      <Name>lib514</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib515.vcxproj">
+      <Project>{42A6E6C4-F25D-345A-9A77-F06BC22D9EE3}</Project>
+      <Name>lib515</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib516.vcxproj">
+      <Project>{3791C09E-4B96-3ADB-85A5-7C556341712F}</Project>
+      <Name>lib516</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib517.vcxproj">
+      <Project>{97321552-B3DF-374A-A58D-D7D67850DDDF}</Project>
+      <Name>lib517</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib518.vcxproj">
+      <Project>{A2DE837B-F559-383C-9BCD-78972B4CB406}</Project>
+      <Name>lib518</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib519.vcxproj">
+      <Project>{24913CF9-6F24-3AAA-BCDD-D9DBBE63A69B}</Project>
+      <Name>lib519</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib520.vcxproj">
+      <Project>{AF6E1CF6-F8B8-38EB-B92A-4B7F4472543B}</Project>
+      <Name>lib520</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib521.vcxproj">
+      <Project>{CE1C1807-2289-309C-9576-5E8A99A52246}</Project>
+      <Name>lib521</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib523.vcxproj">
+      <Project>{B62D842B-03D7-3647-81E3-7FEA3EF5DAC1}</Project>
+      <Name>lib523</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib524.vcxproj">
+      <Project>{D95AD24D-98F0-3211-9A65-888FA9EE2816}</Project>
+      <Name>lib524</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib525.vcxproj">
+      <Project>{3B04A2BF-C1D5-3320-9942-B30AE9267AF3}</Project>
+      <Name>lib525</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib526.vcxproj">
+      <Project>{9E2FE43E-B292-3F0B-835E-7EF85249227E}</Project>
+      <Name>lib526</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib527.vcxproj">
+      <Project>{4F6B0084-BDD9-331F-913A-7FF4E8DD477B}</Project>
+      <Name>lib527</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib529.vcxproj">
+      <Project>{DF8C4049-B89A-3B5E-BC9B-9302DFD1AA55}</Project>
+      <Name>lib529</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib530.vcxproj">
+      <Project>{DC99268C-1566-3E9F-880F-5609413FDAF4}</Project>
+      <Name>lib530</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib532.vcxproj">
+      <Project>{1C6B0048-20F8-33CA-BB7C-784DF6E9C940}</Project>
+      <Name>lib532</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib533.vcxproj">
+      <Project>{A0766E72-19B2-3A2C-B473-799C8D8287CC}</Project>
+      <Name>lib533</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib536.vcxproj">
+      <Project>{A9316436-ECAC-384F-A6EB-45B8F5AD4988}</Project>
+      <Name>lib536</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib537.vcxproj">
+      <Project>{6BB5DF0D-ED1F-3B0A-A239-FA36A2F1B757}</Project>
+      <Name>lib537</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib539.vcxproj">
+      <Project>{E70F1DF1-C6D2-395A-B88F-74472E9016B1}</Project>
+      <Name>lib539</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib540.vcxproj">
+      <Project>{C304F5F2-D2BE-3FC2-9BCB-4C66E9AE6594}</Project>
+      <Name>lib540</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib541.vcxproj">
+      <Project>{BA07DBC1-CF24-3398-89F7-2FD5AC062B6D}</Project>
+      <Name>lib541</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib542.vcxproj">
+      <Project>{D0AE6D03-DCDE-3C86-AB06-7DFE57F5F5BF}</Project>
+      <Name>lib542</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib543.vcxproj">
+      <Project>{DB00BA73-95D3-361A-8EDA-C66A5C04275A}</Project>
+      <Name>lib543</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib544.vcxproj">
+      <Project>{B1E29435-3711-3488-9819-9EB04F913182}</Project>
+      <Name>lib544</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib545.vcxproj">
+      <Project>{7238AF84-14A1-320D-B31C-C822BCEBBD2F}</Project>
+      <Name>lib545</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib547.vcxproj">
+      <Project>{40E4A72F-20AB-33B5-9779-CF0049EC52AA}</Project>
+      <Name>lib547</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib548.vcxproj">
+      <Project>{FF3C1A09-871A-3372-A10C-AE64556A0EE7}</Project>
+      <Name>lib548</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib549.vcxproj">
+      <Project>{0E48768A-6AAA-3FB6-AB3F-821DEDDA352E}</Project>
+      <Name>lib549</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib552.vcxproj">
+      <Project>{A7D143E1-6C09-3050-AC46-1FF95A60B795}</Project>
+      <Name>lib552</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib553.vcxproj">
+      <Project>{04E938BE-DB6E-3684-A31E-0E8A312B6B6A}</Project>
+      <Name>lib553</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib554.vcxproj">
+      <Project>{EFB38808-4298-31DD-9E87-B931A651113C}</Project>
+      <Name>lib554</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib555.vcxproj">
+      <Project>{F0EA71F9-3CAF-33BE-9294-5A1B7F970B89}</Project>
+      <Name>lib555</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib556.vcxproj">
+      <Project>{E1CA5FA2-50C0-3785-8C45-B3B844880AE8}</Project>
+      <Name>lib556</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib557.vcxproj">
+      <Project>{3FDB2FE7-7ABC-302F-BCB9-08A14EF42F92}</Project>
+      <Name>lib557</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib558.vcxproj">
+      <Project>{7735AE63-D20A-3C7F-8B7E-62126CD9B33B}</Project>
+      <Name>lib558</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib559.vcxproj">
+      <Project>{2031313F-6FF3-32F8-8E06-B9944EBE28F8}</Project>
+      <Name>lib559</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib560.vcxproj">
+      <Project>{BF988843-BD88-397D-A81E-94BC85E8D60D}</Project>
+      <Name>lib560</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib562.vcxproj">
+      <Project>{94BCA2B4-EE1A-3DBE-BDBB-68D1D7B4FBB6}</Project>
+      <Name>lib562</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib564.vcxproj">
+      <Project>{B3CCAC0F-D350-31EB-9270-B5808A1B3029}</Project>
+      <Name>lib564</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib565.vcxproj">
+      <Project>{2A7E4868-0B56-3ED9-B02A-95837E0CAA7E}</Project>
+      <Name>lib565</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib566.vcxproj">
+      <Project>{48B48997-71FC-3FE2-8F90-C4CE8D31A442}</Project>
+      <Name>lib566</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib567.vcxproj">
+      <Project>{B73A8C7A-5F5D-3A80-85F7-D8BB6476307C}</Project>
+      <Name>lib567</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib568.vcxproj">
+      <Project>{A6A49E2D-7C55-385A-A809-689401B19A04}</Project>
+      <Name>lib568</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib569.vcxproj">
+      <Project>{0642A5F5-5E71-3819-B614-3C1FDB7581AE}</Project>
+      <Name>lib569</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib570.vcxproj">
+      <Project>{48A735A5-5A5C-30BC-A9E0-D16CA99C6996}</Project>
+      <Name>lib570</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib571.vcxproj">
+      <Project>{EF690396-A603-3635-97F9-C4679B7FCDA1}</Project>
+      <Name>lib571</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib572.vcxproj">
+      <Project>{D5352B12-E860-370F-A1B7-3F6AEE67C356}</Project>
+      <Name>lib572</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib573.vcxproj">
+      <Project>{DC303416-4775-3472-A1D8-079317C12286}</Project>
+      <Name>lib573</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib574.vcxproj">
+      <Project>{EBD51B47-3A11-395B-B589-1C3335C71823}</Project>
+      <Name>lib574</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib575.vcxproj">
+      <Project>{519C028A-421A-34F5-B395-4A3D5D2C07EF}</Project>
+      <Name>lib575</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib576.vcxproj">
+      <Project>{1FD26EE2-F224-30C6-A60F-03AF2D7AA3B1}</Project>
+      <Name>lib576</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib578.vcxproj">
+      <Project>{8C4FDB4E-728A-3D0A-8689-3256145BAF6F}</Project>
+      <Name>lib578</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib579.vcxproj">
+      <Project>{277E4208-B272-3801-9614-DB43D9541C4A}</Project>
+      <Name>lib579</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib582.vcxproj">
+      <Project>{81C26693-21F9-31C3-B6B2-4E0E99708CFA}</Project>
+      <Name>lib582</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib583.vcxproj">
+      <Project>{B43D8D49-21C2-37E7-BD6E-8DE33D3E371C}</Project>
+      <Name>lib583</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib584.vcxproj">
+      <Project>{83D40ED6-1666-351F-AF22-375011B61268}</Project>
+      <Name>lib584</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib585.vcxproj">
+      <Project>{8A795E97-2719-3BC9-A725-D63768B9EAB0}</Project>
+      <Name>lib585</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib586.vcxproj">
+      <Project>{31EAF9C4-9311-36FB-A2EC-0C05EB75E074}</Project>
+      <Name>lib586</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib587.vcxproj">
+      <Project>{770EFD54-180B-3527-898C-B7695536B199}</Project>
+      <Name>lib587</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib589.vcxproj">
+      <Project>{30DBE2DC-230D-38E8-B354-EC43BE205489}</Project>
+      <Name>lib589</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib590.vcxproj">
+      <Project>{760F37EF-468B-3FA1-BCE6-26F9806AD5F6}</Project>
+      <Name>lib590</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib591.vcxproj">
+      <Project>{D8FE9186-0F67-36FE-970A-1F330F2BFC9E}</Project>
+      <Name>lib591</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib597.vcxproj">
+      <Project>{80093096-46A9-3DF0-A820-99D737B381B0}</Project>
+      <Name>lib597</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib598.vcxproj">
+      <Project>{C05987DA-DF4C-3F40-ACCE-0D16CD3D474D}</Project>
+      <Name>lib598</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib599.vcxproj">
+      <Project>{9C496481-A6CA-372A-B0D5-2CE550B2E58C}</Project>
+      <Name>lib599</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib643.vcxproj">
+      <Project>{4FFC5986-EDD0-32B0-8F29-90CDC744D257}</Project>
+      <Name>lib643</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib645.vcxproj">
+      <Project>{FC66A9AA-5694-3504-ABA9-7BAD80446C70}</Project>
+      <Name>lib645</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib650.vcxproj">
+      <Project>{968E85DE-D4FF-36D1-8EA4-9FFAC1453C32}</Project>
+      <Name>lib650</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib651.vcxproj">
+      <Project>{CCF0C8F8-9237-3A9C-ABBE-850026E76F1F}</Project>
+      <Name>lib651</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib652.vcxproj">
+      <Project>{3980369D-418F-3544-A06B-7110A45FB2CE}</Project>
+      <Name>lib652</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib653.vcxproj">
+      <Project>{5B4C81BE-4DA0-39F9-B4D3-C5AE5A580683}</Project>
+      <Name>lib653</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib654.vcxproj">
+      <Project>{20B54A33-E53B-38FE-9AA7-0759284E5FC3}</Project>
+      <Name>lib654</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib655.vcxproj">
+      <Project>{D3979247-80FA-399F-B304-E0C482D44781}</Project>
+      <Name>lib655</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib658.vcxproj">
+      <Project>{DA493373-72B6-3D89-A99E-C7CC9BF11318}</Project>
+      <Name>lib658</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib659.vcxproj">
+      <Project>{A8B382B6-AB92-3009-9E23-A68F37EA0DB5}</Project>
+      <Name>lib659</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib661.vcxproj">
+      <Project>{D43C832A-F8F4-3CA5-8C9C-6E01890D5EA7}</Project>
+      <Name>lib661</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib666.vcxproj">
+      <Project>{39694B1C-6E7A-3C5A-A6BA-C08BC515C64C}</Project>
+      <Name>lib666</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib667.vcxproj">
+      <Project>{7F67FCD4-88B6-39C9-BB63-CB3A630926C8}</Project>
+      <Name>lib667</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib668.vcxproj">
+      <Project>{8B3B84EC-AB08-3268-B913-86B2950E95C9}</Project>
+      <Name>lib668</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib670.vcxproj">
+      <Project>{F648E2C2-E3A7-36AC-A388-CE4998223937}</Project>
+      <Name>lib670</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib671.vcxproj">
+      <Project>{50A7BB65-95C8-35B9-9B7D-D58654827D4A}</Project>
+      <Name>lib671</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib672.vcxproj">
+      <Project>{264F5CB8-19B1-3208-9573-BBD999EF1004}</Project>
+      <Name>lib672</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib673.vcxproj">
+      <Project>{37DC42EE-C959-3C91-B9E4-C4D713B810CD}</Project>
+      <Name>lib673</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib674.vcxproj">
+      <Project>{36528346-A6E5-3A98-AF5B-D76EF625CADF}</Project>
+      <Name>lib674</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib676.vcxproj">
+      <Project>{E8837348-BA35-3415-B9C9-CEDEF1767437}</Project>
+      <Name>lib676</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib677.vcxproj">
+      <Project>{640DB37A-9403-3AC8-8D04-77FDAB6525B2}</Project>
+      <Name>lib677</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\lib678.vcxproj">
+      <Project>{AF685631-CBF7-3598-A617-978A9E5FC2F6}</Project>
+      <Name>lib678</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\libauthretry.vcxproj">
+      <Project>{82834AFB-25EF-3C2B-BA10-D2BD1935B941}</Project>
+      <Name>libauthretry</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\libntlmconnect.vcxproj">
+      <Project>{A9E26B4A-D87B-382C-B657-B454F896095E}</Project>
+      <Name>libntlmconnect</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\libtest\libprereq.vcxproj">
+      <Project>{8CE7477C-F60D-312F-B611-A2646CC9210A}</Project>
+      <Name>libprereq</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\server\mqttd.vcxproj">
+      <Project>{587EFD16-2B9F-378B-93DB-7B04AB88188F}</Project>
+      <Name>mqttd</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\server\resolve.vcxproj">
+      <Project>{8A010FD0-C13E-3D26-82B2-BB14E4EB2AF1}</Project>
+      <Name>resolve</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\server\rtspd.vcxproj">
+      <Project>{4C0317BE-08C2-34DB-9EDF-C65A0B82A82E}</Project>
+      <Name>rtspd</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\server\sockfilt.vcxproj">
+      <Project>{EE914B83-22E3-39A0-ADC5-2521DD6A5F9B}</Project>
+      <Name>sockfilt</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\server\socksd.vcxproj">
+      <Project>{C1A69904-864D-3177-8BDC-D9BFB26E1A70}</Project>
+      <Name>socksd</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\server\sws.vcxproj">
+      <Project>{417E5053-71AF-3029-9CCD-3E17C7AC96C4}</Project>
+      <Name>sws</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\server\tftpd.vcxproj">
+      <Project>{E7C4C13A-82FC-3388-A5C1-51689121E7C7}</Project>
+      <Name>tftpd</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1300.vcxproj">
+      <Project>{D67814EA-3667-37C5-82F2-97728690683B}</Project>
+      <Name>unit1300</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1302.vcxproj">
+      <Project>{53B80A19-88F3-3464-B27B-BE7762056B2F}</Project>
+      <Name>unit1302</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1303.vcxproj">
+      <Project>{C5108CB6-1777-31B4-AC73-5FE59BCB2F60}</Project>
+      <Name>unit1303</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1304.vcxproj">
+      <Project>{39BC313C-1F85-39CE-ADD8-5043B62B3436}</Project>
+      <Name>unit1304</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1305.vcxproj">
+      <Project>{6FAD494A-ACE1-3F8D-B912-10A66FBB68BC}</Project>
+      <Name>unit1305</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1307.vcxproj">
+      <Project>{98175CCE-8DEA-38A7-83FE-98055A02D2C4}</Project>
+      <Name>unit1307</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1308.vcxproj">
+      <Project>{23E79171-5187-3EF8-809F-BDFEF6C5112C}</Project>
+      <Name>unit1308</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1309.vcxproj">
+      <Project>{853BE947-A3DF-3027-ADBD-273B1B663C9E}</Project>
+      <Name>unit1309</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1323.vcxproj">
+      <Project>{3FF16C43-4629-3866-8F48-E7025F6882B4}</Project>
+      <Name>unit1323</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1330.vcxproj">
+      <Project>{D079A595-89C9-32C5-A170-F3A5A1D56FF9}</Project>
+      <Name>unit1330</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1394.vcxproj">
+      <Project>{71E9F0F7-464F-3933-98FC-327E3176FD63}</Project>
+      <Name>unit1394</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1395.vcxproj">
+      <Project>{1C64B73E-15B9-3E24-B845-144AF5F8984F}</Project>
+      <Name>unit1395</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1396.vcxproj">
+      <Project>{A7864CEB-A302-33B5-AD60-44BDB9EE8F4B}</Project>
+      <Name>unit1396</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1397.vcxproj">
+      <Project>{F42C5391-EBC3-3E39-9A52-4ECF85975FF3}</Project>
+      <Name>unit1397</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1398.vcxproj">
+      <Project>{FCAE9729-7E59-390A-8E1E-F40AF1659331}</Project>
+      <Name>unit1398</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1399.vcxproj">
+      <Project>{93334F96-0593-3F89-9DF1-37439496C472}</Project>
+      <Name>unit1399</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1600.vcxproj">
+      <Project>{DA23B6C3-3775-3D40-AB3D-2BF91EA9BE0E}</Project>
+      <Name>unit1600</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1601.vcxproj">
+      <Project>{AB60542D-1A5F-374D-B997-D720CD41AB9C}</Project>
+      <Name>unit1601</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1602.vcxproj">
+      <Project>{F445F4D9-34E4-3EC9-87C8-7EA258E1EC9D}</Project>
+      <Name>unit1602</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1603.vcxproj">
+      <Project>{BDDF50BE-B455-343C-95F7-B0DC9B8DFDFD}</Project>
+      <Name>unit1603</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1604.vcxproj">
+      <Project>{A308575C-A1DE-3640-8003-8EF7B12256CE}</Project>
+      <Name>unit1604</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1605.vcxproj">
+      <Project>{704DB9FC-7D08-3A0F-AEDC-85A465646A05}</Project>
+      <Name>unit1605</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1606.vcxproj">
+      <Project>{9AD8DC54-FBA1-30C7-889C-76C785B26566}</Project>
+      <Name>unit1606</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1607.vcxproj">
+      <Project>{3FF1621B-111A-3859-9DFC-1447E8E0E21B}</Project>
+      <Name>unit1607</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1608.vcxproj">
+      <Project>{F15772BB-D4FE-3483-9859-5983D55BEA58}</Project>
+      <Name>unit1608</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1609.vcxproj">
+      <Project>{8D184013-F856-345B-A0E8-E8B6A0DA81B5}</Project>
+      <Name>unit1609</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1610.vcxproj">
+      <Project>{D0E6B463-65AD-35B2-966A-86170063E781}</Project>
+      <Name>unit1610</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1611.vcxproj">
+      <Project>{72994E32-387E-3122-B092-A344F2B5D038}</Project>
+      <Name>unit1611</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1612.vcxproj">
+      <Project>{0E337BE0-1017-39AC-B4D7-C4E26B0A687A}</Project>
+      <Name>unit1612</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1614.vcxproj">
+      <Project>{9734140D-3824-34CA-AFF8-34B66050463C}</Project>
+      <Name>unit1614</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1615.vcxproj">
+      <Project>{C7755272-9B14-3D33-8A42-433B4C2B3A05}</Project>
+      <Name>unit1615</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1616.vcxproj">
+      <Project>{6A0BD537-831B-3843-89DC-BFF72489E4B9}</Project>
+      <Name>unit1616</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1620.vcxproj">
+      <Project>{F2A8D898-E85D-322A-85DB-751B1F16F915}</Project>
+      <Name>unit1620</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1621.vcxproj">
+      <Project>{168EF3CC-E434-39A4-B1FF-E7C60C7BCC75}</Project>
+      <Name>unit1621</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1650.vcxproj">
+      <Project>{879EFB30-D8B0-3862-B2E9-816132F05034}</Project>
+      <Name>unit1650</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1651.vcxproj">
+      <Project>{5B6B859A-585E-351E-8947-9ED2E4224D90}</Project>
+      <Name>unit1651</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1652.vcxproj">
+      <Project>{78ABE32F-D94B-36AB-9736-A20137CC88D8}</Project>
+      <Name>unit1652</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1653.vcxproj">
+      <Project>{F8F29B8A-7F65-35B3-9A3E-9FE72A07FD29}</Project>
+      <Name>unit1653</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1654.vcxproj">
+      <Project>{B1EC14BC-FE4B-3F6B-B8E4-4C47042C97B1}</Project>
+      <Name>unit1654</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1655.vcxproj">
+      <Project>{AD41EE50-5A98-3CAE-87FD-363ABC59E905}</Project>
+      <Name>unit1655</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1656.vcxproj">
+      <Project>{E43C3175-0E95-3A13-B8A5-099120CB7F6F}</Project>
+      <Name>unit1656</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1660.vcxproj">
+      <Project>{34254047-D0EC-38CD-842E-E36F9BC63299}</Project>
+      <Name>unit1660</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1661.vcxproj">
+      <Project>{FBA4FF2E-AD25-3B00-97EB-2A07C7C07C20}</Project>
+      <Name>unit1661</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit1663.vcxproj">
+      <Project>{BAECE4F9-B9B6-35C1-8096-4308846ED591}</Project>
+      <Name>unit1663</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit2600.vcxproj">
+      <Project>{7AB759E6-BA1C-3A06-8079-E3E9BD76CE32}</Project>
+      <Name>unit2600</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit2601.vcxproj">
+      <Project>{4DD3C9D1-FE14-3E8C-BE21-B868ADCE0EFD}</Project>
+      <Name>unit2601</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit2602.vcxproj">
+      <Project>{9900BBF9-3D69-3444-AB12-0F82B88045D7}</Project>
+      <Name>unit2602</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit2603.vcxproj">
+      <Project>{778E8701-D560-39EE-895D-E00AE80916BD}</Project>
+      <Name>unit2603</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit2604.vcxproj">
+      <Project>{B39C8B78-0AB9-32C8-BE26-B06FBD94247A}</Project>
+      <Name>unit2604</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit3200.vcxproj">
+      <Project>{E47E5C96-D150-3006-9A90-A7B8EC2079A6}</Project>
+      <Name>unit3200</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\tests\unit\unit3205.vcxproj">
+      <Project>{1AE1AE36-FDFE-3A3A-853B-30AEF930A922}</Project>
+      <Name>unit3205</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

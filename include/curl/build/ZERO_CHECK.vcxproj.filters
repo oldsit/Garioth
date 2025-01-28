@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\GoliathGames\Garioth\include\curl\build\CMakeFiles\b23894b93d3013ec2a981028c37dd52e\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{411A3C03-D637-3E4F-80BA-C7E546A64337}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

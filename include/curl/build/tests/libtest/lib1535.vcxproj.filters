@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\tests\libtest\lib1535.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\timediff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\tests\libtest\first.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\tests\libtest\testutil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\GoliathGames\Garioth\include\curl\lib\warnless.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\lib\timediff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\tests\libtest\first.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\tests\libtest\test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\tests\libtest\testutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GoliathGames\Garioth\include\curl\lib\warnless.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\GoliathGames\Garioth\include\curl\tests\libtest\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7582D7FB-08FC-3BCB-BDF0-0EF0C7510B77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2BDFDA74-EC9A-3940-85EC-82F05BC364E4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,5 +1,5 @@
 #include "http.h"
-#include <curl/curl.h>
+#include <curl/include/curl/curl.h>
 #include <iostream>
 #include <sstream>
 

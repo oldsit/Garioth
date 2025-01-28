@@ -1,0 +1,618 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6CE8149F-F71F-3FA9-AB6B-1EB04566F872}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>curl-examples</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\GoliathGames\Garioth\include\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\GoliathGames\Garioth\include\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\GoliathGames\Garioth\include\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\GoliathGames\Garioth\include\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\GoliathGames\Garioth\include\curl\docs\examples\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/GoliathGames/Garioth/include/curl/docs/examples/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/GoliathGames/Garioth/include/curl -BC:/GoliathGames/Garioth/include/curl/build --check-stamp-file C:/GoliathGames/Garioth/include/curl/build/docs/examples/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GoliathGames\Garioth\include\curl\build\docs\examples\Makefile.inc.cmake;C:\GoliathGames\Garioth\include\curl\docs\examples\Makefile.inc;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GoliathGames\Garioth\include\curl\build\docs\examples\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/GoliathGames/Garioth/include/curl/docs/examples/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/GoliathGames/Garioth/include/curl -BC:/GoliathGames/Garioth/include/curl/build --check-stamp-file C:/GoliathGames/Garioth/include/curl/build/docs/examples/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GoliathGames\Garioth\include\curl\build\docs\examples\Makefile.inc.cmake;C:\GoliathGames\Garioth\include\curl\docs\examples\Makefile.inc;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GoliathGames\Garioth\include\curl\build\docs\examples\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/GoliathGames/Garioth/include/curl/docs/examples/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/GoliathGames/Garioth/include/curl -BC:/GoliathGames/Garioth/include/curl/build --check-stamp-file C:/GoliathGames/Garioth/include/curl/build/docs/examples/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\GoliathGames\Garioth\include\curl\build\docs\examples\Makefile.inc.cmake;C:\GoliathGames\Garioth\include\curl\docs\examples\Makefile.inc;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\GoliathGames\Garioth\include\curl\build\docs\examples\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/GoliathGames/Garioth/include/curl/docs/examples/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/GoliathGames/Garioth/include/curl -BC:/GoliathGames/Garioth/include/curl/build --check-stamp-file C:/GoliathGames/Garioth/include/curl/build/docs/examples/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\GoliathGames\Garioth\include\curl\build\docs\examples\Makefile.inc.cmake;C:\GoliathGames\Garioth\include\curl\docs\examples\Makefile.inc;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\GoliathGames\Garioth\include\curl\build\docs\examples\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\ZERO_CHECK.vcxproj">
+      <Project>{2AA234E9-E203-3CC5-807B-490F632E5505}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-10-at-a-time.vcxproj">
+      <Project>{ABCA8E80-E2E5-3AF5-858C-1F29152C4AC8}</Project>
+      <Name>curl-example-10-at-a-time</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-address-scope.vcxproj">
+      <Project>{B7D609A8-E0D9-305E-B0A1-07E8254725BD}</Project>
+      <Name>curl-example-address-scope</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-altsvc.vcxproj">
+      <Project>{A0FE67D4-370A-3915-BE6D-01ED46A962C2}</Project>
+      <Name>curl-example-altsvc</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-anyauthput.vcxproj">
+      <Project>{E4203A1F-92D1-3620-BDB6-3B41BAC297BA}</Project>
+      <Name>curl-example-anyauthput</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-certinfo.vcxproj">
+      <Project>{15E1EC64-FEB2-3D39-8716-2AC908D1CFEE}</Project>
+      <Name>curl-example-certinfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-chkspeed.vcxproj">
+      <Project>{C080B654-AC1D-39B3-88EB-2558037B7CDB}</Project>
+      <Name>curl-example-chkspeed</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-connect-to.vcxproj">
+      <Project>{7B680DF2-A7AF-3311-85A2-070937C568ED}</Project>
+      <Name>curl-example-connect-to</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-cookie_interface.vcxproj">
+      <Project>{EE5BE348-0393-32BB-8AAA-47D5AD0737AC}</Project>
+      <Name>curl-example-cookie_interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-debug.vcxproj">
+      <Project>{ED5F6EDB-FCD0-3E0B-A4A8-2AAD8122B99F}</Project>
+      <Name>curl-example-debug</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-default-scheme.vcxproj">
+      <Project>{9BB56007-7237-3B29-BE58-1C1755F2D871}</Project>
+      <Name>curl-example-default-scheme</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-externalsocket.vcxproj">
+      <Project>{6DF87579-C303-33C8-A83A-937707ECF528}</Project>
+      <Name>curl-example-externalsocket</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-fileupload.vcxproj">
+      <Project>{6438F4B6-FF68-3C06-9997-3257D77CCC69}</Project>
+      <Name>curl-example-fileupload</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-ftp-wildcard.vcxproj">
+      <Project>{D933B489-5015-31FD-A6EB-FFA9C540789B}</Project>
+      <Name>curl-example-ftp-wildcard</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-ftpget.vcxproj">
+      <Project>{A2DABD85-F71A-30FD-9A02-EAB16BC9F4FB}</Project>
+      <Name>curl-example-ftpget</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-ftpgetinfo.vcxproj">
+      <Project>{07227706-FAAA-3C87-8764-6474D3EFB2A8}</Project>
+      <Name>curl-example-ftpgetinfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-ftpgetresp.vcxproj">
+      <Project>{24943B1D-BBB1-3FD8-A13C-AB5DC4E17009}</Project>
+      <Name>curl-example-ftpgetresp</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-ftpsget.vcxproj">
+      <Project>{53E97DCB-644D-3B61-8817-4E1A32574510}</Project>
+      <Name>curl-example-ftpsget</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-ftpupload.vcxproj">
+      <Project>{790C3FF9-0D78-3F2E-890D-DA1742C6BCA1}</Project>
+      <Name>curl-example-ftpupload</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-ftpuploadfrommem.vcxproj">
+      <Project>{E919DE71-1A88-33F9-8C82-6BFF668376DB}</Project>
+      <Name>curl-example-ftpuploadfrommem</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-ftpuploadresume.vcxproj">
+      <Project>{4C18ACEB-729A-313F-8747-F9C16FE9AE85}</Project>
+      <Name>curl-example-ftpuploadresume</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-getinfo.vcxproj">
+      <Project>{B909164B-D1AE-3688-8783-79A07A126AA1}</Project>
+      <Name>curl-example-getinfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-getinmemory.vcxproj">
+      <Project>{0B92961D-C585-33FD-8C66-4822275F9A72}</Project>
+      <Name>curl-example-getinmemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-getredirect.vcxproj">
+      <Project>{E982C347-5734-3E7F-A50B-FB83F79CA52E}</Project>
+      <Name>curl-example-getredirect</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-getreferrer.vcxproj">
+      <Project>{AFF9A2BA-26FF-32F4-B5AB-82285E4EF4CD}</Project>
+      <Name>curl-example-getreferrer</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-headerapi.vcxproj">
+      <Project>{159A089C-097B-3A86-847E-E088DB94F94A}</Project>
+      <Name>curl-example-headerapi</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-hsts-preload.vcxproj">
+      <Project>{81A18CF3-A1E1-39BF-81BA-0310BCF7746A}</Project>
+      <Name>curl-example-hsts-preload</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-http-options.vcxproj">
+      <Project>{338A6629-F471-38AD-BEDC-10E0D5232109}</Project>
+      <Name>curl-example-http-options</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-http-post.vcxproj">
+      <Project>{DD6455A0-4943-3D39-98D5-D1E457BCAB4E}</Project>
+      <Name>curl-example-http-post</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-http2-download.vcxproj">
+      <Project>{CB186EAD-93B2-3BDD-8460-CEDDBEFD37EE}</Project>
+      <Name>curl-example-http2-download</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-http2-pushinmemory.vcxproj">
+      <Project>{D4569B5D-7525-3D3F-9A71-4A0BB605FE54}</Project>
+      <Name>curl-example-http2-pushinmemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-http2-serverpush.vcxproj">
+      <Project>{34849F99-483C-33E6-AB5A-205DF2146EC8}</Project>
+      <Name>curl-example-http2-serverpush</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-http2-upload.vcxproj">
+      <Project>{F77FB5ED-AF84-369A-A365-113391641C94}</Project>
+      <Name>curl-example-http2-upload</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-http3.vcxproj">
+      <Project>{BDF6467C-4029-3E0D-8BD0-55D1752F3448}</Project>
+      <Name>curl-example-http3</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-http3-present.vcxproj">
+      <Project>{5CB7223F-1570-3163-8902-F3A20087A7F5}</Project>
+      <Name>curl-example-http3-present</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-httpcustomheader.vcxproj">
+      <Project>{24D16AC9-B1A9-3A0F-9E14-C886E2FA2711}</Project>
+      <Name>curl-example-httpcustomheader</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-httpput.vcxproj">
+      <Project>{005EA971-EA52-382E-9037-D39CD12628B6}</Project>
+      <Name>curl-example-httpput</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-httpput-postfields.vcxproj">
+      <Project>{24BDE379-6578-3373-8C5D-842430B23406}</Project>
+      <Name>curl-example-httpput-postfields</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-https.vcxproj">
+      <Project>{604910CE-57CB-3655-92F6-F124A8614173}</Project>
+      <Name>curl-example-https</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-imap-append.vcxproj">
+      <Project>{EA1D871F-4389-336D-9A36-435B08B9A8B8}</Project>
+      <Name>curl-example-imap-append</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-imap-authzid.vcxproj">
+      <Project>{8A76E9E3-86AC-3DFA-B2D4-8929CA82DB0D}</Project>
+      <Name>curl-example-imap-authzid</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-imap-copy.vcxproj">
+      <Project>{B5B6474B-C385-3886-A61F-4EBA90CD0ACA}</Project>
+      <Name>curl-example-imap-copy</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-imap-create.vcxproj">
+      <Project>{C64FA4A9-6AB2-3019-848E-F5689EC24AB2}</Project>
+      <Name>curl-example-imap-create</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-imap-delete.vcxproj">
+      <Project>{F1DD20AC-7301-3944-A516-0E6580DD5853}</Project>
+      <Name>curl-example-imap-delete</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-imap-examine.vcxproj">
+      <Project>{49183BCE-DC37-375A-B761-4EF6DF8369C7}</Project>
+      <Name>curl-example-imap-examine</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-imap-fetch.vcxproj">
+      <Project>{DA231CE5-54EB-3A83-A19F-E4B7C490C646}</Project>
+      <Name>curl-example-imap-fetch</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-imap-list.vcxproj">
+      <Project>{A208A0C6-45B5-3F0B-9136-7AF6FC101233}</Project>
+      <Name>curl-example-imap-list</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-imap-lsub.vcxproj">
+      <Project>{7C330292-C2BD-39B5-ACDF-F91AF41B4909}</Project>
+      <Name>curl-example-imap-lsub</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-imap-multi.vcxproj">
+      <Project>{2E9EA36C-5CC4-3A08-8CF8-BE9605ABDD33}</Project>
+      <Name>curl-example-imap-multi</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-imap-noop.vcxproj">
+      <Project>{619C04AC-3090-3720-B778-B2F00D513F3C}</Project>
+      <Name>curl-example-imap-noop</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-imap-search.vcxproj">
+      <Project>{372295BF-E7D9-39CA-8549-02CCAD30F07F}</Project>
+      <Name>curl-example-imap-search</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-imap-ssl.vcxproj">
+      <Project>{D1BC4E3A-7B2B-31D2-897E-56B2A9AC659A}</Project>
+      <Name>curl-example-imap-ssl</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-imap-store.vcxproj">
+      <Project>{57D19E43-03EB-3749-A9B7-04D64CC9307B}</Project>
+      <Name>curl-example-imap-store</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-imap-tls.vcxproj">
+      <Project>{7BC25EE2-F36B-3598-878C-4A1EA95899A1}</Project>
+      <Name>curl-example-imap-tls</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-interface.vcxproj">
+      <Project>{E15C174A-E900-3E3D-8D0B-E7DD4FCC488E}</Project>
+      <Name>curl-example-interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-ipv6.vcxproj">
+      <Project>{65CD6F41-583C-3DA9-AD7C-28216294EC6A}</Project>
+      <Name>curl-example-ipv6</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-keepalive.vcxproj">
+      <Project>{8E08B6E9-6242-3BC0-89D3-A3A40DBBCE16}</Project>
+      <Name>curl-example-keepalive</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-localport.vcxproj">
+      <Project>{E067817D-6935-3FD2-85D0-DAD4E385FDFC}</Project>
+      <Name>curl-example-localport</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-maxconnects.vcxproj">
+      <Project>{0DE13577-229B-3565-B64B-2CEEC0DDA8AA}</Project>
+      <Name>curl-example-maxconnects</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-multi-app.vcxproj">
+      <Project>{6D7B83D8-15FB-3CE7-961A-D9437C4A15FF}</Project>
+      <Name>curl-example-multi-app</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-multi-debugcallback.vcxproj">
+      <Project>{4C4CBF16-0CB0-36BE-8ECE-8D4ABE07DED7}</Project>
+      <Name>curl-example-multi-debugcallback</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-multi-double.vcxproj">
+      <Project>{0CA798D5-391C-30B0-B48B-CBED7306F5CD}</Project>
+      <Name>curl-example-multi-double</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-multi-formadd.vcxproj">
+      <Project>{3E0A9EF8-8B7C-337E-997A-4D1803CAA017}</Project>
+      <Name>curl-example-multi-formadd</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-multi-legacy.vcxproj">
+      <Project>{394953EF-34BE-3F76-9E38-56A4C53AF68B}</Project>
+      <Name>curl-example-multi-legacy</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-multi-post.vcxproj">
+      <Project>{8B0174F0-B650-3E60-8F6E-826016BFC0C7}</Project>
+      <Name>curl-example-multi-post</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-multi-single.vcxproj">
+      <Project>{D0107766-52EE-323D-A784-8096F16D1108}</Project>
+      <Name>curl-example-multi-single</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-netrc.vcxproj">
+      <Project>{11683F8F-B40A-35FA-A189-812876EA5466}</Project>
+      <Name>curl-example-netrc</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-parseurl.vcxproj">
+      <Project>{A3CBC029-24B6-3F73-8CE5-1E18D014D5F6}</Project>
+      <Name>curl-example-parseurl</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-persistent.vcxproj">
+      <Project>{4D03CF06-37C4-3129-9152-9D5301473E10}</Project>
+      <Name>curl-example-persistent</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-pop3-authzid.vcxproj">
+      <Project>{C31278BC-4C99-330D-A705-79EC5ADF697B}</Project>
+      <Name>curl-example-pop3-authzid</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-pop3-dele.vcxproj">
+      <Project>{5FACA51B-F9EA-3EE1-B7E7-26013E70867A}</Project>
+      <Name>curl-example-pop3-dele</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-pop3-list.vcxproj">
+      <Project>{2246498F-3051-3FB9-8EF1-40D545CECF51}</Project>
+      <Name>curl-example-pop3-list</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-pop3-multi.vcxproj">
+      <Project>{B3CE876B-E92A-308C-843E-76896FA77AF2}</Project>
+      <Name>curl-example-pop3-multi</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-pop3-noop.vcxproj">
+      <Project>{D480AD35-C621-39A3-B0F5-03F747B305CC}</Project>
+      <Name>curl-example-pop3-noop</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-pop3-retr.vcxproj">
+      <Project>{4574F4DD-3889-3873-87D8-6074F28E9FE7}</Project>
+      <Name>curl-example-pop3-retr</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-pop3-ssl.vcxproj">
+      <Project>{20ADC504-F487-3308-A0CC-3FF2D5A7EF6F}</Project>
+      <Name>curl-example-pop3-ssl</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-pop3-stat.vcxproj">
+      <Project>{22A5BF48-C6B0-34CA-A606-037725D6C4C4}</Project>
+      <Name>curl-example-pop3-stat</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-pop3-tls.vcxproj">
+      <Project>{81CB9C3C-2866-35CF-8114-AA6DA0E1F46E}</Project>
+      <Name>curl-example-pop3-tls</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-pop3-top.vcxproj">
+      <Project>{701A92EA-C4DE-3C4C-88FE-FF7BA68DF36C}</Project>
+      <Name>curl-example-pop3-top</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-pop3-uidl.vcxproj">
+      <Project>{F886A115-26F8-3193-8143-CD3664A8B55E}</Project>
+      <Name>curl-example-pop3-uidl</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-post-callback.vcxproj">
+      <Project>{511AC63A-0626-37B4-B01E-3096C00B47B4}</Project>
+      <Name>curl-example-post-callback</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-postinmemory.vcxproj">
+      <Project>{24AF9CA4-F6C9-331C-91F3-C062F869746F}</Project>
+      <Name>curl-example-postinmemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-postit2.vcxproj">
+      <Project>{218D8FA6-8EC9-3A21-ACB0-2CC8EA6D96B3}</Project>
+      <Name>curl-example-postit2</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-postit2-formadd.vcxproj">
+      <Project>{08D496AA-604B-3A04-BB18-3AC6F4D5A5B2}</Project>
+      <Name>curl-example-postit2-formadd</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-progressfunc.vcxproj">
+      <Project>{048BA535-FE75-31A6-BEF5-200E0BDDB263}</Project>
+      <Name>curl-example-progressfunc</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-protofeats.vcxproj">
+      <Project>{3E02E2B8-9317-3F68-B161-BDF8CF2830B6}</Project>
+      <Name>curl-example-protofeats</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-range.vcxproj">
+      <Project>{E7236F53-B417-39F5-94A5-D22F5555F4F5}</Project>
+      <Name>curl-example-range</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-resolve.vcxproj">
+      <Project>{58244809-37F0-34EB-A022-8CA03B77DD5B}</Project>
+      <Name>curl-example-resolve</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-rtsp-options.vcxproj">
+      <Project>{20BDA458-5990-3D07-8F67-36D9EA765415}</Project>
+      <Name>curl-example-rtsp-options</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-sendrecv.vcxproj">
+      <Project>{538C193F-C476-3FE0-9D09-2B830523BF19}</Project>
+      <Name>curl-example-sendrecv</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-sepheaders.vcxproj">
+      <Project>{759B73FA-FF8E-3681-BE05-667CCE8299CD}</Project>
+      <Name>curl-example-sepheaders</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-sftpget.vcxproj">
+      <Project>{F31F8C90-AF64-3EE5-AC72-4EA0289D7246}</Project>
+      <Name>curl-example-sftpget</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-sftpuploadresume.vcxproj">
+      <Project>{29AB3DFA-2735-3EB6-AF97-9761BDB3DDDD}</Project>
+      <Name>curl-example-sftpuploadresume</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-shared-connection-cache.vcxproj">
+      <Project>{56BFE630-8FFE-36F3-B717-DE62057236C2}</Project>
+      <Name>curl-example-shared-connection-cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-simple.vcxproj">
+      <Project>{35C753C5-C949-3A49-8577-C4484C1CB533}</Project>
+      <Name>curl-example-simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-simplepost.vcxproj">
+      <Project>{0AF571F0-634C-304E-A720-713C92F7B24D}</Project>
+      <Name>curl-example-simplepost</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-simplessl.vcxproj">
+      <Project>{0D4F348A-7C98-3ACC-A1A6-E627ADBE60F1}</Project>
+      <Name>curl-example-simplessl</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-smtp-authzid.vcxproj">
+      <Project>{E7A9608E-5BA7-3B93-8286-CA3E2FA097B4}</Project>
+      <Name>curl-example-smtp-authzid</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-smtp-expn.vcxproj">
+      <Project>{93F208A9-6CDB-31BA-9E15-E62513DB922C}</Project>
+      <Name>curl-example-smtp-expn</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-smtp-mail.vcxproj">
+      <Project>{149BB48B-F152-3B21-9F78-D8DB47DB37F1}</Project>
+      <Name>curl-example-smtp-mail</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-smtp-mime.vcxproj">
+      <Project>{E3B4DABA-034B-320A-983D-ADAEF8B094F2}</Project>
+      <Name>curl-example-smtp-mime</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-smtp-multi.vcxproj">
+      <Project>{75E3EECA-5C09-3FB0-8FB2-E35B7E16AE90}</Project>
+      <Name>curl-example-smtp-multi</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-smtp-ssl.vcxproj">
+      <Project>{9F4C2B1E-5667-3B8D-B4B8-E0439159009A}</Project>
+      <Name>curl-example-smtp-ssl</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-smtp-tls.vcxproj">
+      <Project>{DFCBDB81-9823-37E8-8DDB-F409063097B9}</Project>
+      <Name>curl-example-smtp-tls</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-smtp-vrfy.vcxproj">
+      <Project>{D94D27E5-C259-3C07-B97D-4D0C2058F9DD}</Project>
+      <Name>curl-example-smtp-vrfy</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-sslbackend.vcxproj">
+      <Project>{8D85EE30-6F71-37D2-9317-E45FA22C46D3}</Project>
+      <Name>curl-example-sslbackend</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-unixsocket.vcxproj">
+      <Project>{7537B5C9-75B1-36FE-A73A-BEC55B41EF30}</Project>
+      <Name>curl-example-unixsocket</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-url2file.vcxproj">
+      <Project>{4DF9D29A-F7E7-360D-B94E-E0C4E44FDD8C}</Project>
+      <Name>curl-example-url2file</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-urlapi.vcxproj">
+      <Project>{62CE12DB-B198-3704-84E0-16787F39E68E}</Project>
+      <Name>curl-example-urlapi</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-websocket.vcxproj">
+      <Project>{0A6C6BD9-A797-3131-A04F-8AC0A810EAEB}</Project>
+      <Name>curl-example-websocket</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GoliathGames\Garioth\include\curl\build\docs\examples\curl-example-websocket-cb.vcxproj">
+      <Project>{B7A9A513-3D5F-3312-BE6D-4FCB5E2EBC43}</Project>
+      <Name>curl-example-websocket-cb</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
