@@ -781,7 +781,7 @@ int main() {
         if (isRegistering) {
             ImGui::SetNextWindowSize(ImVec2(450, 620), ImGuiCond_Always);
         } else {
-            ImGui::SetNextWindowSize(ImVec2(300, 300), ImGuiCond_Always); // Smaller size for login
+            ImGui::SetNextWindowSize(ImVec2(300, 300), ImGuiCond_Always);
         }
 
         ImGui::Begin("Login / Register", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
@@ -789,12 +789,12 @@ int main() {
         ImGui::TextColored(ImVec4(1.0f, 0.8f, 0.0f, 1.0f), "Garioth - Realm of Legends"); // Gold color for the heading
         ImGui::Separator(); // Adds a separator below the heading
 
-        if (isRegistering) {
-            ImGui::Text("Register New Account");
+        float windowWidth = ImGui::GetWindowWidth();
+        float inputWidth = windowWidth * 0.8f;  // Input fields set to 80% of the window width
 
-            // Set width for input fields to 80% of the window width
-            float windowWidth = ImGui::GetWindowWidth();
-            float inputWidth = windowWidth * 0.8f;  // 80% of window width
+        if (isRegistering) {
+            // Registration Form
+            ImGui::Text("Register New Account");
 
             ImGui::TextUnformatted("Email");
             ImGui::PushItemWidth(inputWidth);
@@ -816,29 +816,31 @@ int main() {
             ImGui::InputText("##confirmPassword", confirmPassword, IM_ARRAYSIZE(confirmPassword), ImGuiInputTextFlags_Password);
             ImGui::PopItemWidth();
 
-            ImGui::Dummy(ImVec2(0.0f, 10.0f)); // Add spacing above the button
+            ImGui::Dummy(ImVec2(0.0f, 10.0f)); // Spacing
 
-            // Add checkboxes for Privacy Policy and Terms of Service
+            // Privacy Policy and Terms of Service
             ImGui::Checkbox("I agree to the Privacy Policy", &privacyPolicyAccepted);
             ImGui::Checkbox("I agree to the Terms of Service", &termsOfServiceAccepted);
-            
-            ImGui::Dummy(ImVec2(0.0f, 15.0f));
 
-            // Button to show Privacy Policy
+            ImGui::Dummy(ImVec2(0.0f, 10.0f)); // Spacing
+
             if (ImGui::Button("View Privacy Policy")) {
                 showPrivacyPolicy = true;
             }
 
-            // Button to show Terms of Service
             if (ImGui::Button("View Terms of Service")) {
                 showTermsOfService = true;
             }
 
-            // Disable Register button if the checkboxes are not checked
+            ImGui::Dummy(ImVec2(0.0f, 15.0f)); // Spacing
+
+            // Register Button
             bool canRegister = privacyPolicyAccepted && termsOfServiceAccepted;
-            ImGui::Dummy(ImVec2(0, 30.0f));
-            // Center the "Register" button
-            ImGui::SetCursorPosX((windowWidth - 150) * 0.5f);
+            if (!canRegister) {
+                ImGui::BeginDisabled();
+            }
+
+            ImGui::SetCursorPosX((windowWidth - 150) * 0.5f); // Center button
             if (ImGui::Button("Register", ImVec2(150, 0))) {
                 if (strlen(username) > 0 && strlen(password) > 0 && strlen(confirmPassword) > 0) {
                     if (strcmp(password, confirmPassword) == 0) {
@@ -846,65 +848,68 @@ int main() {
                         bool success = HTTP::registerUser(username, email, password);
                         if (success) {
                             std::cout << "Registration successful!" << std::endl;
-                            // Proceed with your next steps after successful registration
                         } else {
                             std::cout << "Registration failed." << std::endl;
                         }
                     } else {
                         std::cout << "Passwords do not match!" << std::endl;
                     }
-        } else {
-            std::cout << "Please fill out all fields." << std::endl;
-        }
+                } else {
+                    std::cout << "Please fill out all fields." << std::endl;
+                }
+            }
 
+            if (!canRegister) {
+                ImGui::EndDisabled();
+            }
+
+            // Back to Login Button
             ImGui::SetCursorPosY(ImGui::GetWindowHeight() - 50);
             ImGui::SetCursorPosX((windowWidth - 250) * 0.5f);
-            if (ImGui::Button("Back to login.", ImVec2(250, 0))) {
+            if (ImGui::Button("Back to login", ImVec2(250, 0))) {
                 isRegistering = false;
             }
-            } else {
-                // Login Form
-                ImGui::Text("Login");
 
-                // Set width for input fields to 80% of the window width
-                float windowWidth = ImGui::GetWindowWidth();
-                float inputWidth = windowWidth * 0.8f;  // 80% of window width
+        } else {
+            // Login Form
+            ImGui::Text("Login");
 
-                ImGui::TextUnformatted("Username");
-                ImGui::PushItemWidth(inputWidth);
-                ImGui::InputText("##username", username, IM_ARRAYSIZE(username));
-                ImGui::PopItemWidth();
+            ImGui::TextUnformatted("Username");
+            ImGui::PushItemWidth(inputWidth);
+            ImGui::InputText("##username", username, IM_ARRAYSIZE(username));
+            ImGui::PopItemWidth();
 
-                ImGui::TextUnformatted("Password");
-                ImGui::PushItemWidth(inputWidth);
-                ImGui::InputText("##password", password, IM_ARRAYSIZE(password), ImGuiInputTextFlags_Password);
-                ImGui::PopItemWidth();
+            ImGui::TextUnformatted("Password");
+            ImGui::PushItemWidth(inputWidth);
+            ImGui::InputText("##password", password, IM_ARRAYSIZE(password), ImGuiInputTextFlags_Password);
+            ImGui::PopItemWidth();
 
-                ImGui::Dummy(ImVec2(0.0f, 10.0f)); // Add spacing above the button
+            ImGui::Dummy(ImVec2(0.0f, 10.0f)); // Spacing
 
-                // Center the "Login" button
-                ImGui::SetCursorPosX((windowWidth - 150) * 0.5f);
-            }
+            // Login Button
+            ImGui::SetCursorPosX((windowWidth - 150) * 0.5f); // Center button
             if (ImGui::Button("Login", ImVec2(150, 0))) {
                 if (strlen(username) > 0 && strlen(password) > 0) {
                     std::cout << "Attempting login for " << username << std::endl;
-                    bool success = HTTP::loginUser(username, password, "client_ip_address"); // You can replace with real IP
+                    bool success = HTTP::loginUser(username, password, "client_ip_address");
                     if (success) {
                         std::cout << "Login successful!" << std::endl;
-                        // Proceed with your next steps after successful login
                     } else {
                         std::cout << "Login failed." << std::endl;
                     }
                 } else {
                     std::cout << "Please enter username and password." << std::endl;
                 }
-        }
-                ImGui::SetCursorPosY(ImGui::GetWindowHeight() - 50);
-                ImGui::SetCursorPosX((windowWidth - 250) * 0.5f);
-                if (ImGui::Button("Don't have an account? Create one.", ImVec2(250, 0))) {
-                    isRegistering = true;
-                }
-        }
+            }
+
+            // Switch to Register Button
+            ImGui::SetCursorPosY(ImGui::GetWindowHeight() - 50);
+            ImGui::SetCursorPosX((windowWidth - 250) * 0.5f);
+            if (ImGui::Button("Don't have an account? Create one.", ImVec2(250, 0))) {
+                isRegistering = true;
+            }
+        }        // ImGui::End();
+
 
         // Popup for Privacy Policy
         if (showPrivacyPolicy) {
