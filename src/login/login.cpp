@@ -891,7 +891,7 @@ int main() {
             if (ImGui::Button("Login", ImVec2(150, 0))) {
                 if (strlen(username) > 0 && strlen(password) > 0) {
                     std::cout << "Attempting login for " << username << std::endl;
-                    bool success = HTTP::loginUser(username, password, "client_ip_address");
+                    bool success = HTTP::loginUser(username, password);
                     if (success) {
                         std::cout << "Login successful!" << std::endl;
                     } else {
