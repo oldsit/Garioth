@@ -48,7 +48,7 @@ std::string HTTP::jsonToString(const JSONReader& jsonData) {
 
 // Function to send a login request
 bool HTTP::loginUser(const std::string& username, const std::string& password, const std::string& ipAddress) {
-    std::string url = "http://yourserver.com/api/login";
+    std::string url = "http://localhost:3000/login";
     JSONReader jsonData;
     jsonData.add("username", username);
     jsonData.add("password", password);
@@ -60,7 +60,7 @@ bool HTTP::loginUser(const std::string& username, const std::string& password, c
 
 // Function to send a register request
 bool HTTP::registerUser(const std::string& username, const std::string& email, const std::string& password) {
-    std::string url = "http://yourserver.com/api/register";
+    std::string url = "http://localhost:3000/register";
     JSONReader jsonData;
     jsonData.add("username", username);
     jsonData.add("email", email);

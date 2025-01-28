@@ -672,106 +672,106 @@ int main() {
         // SETTINGS/EXIT START
 
         // Button Size and Padding for Layout
-ImVec2 buttonSize(120, 40);  // Button size with increased height
-ImVec2 padding(10, 10);  // Padding to the right and top
+        ImVec2 buttonSize(120, 40);  // Button size with increased height
+        ImVec2 padding(10, 10);  // Padding to the right and top
 
-// Add extra padding to the right of the "Exit" button
-float extraRightPadding = 20.0f;
+        // Add extra padding to the right of the "Exit" button
+        float extraRightPadding = 20.0f;
 
-// Set window flags to be non-debug, without a title bar, and transparent
-ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoBackground;
+        // Set window flags to be non-debug, without a title bar, and transparent
+        ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoBackground;
 
-// Position and size of the window in the top-right corner, with extra right padding
-ImGui::SetNextWindowPos(ImVec2(ImGui::GetIO().DisplaySize.x - buttonSize.x * 2 - padding.x - extraRightPadding, padding.y));
-ImGui::SetNextWindowSize(ImVec2(buttonSize.x * 2 + padding.x * 2 + extraRightPadding, buttonSize.y + padding.y * 2));
+        // Position and size of the window in the top-right corner, with extra right padding
+        ImGui::SetNextWindowPos(ImVec2(ImGui::GetIO().DisplaySize.x - buttonSize.x * 2 - padding.x - extraRightPadding, padding.y));
+        ImGui::SetNextWindowSize(ImVec2(buttonSize.x * 2 + padding.x * 2 + extraRightPadding, buttonSize.y + padding.y * 2));
 
-ImGui::Begin("TopRightButtons", NULL, window_flags);
-{
-    // Settings Button
-    if (ImGui::Button("Settings", buttonSize)) {
-        showSettingsModal = true;
-    }
+        ImGui::Begin("TopRightButtons", NULL, window_flags);
+        {
+            // Settings Button
+            if (ImGui::Button("Settings", buttonSize)) {
+                showSettingsModal = true;
+            }
 
-    ImGui::SameLine();
+            ImGui::SameLine();
 
-    // Exit Button
-    if (ImGui::Button("Exit", buttonSize)) {
-        showExitModal = true;
-    }
-}
-ImGui::End();
-
-// Exit Modal
-if (showExitModal) {
-    ImGui::OpenPopup("Exit");
-}
-
-if (ImGui::BeginPopupModal("Exit", NULL, ImGuiWindowFlags_AlwaysAutoResize)) {
-    ImGui::Text("Are you sure you want to exit?");
-    ImGui::Separator();
-
-    if (ImGui::Button("Yes", ImVec2(120, 0))) {
-        glfwSetWindowShouldClose(window, GLFW_TRUE);  // Close the window
-        ImGui::CloseCurrentPopup();
-    }
-    ImGui::SameLine();
-    if (ImGui::Button("No", ImVec2(120, 0))) {
-        ImGui::CloseCurrentPopup();
-        showExitModal = false;
-    }
-
-    ImGui::EndPopup();
-}
-
-// Settings Modal
-if (showSettingsModal) {
-    ImGui::OpenPopup("Settings");
-}
-
-if (ImGui::BeginPopupModal("Settings", NULL, ImGuiWindowFlags_AlwaysAutoResize)) {
-    ImGui::Text("Settings");
-
-    // Load resolution strings and set the current resolution
-    if (!resolutionsLoaded) {
-        GetAvailableResolutions(resolutions);  // Assuming this function loads available resolutions
-        for (const auto& res : resolutions) {
-            resolutionCStrs.push_back(res.c_str());
+            // Exit Button
+            if (ImGui::Button("Exit", buttonSize)) {
+                showExitModal = true;
+            }
         }
-        resolutionsLoaded = true;
-    }
+        ImGui::End();
 
-    if (ImGui::CollapsingHeader("Video")) {
-        // Fullscreen Toggle
-        if (ImGui::Checkbox("Enable Fullscreen", &fullscreen)) {
-            std::cout << "Fullscreen Enabled: " << fullscreen << std::endl;
+        // Exit Modal
+        if (showExitModal) {
+            ImGui::OpenPopup("Exit");
         }
 
-        // Resolution Dropdown
-        ImGui::Text("Resolution");
-        ImGui::SameLine();
-        ImGui::Combo("##resolution", &currentResolution, resolutionCStrs.data(), resolutionCStrs.size());
+        if (ImGui::BeginPopupModal("Exit", NULL, ImGuiWindowFlags_AlwaysAutoResize)) {
+            ImGui::Text("Are you sure you want to exit?");
+            ImGui::Separator();
 
-    }
+            if (ImGui::Button("Yes", ImVec2(120, 0))) {
+                glfwSetWindowShouldClose(window, GLFW_TRUE);  // Close the window
+                ImGui::CloseCurrentPopup();
+            }
+            ImGui::SameLine();
+            if (ImGui::Button("No", ImVec2(120, 0))) {
+                ImGui::CloseCurrentPopup();
+                showExitModal = false;
+            }
 
-    ImGui::Spacing();
-    ImGui::SetCursorPosX((ImGui::GetWindowSize().x - 2 * buttonSize.x - padding.x) / 2);
+            ImGui::EndPopup();
+        }
 
-    // Apply Button
-    if (ImGui::Button("Apply", ImVec2(120, 0))) {
-        // Apply the selected settings
-        ApplySettings(window);
-    }
+        // Settings Modal
+        if (showSettingsModal) {
+            ImGui::OpenPopup("Settings");
+        }
 
-    ImGui::SameLine();
+        if (ImGui::BeginPopupModal("Settings", NULL, ImGuiWindowFlags_AlwaysAutoResize)) {
+            ImGui::Text("Settings");
 
-    // Close Button
-    if (ImGui::Button("Close", ImVec2(120, 0))) {
-        showSettingsModal = false;
-        ImGui::CloseCurrentPopup();
-    }
+            // Load resolution strings and set the current resolution
+            if (!resolutionsLoaded) {
+                GetAvailableResolutions(resolutions);  // Assuming this function loads available resolutions
+                for (const auto& res : resolutions) {
+                    resolutionCStrs.push_back(res.c_str());
+                }
+                resolutionsLoaded = true;
+            }
 
-    ImGui::EndPopup();
-}
+            if (ImGui::CollapsingHeader("Video")) {
+                // Fullscreen Toggle
+                if (ImGui::Checkbox("Enable Fullscreen", &fullscreen)) {
+                    std::cout << "Fullscreen Enabled: " << fullscreen << std::endl;
+                }
+
+                // Resolution Dropdown
+                ImGui::Text("Resolution");
+                ImGui::SameLine();
+                ImGui::Combo("##resolution", &currentResolution, resolutionCStrs.data(), resolutionCStrs.size());
+
+            }
+
+            ImGui::Spacing();
+            ImGui::SetCursorPosX((ImGui::GetWindowSize().x - 2 * buttonSize.x - padding.x) / 2);
+
+            // Apply Button
+            if (ImGui::Button("Apply", ImVec2(120, 0))) {
+                // Apply the selected settings
+                ApplySettings(window);
+            }
+
+            ImGui::SameLine();
+
+            // Close Button
+            if (ImGui::Button("Close", ImVec2(120, 0))) {
+                showSettingsModal = false;
+                ImGui::CloseCurrentPopup();
+            }
+
+            ImGui::EndPopup();
+        }
         // SETTINGS/EXIT END
 
         // Set window position (keeping it the same for both login and register)
@@ -840,53 +840,70 @@ if (ImGui::BeginPopupModal("Settings", NULL, ImGuiWindowFlags_AlwaysAutoResize))
             // Center the "Register" button
             ImGui::SetCursorPosX((windowWidth - 150) * 0.5f);
             if (ImGui::Button("Register", ImVec2(150, 0))) {
-                if (strcmp(password, confirmPassword) == 0) {
-                    if (canRegister) {
-                        std::cout << "Registered: " << username << std::endl;
+                if (strlen(username) > 0 && strlen(password) > 0 && strlen(confirmPassword) > 0) {
+                    if (strcmp(password, confirmPassword) == 0) {
+                        std::cout << "Attempting registration for " << username << std::endl;
+                        bool success = HTTP::registerUser(username, email, password);
+                        if (success) {
+                            std::cout << "Registration successful!" << std::endl;
+                            // Proceed with your next steps after successful registration
+                        } else {
+                            std::cout << "Registration failed." << std::endl;
+                        }
                     } else {
-                        std::cout << "You must accept the Privacy Policy and Terms of Service to register." << std::endl;
+                        std::cout << "Passwords do not match!" << std::endl;
                     }
-                } else {
-                    std::cout << "Passwords do not match!" << std::endl;
-                }
-            }
+        } else {
+            std::cout << "Please fill out all fields." << std::endl;
+        }
 
             ImGui::SetCursorPosY(ImGui::GetWindowHeight() - 50);
             ImGui::SetCursorPosX((windowWidth - 250) * 0.5f);
             if (ImGui::Button("Back to login.", ImVec2(250, 0))) {
                 isRegistering = false;
             }
-        } else {
-            // Login Form
-            ImGui::Text("Login");
+            } else {
+                // Login Form
+                ImGui::Text("Login");
 
-            // Set width for input fields to 80% of the window width
-            float windowWidth = ImGui::GetWindowWidth();
-            float inputWidth = windowWidth * 0.8f;  // 80% of window width
+                // Set width for input fields to 80% of the window width
+                float windowWidth = ImGui::GetWindowWidth();
+                float inputWidth = windowWidth * 0.8f;  // 80% of window width
 
-            ImGui::TextUnformatted("Username");
-            ImGui::PushItemWidth(inputWidth);
-            ImGui::InputText("##username", username, IM_ARRAYSIZE(username));
-            ImGui::PopItemWidth();
+                ImGui::TextUnformatted("Username");
+                ImGui::PushItemWidth(inputWidth);
+                ImGui::InputText("##username", username, IM_ARRAYSIZE(username));
+                ImGui::PopItemWidth();
 
-            ImGui::TextUnformatted("Password");
-            ImGui::PushItemWidth(inputWidth);
-            ImGui::InputText("##password", password, IM_ARRAYSIZE(password), ImGuiInputTextFlags_Password);
-            ImGui::PopItemWidth();
+                ImGui::TextUnformatted("Password");
+                ImGui::PushItemWidth(inputWidth);
+                ImGui::InputText("##password", password, IM_ARRAYSIZE(password), ImGuiInputTextFlags_Password);
+                ImGui::PopItemWidth();
 
-            ImGui::Dummy(ImVec2(0.0f, 10.0f)); // Add spacing above the button
+                ImGui::Dummy(ImVec2(0.0f, 10.0f)); // Add spacing above the button
 
-            // Center the "Login" button
-            ImGui::SetCursorPosX((windowWidth - 150) * 0.5f);
+                // Center the "Login" button
+                ImGui::SetCursorPosX((windowWidth - 150) * 0.5f);
+            }
             if (ImGui::Button("Login", ImVec2(150, 0))) {
-                std::cout << "Logged in: " << username << std::endl;
-            }
-
-            ImGui::SetCursorPosY(ImGui::GetWindowHeight() - 50);
-            ImGui::SetCursorPosX((windowWidth - 250) * 0.5f);
-            if (ImGui::Button("Don't have an account? Create one.", ImVec2(250, 0))) {
-                isRegistering = true;
-            }
+                if (strlen(username) > 0 && strlen(password) > 0) {
+                    std::cout << "Attempting login for " << username << std::endl;
+                    bool success = HTTP::loginUser(username, password, "client_ip_address"); // You can replace with real IP
+                    if (success) {
+                        std::cout << "Login successful!" << std::endl;
+                        // Proceed with your next steps after successful login
+                    } else {
+                        std::cout << "Login failed." << std::endl;
+                    }
+                } else {
+                    std::cout << "Please enter username and password." << std::endl;
+                }
+        }
+                ImGui::SetCursorPosY(ImGui::GetWindowHeight() - 50);
+                ImGui::SetCursorPosX((windowWidth - 250) * 0.5f);
+                if (ImGui::Button("Don't have an account? Create one.", ImVec2(250, 0))) {
+                    isRegistering = true;
+                }
         }
 
         // Popup for Privacy Policy
@@ -944,7 +961,6 @@ if (ImGui::BeginPopupModal("Settings", NULL, ImGuiWindowFlags_AlwaysAutoResize))
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
-
     // Cleanup
     if (customCursor) {
         glfwDestroyCursor(customCursor);
