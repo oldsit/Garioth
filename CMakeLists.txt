@@ -25,7 +25,10 @@ set(IMGUI_SOURCES
 )
 
 # Include directories
-include_directories(C:/GoliathGames/Garioth/src/common)
+include_directories(
+    ${PROJECT_SOURCE_DIR}/src/common  # Include common directory for JSONReader
+    ${PROJECT_SOURCE_DIR}/include
+)
 
 # Manifest file path
 set(MANIFEST_FILE ${CMAKE_SOURCE_DIR}/Goriath.manifest)
@@ -35,6 +38,7 @@ set(COMMON_SRC
     ${PROJECT_SOURCE_DIR}/src/common/image_utils.cpp
     ${PROJECT_SOURCE_DIR}/src/common/audio_manager.cpp
     ${PROJECT_SOURCE_DIR}/src/common/miniaudio_impl.cpp  # Add miniaudio implementation file
+    ${PROJECT_SOURCE_DIR}/src/common/json_reader.cpp     # Add json_reader source file
 )
 
 # Add STB Image header
@@ -95,8 +99,9 @@ endif()
 
 # Find OpenGL and link it with the login executable
 find_package(OpenGL REQUIRED)
+target_include_directories(garioth_login PRIVATE ${OPENGL_INCLUDE_DIR})
 target_link_libraries(garioth_login ${OPENGL_gl_LIBRARY} 
-    "C:/local/glfw-3.4.bin.WIN64/lib-vc2022/glfw3.lib" 
+    "C:/local/glfw-3.4.bin.WIN64/lib-vc2022/glfw3.lib"
     opengl32
 )
 
