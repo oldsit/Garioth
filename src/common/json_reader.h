@@ -8,17 +8,24 @@
 
 class JSONReader {
 public:
-    bool parse(const std::string& input);
-    std::string get(const std::string& key) const;
-    void display() const;
+    bool parse(const std::string& input);  // Parse JSON string into internal map
+    std::string get(const std::string& key) const;  // Get value by key
+    void display() const;  // For debugging, display parsed data as key-value pairs
+
+    // Add a key-value pair to the internal map
+    void add(const std::string& key, const std::string& value);
+
+    // Convert the internal data into a JSON string
+    std::string toJsonString() const;
 
 private:
-    std::unordered_map<std::string, std::shared_ptr<JSONReader>> jsonData;  // Nested JSON support
+    std::unordered_map<std::string, std::string> jsonData;  // Simple key-value map for values
 
-    void removeWhitespace(std::string& str);
-    bool getQuotedString(std::istringstream& stream, std::string& str);
-    bool parseValue(std::istringstream& stream, std::string& value);
-    bool parseObject(std::istringstream& stream);
+    void removeWhitespace(std::string& str);  // Helper to remove whitespaces from input
+    bool getQuotedString(std::istringstream& stream, std::string& str);  // Extract quoted string (key or value)
+    bool parseValue(std::istringstream& stream, std::string& value);  // Parse JSON values (string, number, object)
+    bool parseObject(std::istringstream& stream, std::string& value);  // Parse nested JSON objects
+    bool parseNumberOrBoolean(std::istringstream& stream, std::string& value);
 };
 
 #endif  // JSON_READER_H

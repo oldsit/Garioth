@@ -36,8 +36,7 @@ bool JSONReader::parse(const std::string& input) {
         }
 
         // Insert the key-value pair into the map
-        jsonData[key] = std::make_shared<JSONReader>();  // Support for nested JSON
-        jsonData[key]->parse(value);
+        jsonData[key] = value;  // Use the value directly for simple types (string or number)
 
         // If there's a comma, skip it and continue reading the next pair
         char nextChar;
@@ -54,33 +53,64 @@ bool JSONReader::parse(const std::string& input) {
 bool JSONReader::parseValue(std::istringstream& stream, std::string& value) {
     char nextChar = stream.peek();
     if (nextChar == '"') {
-        return getQuotedString(stream, value);
+        return getQuotedString(stream, value);  // String value
     } else if (nextChar == '{') {
-        return parseObject(stream);  // Handle nested object
+        return parseObject(stream, value);  // Handle nested object
+    } else {
+        // Parse numbers or other types (for simplicity, assuming only strings and numbers are supported)
+        return parseNumberOrBoolean(stream, value);
     }
-    return false;
 }
 
 // Helper function to parse a nested JSON object
-bool JSONReader::parseObject(std::istringstream& stream) {
+bool JSONReader::parseObject(std::istringstream& stream, std::string& value) {
     char nextChar;
     stream >> nextChar;  // Skip '{'
-    std::string key, value;
+    std::string key, val;
+    std::ostringstream oss;
+
     while (getQuotedString(stream, key)) {
         if (!(stream >> std::ws && stream.get() == ':')) {
             std::cerr << "Invalid format: Key-value pair should be separated by ':'." << std::endl;
             return false;
         }
-        if (!parseValue(stream, value)) {
+
+        if (!parseValue(stream, val)) {
             std::cerr << "Invalid format: Value should be a valid JSON type." << std::endl;
             return false;
         }
-        jsonData[key] = std::make_shared<JSONReader>();
-        jsonData[key]->parse(value);
+
+        oss << "\"" << key << "\": " << val;
+
         char nextChar;
+        if (stream >> nextChar && nextChar == ',') {
+            oss << ",";
+        }
     }
+
+    // Store the nested JSON object as a string for the current key
+    value = "{" + oss.str() + "}";
+    return true;
 }
 
+
+// Helper function to parse numbers, booleans, or other types (just numbers for now)
+bool JSONReader::parseNumberOrBoolean(std::istringstream& stream, std::string& value) {
+    std::ostringstream oss;
+    char nextChar;
+    while (stream.get(nextChar) && (isdigit(nextChar) || nextChar == '.' || nextChar == '-' || nextChar == '+')) {
+        oss.put(nextChar);
+    }
+
+    if (oss.str().empty()) {
+        return false;
+    }
+
+    value = oss.str();
+    return true;
+}
+
+// Function to extract quoted string (key or value)
 bool JSONReader::getQuotedString(std::istringstream& stream, std::string& str) {
     char nextChar;
     // Check if the next character is a double quote (")
@@ -101,3 +131,27 @@ bool JSONReader::getQuotedString(std::istringstream& stream, std::string& str) {
     str = oss.str();  // Store the result in the reference string
     return true;
 }
+
+// Convert the internal data to a JSON string
+std::string JSONReader::toJsonString() const {
+    std::ostringstream oss;
+    oss << "{";
+    bool first = true;
+
+    for (const auto& pair : jsonData) {
+        if (!first) {
+            oss << ",";
+        }
+        oss << "\"" << pair.first << "\":\"" << pair.second << "\"";
+        first = false;
+    }
+    oss << "}";
+
+    return oss.str();
+}
+
+// Add key-value pairs to the internal data
+void JSONReader::add(const std::string& key, const std::string& value) {
+    jsonData[key] = value;
+}
+
