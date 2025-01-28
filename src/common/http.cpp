@@ -47,12 +47,11 @@ std::string HTTP::jsonToString(const JSONReader& jsonData) {
 }
 
 // Function to send a login request
-bool HTTP::loginUser(const std::string& username, const std::string& password, const std::string& ipAddress) {
+bool HTTP::loginUser(const std::string& username, const std::string& password) {
     std::string url = "http://localhost:3000/login";
     JSONReader jsonData;
     jsonData.add("username", username);
     jsonData.add("password", password);
-    jsonData.add("ipAddress", ipAddress);
 
     std::string postData = jsonToString(jsonData);
     return sendRequest(url, postData);

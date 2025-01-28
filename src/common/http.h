@@ -7,7 +7,7 @@
 class HTTP {
 public:
     static bool sendPostRequest(const std::string& url, const JSONReader& jsonData);
-    static bool loginUser(const std::string& username, const std::string& password, const std::string& ipAddress);
+    static bool loginUser(const std::string& username, const std::string& password); // Removed ipAddress parameter
     static bool registerUser(const std::string& username, const std::string& email, const std::string& password);
 
 private:
