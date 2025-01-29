@@ -1,7 +1,7 @@
 #ifndef AUDIO_MANAGER_H
 #define AUDIO_MANAGER_H
 
-#include <miniaudio.h>  // Include the Miniaudio header without implementation
+#include <miniaudio.h>  
 #include <string>
 #include <atomic>
 
@@ -15,10 +15,13 @@ public:
     void stopMusic();
     bool isPlaying() const;
 
+    void setVolume(float volume);  // New method to adjust volume
+
 private:
     ma_decoder decoder;
     ma_device device;
-    std::atomic<bool> isMusicPlaying;  // Thread-safe flag
+    std::atomic<bool> isMusicPlaying;
+    float volume;  // Stores the volume level (0.0 to 1.0)
 
     static void audioCallback(ma_device* pDevice, void* pOutput, const void* pInput, ma_uint32 frameCount);
 };

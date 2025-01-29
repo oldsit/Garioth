@@ -27,7 +27,8 @@ static bool resolutionsLoaded = false;
 static int currentResolutionIndex = 0;
 static std::string resolution = "1920x1080"; // Default resolution
 std::string path = "C:/Program Files/Goliath Games/Goriath/Screenshots/";
-
+AudioManager audioManager;
+float volume;
 
 GLFWcursor* customCursor = nullptr; // Define customCursor globally
 
@@ -131,8 +132,8 @@ void GetAvailableResolutions(std::vector<std::string>& resolutions) {
     }
 }
 
-// Function to save settings to the registry
-void SaveSettingsToRegistry(bool fullscreen, const std::string& resolution) {
+// Function to save settings to the registry (now includes volume)
+void SaveSettingsToRegistry(bool fullscreen, const std::string& resolution, float volume) {
     HKEY hKey;
     const char* regPath = "Software\\GoliathGames\\Garioth"; // Path where settings are stored in the registry
 
@@ -144,13 +145,16 @@ void SaveSettingsToRegistry(bool fullscreen, const std::string& resolution) {
         // Save resolution as a string (e.g., "1920x1080")
         RegSetValueExA(hKey, "Resolution", 0, REG_SZ, (const BYTE*)resolution.c_str(), resolution.size() + 1);
 
+        // Save volume as a float
+        RegSetValueExA(hKey, "Volume", 0, REG_BINARY, (const BYTE*)&volume, sizeof(volume));
+
         // Close the registry key
         RegCloseKey(hKey);
     }
 }
 
-// Function to load settings from the registry
-void LoadSettingsFromRegistry(bool& fullscreen, std::string& resolution) {
+// Function to load settings from the registry (now includes volume)
+void LoadSettingsFromRegistry(bool& fullscreen, std::string& resolution, float& volume) {
     HKEY hKey;
     const char* regPath = "Software\\GoliathGames\\Garioth";
 
@@ -158,17 +162,25 @@ void LoadSettingsFromRegistry(bool& fullscreen, std::string& resolution) {
         DWORD type;
         DWORD size;
 
+        // Load fullscreen setting
         size = sizeof(fullscreen);
         if (RegQueryValueExA(hKey, "Fullscreen", 0, &type, (LPBYTE)&fullscreen, &size) != ERROR_SUCCESS) {
             fullscreen = false; // Default to false if not found
         }
 
+        // Load resolution setting
         size = 256;
         char resBuffer[256];
         if (RegQueryValueExA(hKey, "Resolution", 0, &type, (LPBYTE)resBuffer, &size) == ERROR_SUCCESS) {
             resolution = std::string(resBuffer);
         } else {
             resolution = "1920x1080"; // Default if not found
+        }
+
+        // Load volume setting
+        size = sizeof(volume);
+        if (RegQueryValueExA(hKey, "Volume", 0, &type, (LPBYTE)&volume, &size) != ERROR_SUCCESS) {
+            volume = 1.0f; // Default volume if not found
         }
 
         RegCloseKey(hKey);
@@ -364,11 +376,16 @@ void ApplySettings(GLFWwindow* window) {
         std::cout << "Resolution applied: " << width << "x" << height << std::endl;
     }
 
+    // Apply volume to AudioManager
+    audioManager.setVolume(volume);
+    std::cout << "Volume applied: " << volume << std::endl;
+
     // Save the applied settings to the registry
-    SaveSettingsToRegistry(fullscreen, resolutions[currentResolutionIndex]);
+    SaveSettingsToRegistry(fullscreen, resolutions[currentResolutionIndex], volume);
 
     std::cout << "Settings Applied: Fullscreen - " << (fullscreen ? "ON" : "OFF") 
-              << ", Resolution - " << resolutions[currentResolutionIndex] << std::endl;
+              << ", Resolution - " << resolutions[currentResolutionIndex]
+              << ", Volume - " << volume << std::endl;
 }
 
 // Function to read the Privacy Policy from a file
@@ -410,7 +427,7 @@ std::string ProcessLegalPolicyText(const std::string& text)
 
 void ShowSettingsMenu(GLFWwindow* window) {
     // Load settings from registry before showing the menu
-    LoadSettingsFromRegistry(fullscreen, resolution);
+    LoadSettingsFromRegistry(fullscreen, resolution, volume);
 
     // Find the resolution index to select the correct one in the dropdown
     currentResolutionIndex = -1;  // Default to -1 if not found
@@ -448,10 +465,16 @@ void ShowSettingsMenu(GLFWwindow* window) {
             ImGui::Combo("##resolution", &currentResolutionIndex, resolutionCStrs.data(), resolutionCStrs.size());
         }
 
+        if (ImGui::CollapsingHeader("Audio")) {
+            ImGui::Text("Volume");
+            ImGui::SameLine();
+            ImGui::SliderFloat("##volume", &volume, 0.0f, 1.0f, "%.2f");
+        }
+
         ImGui::Spacing();
         if (ImGui::Button("Apply", ImVec2(120, 0))) {
             resolution = resolutions[currentResolutionIndex];  // Save the selected resolution
-            SaveSettingsToRegistry(fullscreen, resolution);
+            SaveSettingsToRegistry(fullscreen, resolution, volume);
             ApplySettings(window);
         }
 
@@ -463,6 +486,7 @@ void ShowSettingsMenu(GLFWwindow* window) {
         ImGui::EndPopup();
     }
 }
+
 
 
 
@@ -502,7 +526,7 @@ int main() {
     glfwWindowHint(GLFW_RESIZABLE, 0);
 
     // Load saved settings from the registry
-    LoadSettingsFromRegistry(fullscreen, resolution);
+    LoadSettingsFromRegistry(fullscreen, resolution, volume);
 
     // Parse the resolution string to get the width and height
     std::pair<int, int> resolutionDimensions = ParseResolution(resolution);
@@ -628,7 +652,6 @@ int main() {
     bool showPrivacyPolicy = false;
     bool showTermsOfService = false;
 
-
     ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_NoMouseCursorChange;
 
     // Create a custom cursor and get the cursor, width, and height
@@ -672,29 +695,25 @@ int main() {
         // SETTINGS/EXIT START
 
         // Button Size and Padding for Layout
-        ImVec2 buttonSize(120, 40);  // Button size with increased height
-        ImVec2 padding(10, 10);  // Padding to the right and top
+        ImVec2 buttonSize(120, 40);  
+        ImVec2 padding(10, 10);  
 
-        // Add extra padding to the right of the "Exit" button
         float extraRightPadding = 20.0f;
 
-        // Set window flags to be non-debug, without a title bar, and transparent
-        ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoBackground;
+        ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | 
+                                        ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoNav | 
+                                        ImGuiWindowFlags_NoBackground;
 
-        // Position and size of the window in the top-right corner, with extra right padding
         ImGui::SetNextWindowPos(ImVec2(ImGui::GetIO().DisplaySize.x - buttonSize.x * 2 - padding.x - extraRightPadding, padding.y));
         ImGui::SetNextWindowSize(ImVec2(buttonSize.x * 2 + padding.x * 2 + extraRightPadding, buttonSize.y + padding.y * 2));
 
         ImGui::Begin("TopRightButtons", NULL, window_flags);
         {
-            // Settings Button
             if (ImGui::Button("Settings", buttonSize)) {
                 showSettingsModal = true;
             }
-
             ImGui::SameLine();
 
-            // Exit Button
             if (ImGui::Button("Exit", buttonSize)) {
                 showExitModal = true;
             }
@@ -711,7 +730,7 @@ int main() {
             ImGui::Separator();
 
             if (ImGui::Button("Yes", ImVec2(120, 0))) {
-                glfwSetWindowShouldClose(window, GLFW_TRUE);  // Close the window
+                glfwSetWindowShouldClose(window, GLFW_TRUE);
                 ImGui::CloseCurrentPopup();
             }
             ImGui::SameLine();
@@ -731,9 +750,9 @@ int main() {
         if (ImGui::BeginPopupModal("Settings", NULL, ImGuiWindowFlags_AlwaysAutoResize)) {
             ImGui::Text("Settings");
 
-            // Load resolution strings and set the current resolution
+            // Load available resolutions (only once)
             if (!resolutionsLoaded) {
-                GetAvailableResolutions(resolutions);  // Assuming this function loads available resolutions
+                GetAvailableResolutions(resolutions);
                 for (const auto& res : resolutions) {
                     resolutionCStrs.push_back(res.c_str());
                 }
@@ -741,30 +760,31 @@ int main() {
             }
 
             if (ImGui::CollapsingHeader("Video")) {
-                // Fullscreen Toggle
                 if (ImGui::Checkbox("Enable Fullscreen", &fullscreen)) {
                     std::cout << "Fullscreen Enabled: " << fullscreen << std::endl;
                 }
 
-                // Resolution Dropdown
                 ImGui::Text("Resolution");
                 ImGui::SameLine();
                 ImGui::Combo("##resolution", &currentResolution, resolutionCStrs.data(), resolutionCStrs.size());
+            }
 
+            if (ImGui::CollapsingHeader("Audio")) {  // New Audio Settings
+                ImGui::Text("Volume");
+                if (ImGui::SliderFloat("##volume", &volume, 0.0f, 1.0f, "%.2f")) {
+                    audioManager.setVolume(volume);  // Update AudioManager volume
+                }
             }
 
             ImGui::Spacing();
             ImGui::SetCursorPosX((ImGui::GetWindowSize().x - 2 * buttonSize.x - padding.x) / 2);
 
-            // Apply Button
             if (ImGui::Button("Apply", ImVec2(120, 0))) {
-                // Apply the selected settings
                 ApplySettings(window);
             }
 
             ImGui::SameLine();
 
-            // Close Button
             if (ImGui::Button("Close", ImVec2(120, 0))) {
                 showSettingsModal = false;
                 ImGui::CloseCurrentPopup();
@@ -772,7 +792,9 @@ int main() {
 
             ImGui::EndPopup();
         }
+
         // SETTINGS/EXIT END
+
 
         // Set window position (keeping it the same for both login and register)
         ImGui::SetNextWindowPos(ImVec2((display_w - 400) * 0.5f, (display_h - 500) * 0.5f), ImGuiCond_Always);
